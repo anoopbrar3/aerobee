@@ -1,0 +1,7152 @@
+[
+ {
+  "start": "2021-02-10 15:14:00",
+  "end": "2021-02-10 15:41:00",
+  "durMin": 27,
+  "points": 10,
+  "origin": [
+   "???",
+   "43.73,79.65",
+   1774.5
+  ],
+  "dest": [
+   "???",
+   "43.73,79.65",
+   1774.5
+  ],
+  "maxAlt": 11000.0,
+  "fuelStart": 131040.0,
+  "fuelEnd": 131040.0,
+  "fuelBurn": 0.0,
+  "gwStart": 336640.0,
+  "apuOnPct": 0.0
+ },
+ {
+  "start": "2021-02-25 10:59:00",
+  "end": "2021-02-25 10:59:00",
+  "durMin": 0,
+  "points": 1,
+  "origin": [
+   "LFBD",
+   "Bordeaux",
+   0.4
+  ],
+  "dest": [
+   "LFBD",
+   "Bordeaux",
+   0.4
+  ],
+  "maxAlt": -250.0,
+  "fuelStart": 44500.0,
+  "fuelEnd": 44500.0,
+  "fuelBurn": null,
+  "gwStart": 0.0,
+  "apuOnPct": 100.0
+ },
+ {
+  "start": "2021-03-12 08:51:00",
+  "end": "2021-03-12 08:51:00",
+  "durMin": 0,
+  "points": 1,
+  "origin": [
+   "LFBD",
+   "Bordeaux",
+   0.7
+  ],
+  "dest": [
+   "LFBD",
+   "Bordeaux",
+   0.7
+  ],
+  "maxAlt": -54.0,
+  "fuelStart": 18160.0,
+  "fuelEnd": 18160.0,
+  "fuelBurn": null,
+  "gwStart": 0.0,
+  "apuOnPct": 100.0
+ },
+ {
+  "start": "2021-03-23 09:59:00",
+  "end": "2021-03-23 11:05:00",
+  "durMin": 66,
+  "points": 10,
+  "origin": [
+   "LFBD",
+   "Bordeaux",
+   0.7
+  ],
+  "dest": [
+   "LFBD",
+   "Bordeaux",
+   0.8
+  ],
+  "maxAlt": 21004.0,
+  "fuelStart": 66180.0,
+  "fuelEnd": 55240.0,
+  "fuelBurn": 10940.0,
+  "gwStart": 263880.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-03-23 15:10:00",
+  "end": "2021-03-23 16:34:00",
+  "durMin": 84,
+  "points": 5,
+  "origin": [
+   "LFBD",
+   "Bordeaux",
+   0.8
+  ],
+  "dest": [
+   "???",
+   "40.27,11.81",
+   141.3
+  ],
+  "maxAlt": 35011.0,
+  "fuelStart": 70160.0,
+  "fuelEnd": 52480.0,
+  "fuelBurn": 17680.0,
+  "gwStart": 271800.0,
+  "apuOnPct": 20.0
+ },
+ {
+  "start": "2021-03-23 20:34:00",
+  "end": "2021-03-23 20:44:00",
+  "durMin": 10,
+  "points": 5,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   23.6
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.7
+  ],
+  "maxAlt": 6739.0,
+  "fuelStart": 17440.0,
+  "fuelEnd": 17100.0,
+  "fuelBurn": 340.0,
+  "gwStart": 219760.0,
+  "apuOnPct": 60.0
+ },
+ {
+  "start": "2021-03-28 15:56:00",
+  "end": "2021-03-28 16:42:00",
+  "durMin": 46,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OEAH",
+   "Al-Ahsa",
+   0.5
+  ],
+  "maxAlt": 19015.0,
+  "fuelStart": 33040.0,
+  "fuelEnd": 24880.0,
+  "fuelBurn": 8160.0,
+  "gwStart": 233000.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-03-28 18:53:00",
+  "end": "2021-03-28 19:36:00",
+  "durMin": 43,
+  "points": 10,
+  "origin": [
+   "OEAH",
+   "Al-Ahsa",
+   0.7
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "maxAlt": 18011.0,
+  "fuelStart": 24100.0,
+  "fuelEnd": 16940.0,
+  "fuelBurn": 7160.0,
+  "gwStart": 231920.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-03-30 13:48:00",
+  "end": "2021-03-30 15:14:00",
+  "durMin": 86,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.3
+  ],
+  "maxAlt": 36006.0,
+  "fuelStart": 55780.0,
+  "fuelEnd": 40840.0,
+  "fuelBurn": 14940.0,
+  "gwStart": 254600.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-03-30 17:03:00",
+  "end": "2021-03-30 18:10:00",
+  "durMin": 67,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.6
+  ],
+  "maxAlt": 37007.0,
+  "fuelStart": 40680.0,
+  "fuelEnd": 28080.0,
+  "fuelBurn": 12600.0,
+  "gwStart": 247320.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-04-05 10:02:00",
+  "end": "2021-04-05 11:41:00",
+  "durMin": 99,
+  "points": 11,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.6
+  ],
+  "maxAlt": 36013.0,
+  "fuelStart": 54940.0,
+  "fuelEnd": 40240.0,
+  "fuelBurn": 14700.0,
+  "gwStart": 253960.0,
+  "apuOnPct": 45.5
+ },
+ {
+  "start": "2021-04-05 13:22:00",
+  "end": "2021-04-05 14:35:00",
+  "durMin": 73,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 35002.0,
+  "fuelStart": 39680.0,
+  "fuelEnd": 26620.0,
+  "fuelBurn": 13060.0,
+  "gwStart": 242480.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-04-07 12:50:00",
+  "end": "2021-04-07 12:50:00",
+  "durMin": 0,
+  "points": 1,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "maxAlt": 1938.0,
+  "fuelStart": 39580.0,
+  "fuelEnd": 39580.0,
+  "fuelBurn": null,
+  "gwStart": 0.0,
+  "apuOnPct": 100.0
+ },
+ {
+  "start": "2021-04-07 15:04:00",
+  "end": "2021-04-07 17:20:00",
+  "durMin": 136,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 23980.0,
+  "fuelStart": 38480.0,
+  "fuelEnd": 20980.0,
+  "fuelBurn": 17500.0,
+  "gwStart": 250880.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-04-10 12:06:00",
+  "end": "2021-04-10 12:52:00",
+  "durMin": 46,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OEDR",
+   "Dhahran",
+   1.1
+  ],
+  "maxAlt": 23010.0,
+  "fuelStart": 39260.0,
+  "fuelEnd": 33240.0,
+  "fuelBurn": 6020.0,
+  "gwStart": 238520.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-04-10 14:41:00",
+  "end": "2021-04-10 15:45:00",
+  "durMin": 64,
+  "points": 10,
+  "origin": [
+   "OEDR",
+   "Dhahran",
+   1.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.6
+  ],
+  "maxAlt": 23999.0,
+  "fuelStart": 32940.0,
+  "fuelEnd": 20980.0,
+  "fuelBurn": 11960.0,
+  "gwStart": 242920.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-04-18 06:06:00",
+  "end": "2021-04-18 08:42:00",
+  "durMin": 156,
+  "points": 11,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "???",
+   "16.90,42.58",
+   313.0
+  ],
+  "maxAlt": 32007.0,
+  "fuelStart": 55360.0,
+  "fuelEnd": 35020.0,
+  "fuelBurn": 20340.0,
+  "gwStart": 253960.0,
+  "apuOnPct": 45.5
+ },
+ {
+  "start": "2021-04-18 11:30:00",
+  "end": "2021-04-18 12:09:00",
+  "durMin": 39,
+  "points": 10,
+  "origin": [
+   "???",
+   "16.89,42.59",
+   313.6
+  ],
+  "dest": [
+   "???",
+   "17.61,44.41",
+   346.3
+  ],
+  "maxAlt": 19017.0,
+  "fuelStart": 57300.0,
+  "fuelEnd": 49180.0,
+  "fuelBurn": 8120.0,
+  "gwStart": 258600.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-04-18 13:43:00",
+  "end": "2021-04-18 14:15:00",
+  "durMin": 32,
+  "points": 10,
+  "origin": [
+   "???",
+   "17.61,44.41",
+   346.3
+  ],
+  "dest": [
+   "???",
+   "17.47,47.12",
+   435.4
+  ],
+  "maxAlt": 17021.0,
+  "fuelStart": 48980.0,
+  "fuelEnd": 41280.0,
+  "fuelBurn": 7700.0,
+  "gwStart": 250640.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-04-18 16:21:00",
+  "end": "2021-04-18 18:17:00",
+  "durMin": 116,
+  "points": 11,
+  "origin": [
+   "???",
+   "17.47,47.11",
+   435.5
+  ],
+  "dest": [
+   "OERY",
+   "Riyadh Air Base",
+   0.1
+  ],
+  "maxAlt": 31007.0,
+  "fuelStart": 41440.0,
+  "fuelEnd": 28120.0,
+  "fuelBurn": 13320.0,
+  "gwStart": 244040.0,
+  "apuOnPct": 45.5
+ },
+ {
+  "start": "2021-05-01 09:08:00",
+  "end": "2021-05-01 12:18:00",
+  "durMin": 190,
+  "points": 19,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   4.6
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.2
+  ],
+  "maxAlt": 34000.0,
+  "fuelStart": 52780.0,
+  "fuelEnd": 31400.0,
+  "fuelBurn": 21380.0,
+  "gwStart": 258560.0,
+  "apuOnPct": 36.8
+ },
+ {
+  "start": "2021-05-01 19:24:00",
+  "end": "2021-05-01 20:37:00",
+  "durMin": 73,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 36991.0,
+  "fuelStart": 31340.0,
+  "fuelEnd": 18160.0,
+  "fuelBurn": 13180.0,
+  "gwStart": 243800.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-05-02 15:09:00",
+  "end": "2021-05-02 17:20:00",
+  "durMin": 131,
+  "points": 11,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.2
+  ],
+  "dest": [
+   "OENN",
+   "NEOM Bay",
+   0.7
+  ],
+  "maxAlt": 35992.0,
+  "fuelStart": 58400.0,
+  "fuelEnd": 41320.0,
+  "fuelBurn": 17080.0,
+  "gwStart": 263000.0,
+  "apuOnPct": 45.5
+ },
+ {
+  "start": "2021-05-03 00:41:00",
+  "end": "2021-05-03 02:33:00",
+  "durMin": 112,
+  "points": 10,
+  "origin": [
+   "OENN",
+   "NEOM Bay",
+   1.2
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.3
+  ],
+  "maxAlt": 37022.0,
+  "fuelStart": 38720.0,
+  "fuelEnd": 19740.0,
+  "fuelBurn": 18980.0,
+  "gwStart": 239640.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-05-06 15:03:00",
+  "end": "2021-05-06 15:03:00",
+  "durMin": 0,
+  "points": 1,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "maxAlt": 2090.0,
+  "fuelStart": 48120.0,
+  "fuelEnd": 48120.0,
+  "fuelBurn": null,
+  "gwStart": 0.0,
+  "apuOnPct": 100.0
+ },
+ {
+  "start": "2021-05-06 17:45:00",
+  "end": "2021-05-06 21:27:00",
+  "durMin": 222,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 36009.0,
+  "fuelStart": 46740.0,
+  "fuelEnd": 20580.0,
+  "fuelBurn": 26160.0,
+  "gwStart": 262120.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-05-07 17:36:00",
+  "end": "2021-05-07 19:07:00",
+  "durMin": 91,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   0.8
+  ],
+  "maxAlt": 37999.0,
+  "fuelStart": 48080.0,
+  "fuelEnd": 34740.0,
+  "fuelBurn": 13340.0,
+  "gwStart": 251080.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-05-07 21:30:00",
+  "end": "2021-05-07 22:43:00",
+  "durMin": 73,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 34974.0,
+  "fuelStart": 33260.0,
+  "fuelEnd": 20360.0,
+  "fuelBurn": 12900.0,
+  "gwStart": 232360.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-05-08 15:49:00",
+  "end": "2021-05-08 15:49:00",
+  "durMin": 0,
+  "points": 1,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 2079.0,
+  "fuelStart": 57840.0,
+  "fuelEnd": 57840.0,
+  "fuelBurn": null,
+  "gwStart": 260120.0,
+  "apuOnPct": 100.0
+ },
+ {
+  "start": "2021-05-08 17:32:00",
+  "end": "2021-05-08 18:54:00",
+  "durMin": 82,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.7
+  ],
+  "maxAlt": 31996.0,
+  "fuelStart": 56560.0,
+  "fuelEnd": 41140.0,
+  "fuelBurn": 15420.0,
+  "gwStart": 260120.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-05-09 01:14:00",
+  "end": "2021-05-09 02:24:00",
+  "durMin": 70,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.7
+  ],
+  "maxAlt": 37008.0,
+  "fuelStart": 41140.0,
+  "fuelEnd": 28420.0,
+  "fuelBurn": 12720.0,
+  "gwStart": 244040.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-05-11 22:03:00",
+  "end": "2021-05-12 01:58:00",
+  "durMin": 235,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.3
+  ],
+  "maxAlt": 35999.0,
+  "fuelStart": 54860.0,
+  "fuelEnd": 27480.0,
+  "fuelBurn": 27380.0,
+  "gwStart": 253720.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-05-13 01:29:00",
+  "end": "2021-05-13 02:52:00",
+  "durMin": 83,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.6
+  ],
+  "maxAlt": 36010.0,
+  "fuelStart": 54980.0,
+  "fuelEnd": 42500.0,
+  "fuelBurn": 12480.0,
+  "gwStart": 253960.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-05-13 05:49:00",
+  "end": "2021-05-13 06:58:00",
+  "durMin": 69,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.3
+  ],
+  "maxAlt": 35009.0,
+  "fuelStart": 41100.0,
+  "fuelEnd": 27700.0,
+  "fuelBurn": 13400.0,
+  "gwStart": 256360.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-05-22 06:32:00",
+  "end": "2021-05-22 08:00:00",
+  "durMin": 88,
+  "points": 11,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.3
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.6
+  ],
+  "maxAlt": 35009.0,
+  "fuelStart": 40820.0,
+  "fuelEnd": 27940.0,
+  "fuelBurn": 12880.0,
+  "gwStart": 238520.0,
+  "apuOnPct": 45.5
+ },
+ {
+  "start": "2021-05-27 12:22:00",
+  "end": "2021-05-27 12:22:00",
+  "durMin": 0,
+  "points": 1,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 2094.0,
+  "fuelStart": 50980.0,
+  "fuelEnd": 50980.0,
+  "fuelBurn": null,
+  "gwStart": 0.0,
+  "apuOnPct": 100.0
+ },
+ {
+  "start": "2021-05-27 14:53:00",
+  "end": "2021-05-27 18:35:00",
+  "durMin": 222,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 37005.0,
+  "fuelStart": 49520.0,
+  "fuelEnd": 22240.0,
+  "fuelBurn": 27280.0,
+  "gwStart": 261880.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-06-01 00:10:00",
+  "end": "2021-06-01 00:47:00",
+  "durMin": 37,
+  "points": 5,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "25.88,42.08",
+   94.7
+  ],
+  "maxAlt": 34008.0,
+  "fuelStart": 102120.0,
+  "fuelEnd": 90300.0,
+  "fuelBurn": 11820.0,
+  "gwStart": 308400.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-06-01 07:39:00",
+  "end": "2021-06-01 10:08:00",
+  "durMin": 149,
+  "points": 10,
+  "origin": [
+   "???",
+   "52.50,-9.14",
+   568.2
+  ],
+  "dest": [
+   "???",
+   "51.87,-18.45",
+   821.0
+  ],
+  "maxAlt": 36011.0,
+  "fuelStart": 25040.0,
+  "fuelEnd": 70460.0,
+  "fuelBurn": -45420.0,
+  "gwStart": 231880.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-06-01 15:57:00",
+  "end": "2021-06-01 16:06:00",
+  "durMin": 9,
+  "points": 5,
+  "origin": [
+   "???",
+   "40.80,-73.41",
+   3101.7
+  ],
+  "dest": [
+   "???",
+   "40.63,-73.77",
+   3120.9
+  ],
+  "maxAlt": 4852.0,
+  "fuelStart": 17980.0,
+  "fuelEnd": 16840.0,
+  "fuelBurn": 1140.0,
+  "gwStart": 224760.0,
+  "apuOnPct": 60.0
+ },
+ {
+  "start": "2021-06-03 20:43:00",
+  "end": "2021-06-03 21:37:00",
+  "durMin": 54,
+  "points": 6,
+  "origin": [
+   "???",
+   "40.65,-73.81",
+   3121.7
+  ],
+  "dest": [
+   "???",
+   "43.49,-68.95",
+   2850.2
+  ],
+  "maxAlt": 35009.0,
+  "fuelStart": 83420.0,
+  "fuelEnd": 72940.0,
+  "fuelBurn": 10480.0,
+  "gwStart": 286360.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2021-06-04 02:26:00",
+  "end": "2021-06-04 04:26:00",
+  "durMin": 120,
+  "points": 10,
+  "origin": [
+   "???",
+   "52.96,-8.78",
+   581.9
+  ],
+  "dest": [
+   "???",
+   "51.62,-2.24",
+   412.5
+  ],
+  "maxAlt": 35028.0,
+  "fuelStart": 28240.0,
+  "fuelEnd": 80260.0,
+  "fuelBurn": -52020.0,
+  "gwStart": 231520.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-06-04 10:32:00",
+  "end": "2021-06-04 10:56:00",
+  "durMin": 24,
+  "points": 5,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   25.3
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 6686.0,
+  "fuelStart": 21380.0,
+  "fuelEnd": 20700.0,
+  "fuelBurn": 680.0,
+  "gwStart": 225960.0,
+  "apuOnPct": 60.0
+ },
+ {
+  "start": "2021-06-07 14:57:00",
+  "end": "2021-06-07 16:21:00",
+  "durMin": 84,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.2
+  ],
+  "maxAlt": 35993.0,
+  "fuelStart": 51220.0,
+  "fuelEnd": 35720.0,
+  "fuelBurn": 15500.0,
+  "gwStart": 253960.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-06-07 19:36:00",
+  "end": "2021-06-07 20:59:00",
+  "durMin": 83,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.5
+  ],
+  "maxAlt": 37004.0,
+  "fuelStart": 36480.0,
+  "fuelEnd": 21600.0,
+  "fuelBurn": 14880.0,
+  "gwStart": 236760.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-06-11 12:50:00",
+  "end": "2021-06-11 14:19:00",
+  "durMin": 89,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "???",
+   "25.26,55.36",
+   288.1
+  ],
+  "maxAlt": 35010.0,
+  "fuelStart": 54540.0,
+  "fuelEnd": 39860.0,
+  "fuelBurn": 14680.0,
+  "gwStart": 253520.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-06-11 16:38:00",
+  "end": "2021-06-11 18:00:00",
+  "durMin": 82,
+  "points": 10,
+  "origin": [
+   "???",
+   "25.24,55.39",
+   290.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.6
+  ],
+  "maxAlt": 36009.0,
+  "fuelStart": 39080.0,
+  "fuelEnd": 24480.0,
+  "fuelBurn": 14600.0,
+  "gwStart": 257920.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-06-12 16:35:00",
+  "end": "2021-06-12 20:26:00",
+  "durMin": 231,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 36997.0,
+  "fuelStart": 48720.0,
+  "fuelEnd": 19280.0,
+  "fuelBurn": 29440.0,
+  "gwStart": 257480.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-06-26 19:06:00",
+  "end": "2021-06-26 20:10:00",
+  "durMin": 64,
+  "points": 5,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "26.82,38.21",
+   125.8
+  ],
+  "maxAlt": 34008.0,
+  "fuelStart": 95640.0,
+  "fuelEnd": 80280.0,
+  "fuelBurn": 15360.0,
+  "gwStart": 301560.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-06-27 02:03:00",
+  "end": "2021-06-27 04:02:00",
+  "durMin": 119,
+  "points": 9,
+  "origin": [
+   "???",
+   "52.54,-8.54",
+   556.6
+  ],
+  "dest": [
+   "???",
+   "52.68,-12.18",
+   652.9
+  ],
+  "maxAlt": 36004.0,
+  "fuelStart": 23700.0,
+  "fuelEnd": 76920.0,
+  "fuelBurn": -53220.0,
+  "gwStart": 229120.0,
+  "apuOnPct": 44.4
+ },
+ {
+  "start": "2021-06-27 05:57:00",
+  "end": "2021-06-27 05:57:00",
+  "durMin": 0,
+  "points": 1,
+  "origin": [
+   "???",
+   "49.47,-36.33",
+   1466.5
+  ],
+  "dest": [
+   "???",
+   "49.47,-36.33",
+   1466.5
+  ],
+  "maxAlt": 35994.0,
+  "fuelStart": 57540.0,
+  "fuelEnd": 57540.0,
+  "fuelBurn": null,
+  "gwStart": 261640.0,
+  "apuOnPct": 0.0
+ },
+ {
+  "start": "2021-06-27 10:19:00",
+  "end": "2021-06-27 10:29:00",
+  "durMin": 10,
+  "points": 5,
+  "origin": [
+   "???",
+   "41.50,-81.45",
+   3389.1
+  ],
+  "dest": [
+   "???",
+   "41.40,-81.87",
+   3408.2
+  ],
+  "maxAlt": 5901.0,
+  "fuelStart": 16720.0,
+  "fuelEnd": 16620.0,
+  "fuelBurn": 100.0,
+  "gwStart": 220760.0,
+  "apuOnPct": 60.0
+ },
+ {
+  "start": "2021-06-29 23:32:00",
+  "end": "2021-06-29 23:54:00",
+  "durMin": 22,
+  "points": 5,
+  "origin": [
+   "???",
+   "41.41,-81.85",
+   3407.2
+  ],
+  "dest": [
+   "???",
+   "42.19,-79.12",
+   3279.1
+  ],
+  "maxAlt": 35024.0,
+  "fuelStart": 84500.0,
+  "fuelEnd": 76200.0,
+  "fuelBurn": 8300.0,
+  "gwStart": 283920.0,
+  "apuOnPct": 20.0
+ },
+ {
+  "start": "2021-06-30 05:51:00",
+  "end": "2021-06-30 09:14:00",
+  "durMin": 203,
+  "points": 10,
+  "origin": [
+   "???",
+   "52.59,-9.29",
+   576.1
+  ],
+  "dest": [
+   "???",
+   "45.52,8.31",
+   377.5
+  ],
+  "maxAlt": 37013.0,
+  "fuelStart": 21140.0,
+  "fuelEnd": 61180.0,
+  "fuelBurn": -40040.0,
+  "gwStart": 221960.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-06-30 13:39:00",
+  "end": "2021-06-30 13:47:00",
+  "durMin": 8,
+  "points": 5,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   22.3
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "maxAlt": 4267.0,
+  "fuelStart": 20260.0,
+  "fuelEnd": 20000.0,
+  "fuelBurn": 260.0,
+  "gwStart": 221040.0,
+  "apuOnPct": 60.0
+ },
+ {
+  "start": "2021-06-30 16:23:00",
+  "end": "2021-06-30 17:49:00",
+  "durMin": 86,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   2.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 32998.0,
+  "fuelStart": 39740.0,
+  "fuelEnd": 24780.0,
+  "fuelBurn": 14960.0,
+  "gwStart": 247560.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-10 10:29:00",
+  "end": "2021-08-10 12:11:00",
+  "durMin": 102,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OENN",
+   "NEOM Bay",
+   0.4
+  ],
+  "maxAlt": 35990.0,
+  "fuelStart": 57500.0,
+  "fuelEnd": 40420.0,
+  "fuelBurn": 17080.0,
+  "gwStart": 256160.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-10 14:12:00",
+  "end": "2021-08-10 16:08:00",
+  "durMin": 116,
+  "points": 10,
+  "origin": [
+   "OENN",
+   "NEOM Bay",
+   1.2
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 35006.0,
+  "fuelStart": 39960.0,
+  "fuelEnd": 20520.0,
+  "fuelBurn": 19440.0,
+  "gwStart": 247120.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-11 10:30:00",
+  "end": "2021-08-11 10:30:00",
+  "durMin": 0,
+  "points": 1,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 2217.0,
+  "fuelStart": 77280.0,
+  "fuelEnd": 77280.0,
+  "fuelBurn": null,
+  "gwStart": 0.0,
+  "apuOnPct": 100.0
+ },
+ {
+  "start": "2021-08-11 12:30:00",
+  "end": "2021-08-11 18:15:00",
+  "durMin": 345,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.2
+  ],
+  "maxAlt": 35994.0,
+  "fuelStart": 74340.0,
+  "fuelEnd": 29700.0,
+  "fuelBurn": 44640.0,
+  "gwStart": 277560.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-12 10:48:00",
+  "end": "2021-08-12 12:07:00",
+  "durMin": 79,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.2
+  ],
+  "maxAlt": 33990.0,
+  "fuelStart": 60120.0,
+  "fuelEnd": 46400.0,
+  "fuelBurn": 13720.0,
+  "gwStart": 260800.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-12 14:23:00",
+  "end": "2021-08-12 17:24:00",
+  "durMin": 181,
+  "points": 20,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 35007.0,
+  "fuelStart": 46440.0,
+  "fuelEnd": 22100.0,
+  "fuelBurn": 24340.0,
+  "gwStart": 251320.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-14 15:59:00",
+  "end": "2021-08-14 17:26:00",
+  "durMin": 87,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "26.21,36.47",
+   121.2
+  ],
+  "maxAlt": 33970.0,
+  "fuelStart": 64180.0,
+  "fuelEnd": 47060.0,
+  "fuelBurn": 17120.0,
+  "gwStart": 262760.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-08-14 19:06:00",
+  "end": "2021-08-14 20:13:00",
+  "durMin": 67,
+  "points": 10,
+  "origin": [
+   "???",
+   "26.19,36.48",
+   122.4
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.2
+  ],
+  "maxAlt": 30983.0,
+  "fuelStart": 48120.0,
+  "fuelEnd": 36640.0,
+  "fuelBurn": 11480.0,
+  "gwStart": 252400.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-14 21:54:00",
+  "end": "2021-08-14 23:19:00",
+  "durMin": 85,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 34998.0,
+  "fuelStart": 35440.0,
+  "fuelEnd": 21520.0,
+  "fuelBurn": 13920.0,
+  "gwStart": 235440.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-15 18:49:00",
+  "end": "2021-08-15 22:44:00",
+  "durMin": 235,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 36992.0,
+  "fuelStart": 52720.0,
+  "fuelEnd": 26700.0,
+  "fuelBurn": 26020.0,
+  "gwStart": 274680.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-17 07:29:00",
+  "end": "2021-08-17 07:39:00",
+  "durMin": 10,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "25.00,45.85",
+   46.1
+  ],
+  "maxAlt": 17919.0,
+  "fuelStart": 68920.0,
+  "fuelEnd": 64240.0,
+  "fuelBurn": 4680.0,
+  "gwStart": 267640.0,
+  "apuOnPct": 25.0
+ },
+ {
+  "start": "2021-08-17 09:14:00",
+  "end": "2021-08-17 09:52:00",
+  "durMin": 38,
+  "points": 6,
+  "origin": [
+   "???",
+   "28.93,33.11",
+   88.6
+  ],
+  "dest": [
+   "HECA",
+   "Cairo",
+   1.9
+  ],
+  "maxAlt": 35880.0,
+  "fuelStart": 49200.0,
+  "fuelEnd": 43520.0,
+  "fuelBurn": 5680.0,
+  "gwStart": 248760.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-08-17 13:27:00",
+  "end": "2021-08-17 15:52:00",
+  "durMin": 145,
+  "points": 10,
+  "origin": [
+   "HECA",
+   "Cairo",
+   1.3
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.3
+  ],
+  "maxAlt": 34998.0,
+  "fuelStart": 41340.0,
+  "fuelEnd": 17580.0,
+  "fuelBurn": 23760.0,
+  "gwStart": 249520.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-18 11:26:00",
+  "end": "2021-08-18 12:48:00",
+  "durMin": 82,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.2
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.2
+  ],
+  "maxAlt": 35991.0,
+  "fuelStart": 51280.0,
+  "fuelEnd": 38460.0,
+  "fuelBurn": 12820.0,
+  "gwStart": 249560.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-18 14:26:00",
+  "end": "2021-08-18 15:44:00",
+  "durMin": 78,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.6
+  ],
+  "maxAlt": 34999.0,
+  "fuelStart": 38060.0,
+  "fuelEnd": 23480.0,
+  "fuelBurn": 14580.0,
+  "gwStart": 245560.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-19 10:39:00",
+  "end": "2021-08-19 11:59:00",
+  "durMin": 80,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.9
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.2
+  ],
+  "maxAlt": 33994.0,
+  "fuelStart": 50920.0,
+  "fuelEnd": 36820.0,
+  "fuelBurn": 14100.0,
+  "gwStart": 249760.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-19 14:00:00",
+  "end": "2021-08-19 15:22:00",
+  "durMin": 82,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.7
+  ],
+  "maxAlt": 34993.0,
+  "fuelStart": 35980.0,
+  "fuelEnd": 21420.0,
+  "fuelBurn": 14560.0,
+  "gwStart": 246000.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-19 19:35:00",
+  "end": "2021-08-19 21:24:00",
+  "durMin": 109,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "24.58,60.74",
+   583.0
+  ],
+  "maxAlt": 37009.0,
+  "fuelStart": 77300.0,
+  "fuelEnd": 54100.0,
+  "fuelBurn": 23200.0,
+  "gwStart": 284800.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2021-08-19 23:12:00",
+  "end": "2021-08-19 23:19:00",
+  "durMin": 7,
+  "points": 4,
+  "origin": [
+   "???",
+   "33.41,73.13",
+   1267.9
+  ],
+  "dest": [
+   "???",
+   "33.62,73.09",
+   1269.1
+  ],
+  "maxAlt": 6579.0,
+  "fuelStart": 37520.0,
+  "fuelEnd": 37280.0,
+  "fuelBurn": 240.0,
+  "gwStart": 245960.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-08-24 12:46:00",
+  "end": "2021-08-24 17:19:00",
+  "durMin": 273,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.6
+  ],
+  "maxAlt": 35993.0,
+  "fuelStart": 54500.0,
+  "fuelEnd": 15480.0,
+  "fuelBurn": 39020.0,
+  "gwStart": 253520.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-27 10:16:00",
+  "end": "2021-08-27 11:05:00",
+  "durMin": 49,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "26.47,40.23",
+   118.6
+  ],
+  "maxAlt": 33998.0,
+  "fuelStart": 93940.0,
+  "fuelEnd": 82360.0,
+  "fuelBurn": 11580.0,
+  "gwStart": 291640.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-08-27 16:49:00",
+  "end": "2021-08-27 16:57:00",
+  "durMin": 8,
+  "points": 4,
+  "origin": [
+   "???",
+   "51.92,0.09",
+   427.2
+  ],
+  "dest": [
+   "???",
+   "51.89,0.24",
+   425.7
+  ],
+  "maxAlt": 5054.0,
+  "fuelStart": 27760.0,
+  "fuelEnd": 26960.0,
+  "fuelBurn": 800.0,
+  "gwStart": 227480.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-08-28 11:28:00",
+  "end": "2021-08-28 12:02:00",
+  "durMin": 34,
+  "points": 6,
+  "origin": [
+   "???",
+   "51.88,0.22",
+   424.8
+  ],
+  "dest": [
+   "???",
+   "51.42,5.96",
+   477.4
+  ],
+  "maxAlt": 33012.0,
+  "fuelStart": 93020.0,
+  "fuelEnd": 82820.0,
+  "fuelBurn": 10200.0,
+  "gwStart": 303320.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2021-08-28 17:59:00",
+  "end": "2021-08-28 18:07:00",
+  "durMin": 8,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   8.2
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 6772.0,
+  "fuelStart": 24340.0,
+  "fuelEnd": 24180.0,
+  "fuelBurn": 160.0,
+  "gwStart": 235680.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-08-29 09:15:00",
+  "end": "2021-08-29 10:30:00",
+  "durMin": 75,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.2
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.6
+  ],
+  "maxAlt": 33998.0,
+  "fuelStart": 51880.0,
+  "fuelEnd": 38740.0,
+  "fuelBurn": 13140.0,
+  "gwStart": 250640.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-08-29 12:45:00",
+  "end": "2021-08-29 14:11:00",
+  "durMin": 86,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.3
+  ],
+  "maxAlt": 33036.0,
+  "fuelStart": 38760.0,
+  "fuelEnd": 22700.0,
+  "fuelBurn": 16060.0,
+  "gwStart": 255040.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-09-03 07:18:00",
+  "end": "2021-09-03 10:19:00",
+  "durMin": 181,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.9
+  ],
+  "maxAlt": 33999.0,
+  "fuelStart": 52460.0,
+  "fuelEnd": 24800.0,
+  "fuelBurn": 27660.0,
+  "gwStart": 257920.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-09-04 07:23:00",
+  "end": "2021-09-04 08:41:00",
+  "durMin": 78,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "30.91,41.14",
+   268.3
+  ],
+  "maxAlt": 33998.0,
+  "fuelStart": 52500.0,
+  "fuelEnd": 37620.0,
+  "fuelBurn": 14880.0,
+  "gwStart": 251960.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-09-04 10:20:00",
+  "end": "2021-09-04 11:38:00",
+  "durMin": 78,
+  "points": 10,
+  "origin": [
+   "???",
+   "30.91,41.13",
+   267.7
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.9
+  ],
+  "maxAlt": 32999.0,
+  "fuelStart": 37320.0,
+  "fuelEnd": 23520.0,
+  "fuelBurn": 13800.0,
+  "gwStart": 241600.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-09-06 07:23:00",
+  "end": "2021-09-06 08:29:00",
+  "durMin": 66,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   9.3
+  ],
+  "maxAlt": 34008.0,
+  "fuelStart": 99560.0,
+  "fuelEnd": 82780.0,
+  "fuelBurn": 16780.0,
+  "gwStart": 301560.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-09-06 12:42:00",
+  "end": "2021-09-06 14:42:00",
+  "durMin": 120,
+  "points": 10,
+  "origin": [
+   "???",
+   "9.22,7.32",
+   1805.8
+  ],
+  "dest": [
+   "???",
+   "10.39,9.15",
+   1717.6
+  ],
+  "maxAlt": 37016.0,
+  "fuelStart": 42740.0,
+  "fuelEnd": 64680.0,
+  "fuelBurn": -21940.0,
+  "gwStart": 245600.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-09-06 19:49:00",
+  "end": "2021-09-06 20:03:00",
+  "durMin": 14,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   22.3
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 6845.0,
+  "fuelStart": 18300.0,
+  "fuelEnd": 16520.0,
+  "fuelBurn": 1780.0,
+  "gwStart": 217680.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-09-10 13:47:00",
+  "end": "2021-09-10 18:34:00",
+  "durMin": 287,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.3
+  ],
+  "maxAlt": 35018.0,
+  "fuelStart": 55840.0,
+  "fuelEnd": 22220.0,
+  "fuelBurn": 33620.0,
+  "gwStart": 254600.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-09-11 21:09:00",
+  "end": "2021-09-11 21:09:00",
+  "durMin": 0,
+  "points": 2,
+  "origin": [
+   "???",
+   "37.97,15.36",
+   305.8
+  ],
+  "dest": [
+   "???",
+   "37.98,15.36",
+   305.3
+  ],
+  "maxAlt": 36007.0,
+  "fuelStart": 56340.0,
+  "fuelEnd": 56300.0,
+  "fuelBurn": 40.0,
+  "gwStart": 255360.0,
+  "apuOnPct": 0.0
+ },
+ {
+  "start": "2021-09-12 15:13:00",
+  "end": "2021-09-12 15:38:00",
+  "durMin": 25,
+  "points": 4,
+  "origin": [
+   "???",
+   "36.65,-4.47",
+   519.7
+  ],
+  "dest": [
+   "???",
+   "38.11,-0.99",
+   403.3
+  ],
+  "maxAlt": 34022.0,
+  "fuelStart": 88580.0,
+  "fuelEnd": 79980.0,
+  "fuelBurn": 8600.0,
+  "gwStart": 300320.0,
+  "apuOnPct": 0.0
+ },
+ {
+  "start": "2021-09-12 21:03:00",
+  "end": "2021-09-12 21:18:00",
+  "durMin": 15,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   18.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.6
+  ],
+  "maxAlt": 7358.0,
+  "fuelStart": 25940.0,
+  "fuelEnd": 25480.0,
+  "fuelBurn": 460.0,
+  "gwStart": 237600.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-09-13 11:27:00",
+  "end": "2021-09-13 15:34:00",
+  "durMin": 247,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.6
+  ],
+  "maxAlt": 36013.0,
+  "fuelStart": 51100.0,
+  "fuelEnd": 21740.0,
+  "fuelBurn": 29360.0,
+  "gwStart": 249560.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-09-15 07:43:00",
+  "end": "2021-09-15 09:32:00",
+  "durMin": 109,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "23.60,58.29",
+   470.8
+  ],
+  "maxAlt": 37009.0,
+  "fuelStart": 55820.0,
+  "fuelEnd": 36420.0,
+  "fuelBurn": 19400.0,
+  "gwStart": 254600.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-09-15 17:52:00",
+  "end": "2021-09-15 19:39:00",
+  "durMin": 107,
+  "points": 9,
+  "origin": [
+   "???",
+   "23.61,58.29",
+   471.0
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 36018.0,
+  "fuelStart": 44220.0,
+  "fuelEnd": 25060.0,
+  "fuelBurn": 19160.0,
+  "gwStart": 243600.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2021-09-17 08:30:00",
+  "end": "2021-09-17 08:30:00",
+  "durMin": 0,
+  "points": 1,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "maxAlt": 2137.0,
+  "fuelStart": 49020.0,
+  "fuelEnd": 49020.0,
+  "fuelBurn": null,
+  "gwStart": 0.0,
+  "apuOnPct": 100.0
+ },
+ {
+  "start": "2021-09-17 10:47:00",
+  "end": "2021-09-17 13:53:00",
+  "durMin": 186,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.2
+  ],
+  "maxAlt": 34006.0,
+  "fuelStart": 47320.0,
+  "fuelEnd": 22740.0,
+  "fuelBurn": 24580.0,
+  "gwStart": 250440.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-09-21 06:12:00",
+  "end": "2021-09-21 07:59:00",
+  "durMin": 107,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "23.61,58.29",
+   470.8
+  ],
+  "maxAlt": 33014.0,
+  "fuelStart": 60340.0,
+  "fuelEnd": 41800.0,
+  "fuelBurn": 18540.0,
+  "gwStart": 261880.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-09-21 13:58:00",
+  "end": "2021-09-21 16:03:00",
+  "durMin": 125,
+  "points": 10,
+  "origin": [
+   "???",
+   "23.61,58.26",
+   469.3
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.9
+  ],
+  "maxAlt": 36020.0,
+  "fuelStart": 41680.0,
+  "fuelEnd": 21600.0,
+  "fuelBurn": 20080.0,
+  "gwStart": 243360.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-10-01 00:45:00",
+  "end": "2021-10-01 04:31:00",
+  "durMin": 226,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 36013.0,
+  "fuelStart": 54460.0,
+  "fuelEnd": 25000.0,
+  "fuelBurn": 29460.0,
+  "gwStart": 257240.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-10-23 05:47:00",
+  "end": "2021-10-23 07:22:00",
+  "durMin": 95,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "???",
+   "21.16,59.17",
+   582.4
+  ],
+  "maxAlt": 35019.0,
+  "fuelStart": 91100.0,
+  "fuelEnd": 71380.0,
+  "fuelBurn": 19720.0,
+  "gwStart": 289240.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2021-10-23 10:53:00",
+  "end": "2021-10-23 11:03:00",
+  "durMin": 10,
+  "points": 4,
+  "origin": [
+   "???",
+   "-4.44,55.75",
+   1813.3
+  ],
+  "dest": [
+   "???",
+   "-4.67,55.51",
+   1818.0
+  ],
+  "maxAlt": 4903.0,
+  "fuelStart": 37820.0,
+  "fuelEnd": 37360.0,
+  "fuelBurn": 460.0,
+  "gwStart": 237200.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-10-23 13:38:00",
+  "end": "2021-10-23 14:47:00",
+  "durMin": 69,
+  "points": 6,
+  "origin": [
+   "???",
+   "-4.68,55.53",
+   1819.1
+  ],
+  "dest": [
+   "???",
+   "2.05,60.20",
+   1526.8
+  ],
+  "maxAlt": 35001.0,
+  "fuelStart": 84100.0,
+  "fuelEnd": 67600.0,
+  "fuelBurn": 16500.0,
+  "gwStart": 286360.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2021-10-23 19:19:00",
+  "end": "2021-10-23 19:29:00",
+  "durMin": 10,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   17.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.3
+  ],
+  "maxAlt": 6583.0,
+  "fuelStart": 24580.0,
+  "fuelEnd": 23820.0,
+  "fuelBurn": 760.0,
+  "gwStart": 227880.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-10-27 02:48:00",
+  "end": "2021-10-27 03:05:00",
+  "durMin": 17,
+  "points": 5,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.9
+  ],
+  "dest": [
+   "???",
+   "25.16,44.98",
+   94.3
+  ],
+  "maxAlt": 34000.0,
+  "fuelStart": 91080.0,
+  "fuelEnd": 83620.0,
+  "fuelBurn": 7460.0,
+  "gwStart": 289000.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-10-27 04:38:00",
+  "end": "2021-10-27 04:38:00",
+  "durMin": 0,
+  "points": 1,
+  "origin": [
+   "HESH",
+   "Sharm El-Sheikh",
+   27.7
+  ],
+  "dest": [
+   "HESH",
+   "Sharm El-Sheikh",
+   27.7
+  ],
+  "maxAlt": 36005.0,
+  "fuelStart": 68140.0,
+  "fuelEnd": 68140.0,
+  "fuelBurn": null,
+  "gwStart": 267360.0,
+  "apuOnPct": 0.0
+ },
+ {
+  "start": "2021-10-27 09:22:00",
+  "end": "2021-10-27 09:30:00",
+  "durMin": 8,
+  "points": 4,
+  "origin": [
+   "???",
+   "52.03,0.52",
+   435.4
+  ],
+  "dest": [
+   "???",
+   "51.88,0.23",
+   425.3
+  ],
+  "maxAlt": 5138.0,
+  "fuelStart": 25200.0,
+  "fuelEnd": 24920.0,
+  "fuelBurn": 280.0,
+  "gwStart": 224440.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-10-28 04:07:00",
+  "end": "2021-10-28 04:24:00",
+  "durMin": 17,
+  "points": 5,
+  "origin": [
+   "???",
+   "51.89,0.25",
+   425.9
+  ],
+  "dest": [
+   "???",
+   "52.11,3.00",
+   461.4
+  ],
+  "maxAlt": 33010.0,
+  "fuelStart": 90680.0,
+  "fuelEnd": 83280.0,
+  "fuelBurn": 7400.0,
+  "gwStart": 311480.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-10-28 06:06:00",
+  "end": "2021-10-28 06:06:00",
+  "durMin": 0,
+  "points": 1,
+  "origin": [
+   "???",
+   "45.06,18.14",
+   533.4
+  ],
+  "dest": [
+   "???",
+   "45.06,18.14",
+   533.4
+  ],
+  "maxAlt": 33013.0,
+  "fuelStart": 65960.0,
+  "fuelEnd": 65960.0,
+  "fuelBurn": null,
+  "gwStart": 287680.0,
+  "apuOnPct": 0.0
+ },
+ {
+  "start": "2021-10-28 10:27:00",
+  "end": "2021-10-28 10:39:00",
+  "durMin": 12,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   22.7
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.3
+  ],
+  "maxAlt": 6665.0,
+  "fuelStart": 22480.0,
+  "fuelEnd": 22500.0,
+  "fuelBurn": -20.0,
+  "gwStart": 244280.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-11-06 11:21:00",
+  "end": "2021-11-06 13:20:00",
+  "durMin": 119,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OJAI",
+   "Amman",
+   0.4
+  ],
+  "maxAlt": 34019.0,
+  "fuelStart": 54540.0,
+  "fuelEnd": 34420.0,
+  "fuelBurn": 20120.0,
+  "gwStart": 253080.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-11-16 09:27:00",
+  "end": "2021-11-16 10:50:00",
+  "durMin": 83,
+  "points": 10,
+  "origin": [
+   "OJAI",
+   "Amman",
+   1.2
+  ],
+  "dest": [
+   "OEMA",
+   "Medina",
+   0.5
+  ],
+  "maxAlt": 35008.0,
+  "fuelStart": 36180.0,
+  "fuelEnd": 21900.0,
+  "fuelBurn": 14280.0,
+  "gwStart": 233680.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-11-16 13:26:00",
+  "end": "2021-11-16 17:02:00",
+  "durMin": 216,
+  "points": 21,
+  "origin": [
+   "OEMA",
+   "Medina",
+   0.9
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 35016.0,
+  "fuelStart": 40100.0,
+  "fuelEnd": 16300.0,
+  "fuelBurn": 23800.0,
+  "gwStart": 240080.0,
+  "apuOnPct": 42.9
+ },
+ {
+  "start": "2021-11-18 09:56:00",
+  "end": "2021-11-18 11:02:00",
+  "durMin": 66,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "26.41,39.17",
+   115.4
+  ],
+  "maxAlt": 34013.0,
+  "fuelStart": 88420.0,
+  "fuelEnd": 72240.0,
+  "fuelBurn": 16180.0,
+  "gwStart": 297400.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2021-11-18 16:48:00",
+  "end": "2021-11-18 16:54:00",
+  "durMin": 6,
+  "points": 4,
+  "origin": [
+   "???",
+   "52.03,0.51",
+   435.2
+  ],
+  "dest": [
+   "???",
+   "51.88,0.23",
+   425.3
+  ],
+  "maxAlt": 4922.0,
+  "fuelStart": 18580.0,
+  "fuelEnd": 18840.0,
+  "fuelBurn": -260.0,
+  "gwStart": 228480.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-11-19 14:13:00",
+  "end": "2021-11-19 15:37:00",
+  "durMin": 84,
+  "points": 6,
+  "origin": [
+   "???",
+   "51.89,0.25",
+   425.9
+  ],
+  "dest": [
+   "???",
+   "47.01,13.97",
+   512.8
+  ],
+  "maxAlt": 37013.0,
+  "fuelStart": 77820.0,
+  "fuelEnd": 59760.0,
+  "fuelBurn": 18060.0,
+  "gwStart": 275560.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2021-11-19 20:16:00",
+  "end": "2021-11-19 20:19:00",
+  "durMin": 3,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   4.0
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 3009.0,
+  "fuelStart": 18460.0,
+  "fuelEnd": 18280.0,
+  "fuelBurn": 180.0,
+  "gwStart": 217960.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-12-04 02:47:00",
+  "end": "2021-12-04 04:05:00",
+  "durMin": 78,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "26.58,37.18",
+   111.2
+  ],
+  "maxAlt": 34017.0,
+  "fuelStart": 107920.0,
+  "fuelEnd": 88380.0,
+  "fuelBurn": 19540.0,
+  "gwStart": 307320.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2021-12-04 09:46:00",
+  "end": "2021-12-04 09:54:00",
+  "durMin": 8,
+  "points": 4,
+  "origin": [
+   "???",
+   "51.95,0.68",
+   431.4
+  ],
+  "dest": [
+   "???",
+   "51.88,0.23",
+   425.3
+  ],
+  "maxAlt": 5812.0,
+  "fuelStart": 33360.0,
+  "fuelEnd": 32820.0,
+  "fuelBurn": 540.0,
+  "gwStart": 233760.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-12-04 13:07:00",
+  "end": "2021-12-04 13:52:00",
+  "durMin": 45,
+  "points": 6,
+  "origin": [
+   "???",
+   "51.89,0.25",
+   425.9
+  ],
+  "dest": [
+   "???",
+   "49.39,7.67",
+   438.2
+  ],
+  "maxAlt": 33001.0,
+  "fuelStart": 101400.0,
+  "fuelEnd": 89220.0,
+  "fuelBurn": 12180.0,
+  "gwStart": 316560.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2021-12-04 18:44:00",
+  "end": "2021-12-04 18:59:00",
+  "durMin": 15,
+  "points": 4,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   20.6
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.2
+  ],
+  "maxAlt": 4611.0,
+  "fuelStart": 38620.0,
+  "fuelEnd": 37680.0,
+  "fuelBurn": 940.0,
+  "gwStart": 255000.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-12-04 20:45:00",
+  "end": "2021-12-04 22:00:00",
+  "durMin": 75,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.2
+  ],
+  "maxAlt": 33018.0,
+  "fuelStart": 37400.0,
+  "fuelEnd": 23860.0,
+  "fuelBurn": 13540.0,
+  "gwStart": 235880.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-12-06 16:17:00",
+  "end": "2021-12-06 19:53:00",
+  "durMin": 216,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 34019.0,
+  "fuelStart": 47000.0,
+  "fuelEnd": 19880.0,
+  "fuelBurn": 27120.0,
+  "gwStart": 254840.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-12-13 05:11:00",
+  "end": "2021-12-13 06:11:00",
+  "durMin": 60,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "26.19,39.88",
+   98.6
+  ],
+  "maxAlt": 36027.0,
+  "fuelStart": 89200.0,
+  "fuelEnd": 74700.0,
+  "fuelBurn": 14500.0,
+  "gwStart": 287240.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2021-12-13 10:18:00",
+  "end": "2021-12-13 10:26:00",
+  "durMin": 8,
+  "points": 4,
+  "origin": [
+   "???",
+   "42.01,12.61",
+   231.4
+  ],
+  "dest": [
+   "???",
+   "41.80,12.60",
+   222.3
+  ],
+  "maxAlt": 5102.0,
+  "fuelStart": 37240.0,
+  "fuelEnd": 36100.0,
+  "fuelBurn": 1140.0,
+  "gwStart": 236880.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-12-13 12:52:00",
+  "end": "2021-12-13 13:15:00",
+  "durMin": 23,
+  "points": 6,
+  "origin": [
+   "???",
+   "41.81,12.59",
+   222.6
+  ],
+  "dest": [
+   "???",
+   "40.79,15.36",
+   304.4
+  ],
+  "maxAlt": 35024.0,
+  "fuelStart": 70420.0,
+  "fuelEnd": 62860.0,
+  "fuelBurn": 7560.0,
+  "gwStart": 274000.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2021-12-13 17:13:00",
+  "end": "2021-12-13 17:28:00",
+  "durMin": 15,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   8.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.3
+  ],
+  "maxAlt": 6844.0,
+  "fuelStart": 27440.0,
+  "fuelEnd": 26120.0,
+  "fuelBurn": 1320.0,
+  "gwStart": 231560.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2021-12-24 10:03:00",
+  "end": "2021-12-24 11:32:00",
+  "durMin": 89,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.6
+  ],
+  "maxAlt": 34013.0,
+  "fuelStart": 55340.0,
+  "fuelEnd": 39340.0,
+  "fuelBurn": 16000.0,
+  "gwStart": 253960.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2021-12-24 14:36:00",
+  "end": "2021-12-24 15:40:00",
+  "durMin": 64,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.3
+  ],
+  "maxAlt": 37031.0,
+  "fuelStart": 37820.0,
+  "fuelEnd": 25800.0,
+  "fuelBurn": 12020.0,
+  "gwStart": 244920.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-01-09 10:27:00",
+  "end": "2022-01-09 10:52:00",
+  "durMin": 25,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "???",
+   "25.32,44.16",
+   62.7
+  ],
+  "maxAlt": 34030.0,
+  "fuelStart": 92420.0,
+  "fuelEnd": 83180.0,
+  "fuelBurn": 9240.0,
+  "gwStart": 301800.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-01-09 16:26:00",
+  "end": "2022-01-09 16:33:00",
+  "durMin": 7,
+  "points": 4,
+  "origin": [
+   "???",
+   "46.41,6.37",
+   312.3
+  ],
+  "dest": [
+   "???",
+   "46.24,6.11",
+   299.0
+  ],
+  "maxAlt": 6443.0,
+  "fuelStart": 29920.0,
+  "fuelEnd": 29520.0,
+  "fuelBurn": 400.0,
+  "gwStart": 239400.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-01-09 19:04:00",
+  "end": "2022-01-09 19:50:00",
+  "durMin": 46,
+  "points": 6,
+  "origin": [
+   "???",
+   "46.25,6.13",
+   300.0
+  ],
+  "dest": [
+   "???",
+   "42.74,12.96",
+   273.9
+  ],
+  "maxAlt": 37035.0,
+  "fuelStart": 78220.0,
+  "fuelEnd": 66480.0,
+  "fuelBurn": 11740.0,
+  "gwStart": 281720.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-01-09 23:56:00",
+  "end": "2022-01-10 00:04:00",
+  "durMin": 8,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   19.3
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.7
+  ],
+  "maxAlt": 6839.0,
+  "fuelStart": 27960.0,
+  "fuelEnd": 27360.0,
+  "fuelBurn": 600.0,
+  "gwStart": 233240.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-02-02 12:34:00",
+  "end": "2022-02-02 16:06:00",
+  "durMin": 212,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 35014.0,
+  "fuelStart": 49060.0,
+  "fuelEnd": 21160.0,
+  "fuelBurn": 27900.0,
+  "gwStart": 254600.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-02-05 13:17:00",
+  "end": "2022-02-05 14:51:00",
+  "durMin": 94,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "???",
+   "26.49,38.11",
+   138.0
+  ],
+  "maxAlt": 36022.0,
+  "fuelStart": 51520.0,
+  "fuelEnd": 35020.0,
+  "fuelBurn": 16500.0,
+  "gwStart": 250000.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-02-05 17:37:00",
+  "end": "2022-02-05 18:46:00",
+  "durMin": 69,
+  "points": 10,
+  "origin": [
+   "???",
+   "26.48,38.12",
+   138.8
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.7
+  ],
+  "maxAlt": 35029.0,
+  "fuelStart": 33360.0,
+  "fuelEnd": 21300.0,
+  "fuelBurn": 12060.0,
+  "gwStart": 237400.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-02-22 17:41:00",
+  "end": "2022-02-22 18:55:00",
+  "durMin": 74,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "???",
+   "24.43,54.64",
+   267.4
+  ],
+  "maxAlt": 35035.0,
+  "fuelStart": 53920.0,
+  "fuelEnd": 40260.0,
+  "fuelBurn": 13660.0,
+  "gwStart": 257920.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-02-23 17:17:00",
+  "end": "2022-02-23 18:45:00",
+  "durMin": 88,
+  "points": 10,
+  "origin": [
+   "???",
+   "24.42,54.67",
+   268.7
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 35818.0,
+  "fuelStart": 38840.0,
+  "fuelEnd": 23620.0,
+  "fuelBurn": 15220.0,
+  "gwStart": 242920.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-03-07 09:34:00",
+  "end": "2022-03-07 09:58:00",
+  "durMin": 24,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "???",
+   "25.27,44.42",
+   71.1
+  ],
+  "maxAlt": 34011.0,
+  "fuelStart": 98220.0,
+  "fuelEnd": 89360.0,
+  "fuelBurn": 8860.0,
+  "gwStart": 302880.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-03-07 13:29:00",
+  "end": "2022-03-07 13:40:00",
+  "durMin": 11,
+  "points": 4,
+  "origin": [
+   "???",
+   "40.15,33.20",
+   509.3
+  ],
+  "dest": [
+   "???",
+   "40.12,32.99",
+   510.3
+  ],
+  "maxAlt": 9781.0,
+  "fuelStart": 54860.0,
+  "fuelEnd": 54520.0,
+  "fuelBurn": 340.0,
+  "gwStart": 260280.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-03-07 17:29:00",
+  "end": "2022-03-07 18:21:00",
+  "durMin": 52,
+  "points": 6,
+  "origin": [
+   "???",
+   "40.14,33.01",
+   511.3
+  ],
+  "dest": [
+   "???",
+   "34.79,30.90",
+   281.7
+  ],
+  "maxAlt": 35019.0,
+  "fuelStart": 76820.0,
+  "fuelEnd": 65040.0,
+  "fuelBurn": 11780.0,
+  "gwStart": 279760.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-03-07 20:46:00",
+  "end": "2022-03-07 20:54:00",
+  "durMin": 8,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   5.3
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 6843.0,
+  "fuelStart": 41900.0,
+  "fuelEnd": 42040.0,
+  "fuelBurn": -140.0,
+  "gwStart": 245160.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-03-09 15:01:00",
+  "end": "2022-03-09 20:09:00",
+  "durMin": 308,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.9
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.2
+  ],
+  "maxAlt": 36030.0,
+  "fuelStart": 59620.0,
+  "fuelEnd": 19760.0,
+  "fuelBurn": 39860.0,
+  "gwStart": 266080.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-03-10 12:49:00",
+  "end": "2022-03-10 14:36:00",
+  "durMin": 107,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.6
+  ],
+  "dest": [
+   "???",
+   "26.55,40.04",
+   121.5
+  ],
+  "maxAlt": 34040.0,
+  "fuelStart": 98460.0,
+  "fuelEnd": 81820.0,
+  "fuelBurn": 16640.0,
+  "gwStart": 0.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-03-10 19:53:00",
+  "end": "2022-03-10 20:00:00",
+  "durMin": 7,
+  "points": 4,
+  "origin": [
+   "???",
+   "46.42,6.38",
+   312.8
+  ],
+  "dest": [
+   "???",
+   "46.23,6.10",
+   298.7
+  ],
+  "maxAlt": 6151.0,
+  "fuelStart": 29380.0,
+  "fuelEnd": 30080.0,
+  "fuelBurn": -700.0,
+  "gwStart": 246760.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-03-11 13:01:00",
+  "end": "2022-03-11 13:21:00",
+  "durMin": 20,
+  "points": 6,
+  "origin": [
+   "???",
+   "46.25,6.12",
+   299.9
+  ],
+  "dest": [
+   "???",
+   "44.60,8.08",
+   324.3
+  ],
+  "maxAlt": 35007.0,
+  "fuelStart": 80440.0,
+  "fuelEnd": 73200.0,
+  "fuelBurn": 7240.0,
+  "gwStart": 278200.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-03-11 17:58:00",
+  "end": "2022-03-11 18:07:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   3.2
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 6702.0,
+  "fuelStart": 30700.0,
+  "fuelEnd": 30500.0,
+  "fuelBurn": 200.0,
+  "gwStart": 230440.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-03-13 02:01:00",
+  "end": "2022-03-13 04:00:00",
+  "durMin": 119,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "OJAI",
+   "Amman",
+   0.6
+  ],
+  "maxAlt": 34015.0,
+  "fuelStart": 65440.0,
+  "fuelEnd": 43920.0,
+  "fuelBurn": 21520.0,
+  "gwStart": 271160.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-03-17 08:40:00",
+  "end": "2022-03-17 10:22:00",
+  "durMin": 102,
+  "points": 10,
+  "origin": [
+   "OJAI",
+   "Amman",
+   1.2
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 35027.0,
+  "fuelStart": 42080.0,
+  "fuelEnd": 24480.0,
+  "fuelBurn": 17600.0,
+  "gwStart": 240720.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-03-20 08:58:00",
+  "end": "2022-03-20 11:36:00",
+  "durMin": 158,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.7
+  ],
+  "maxAlt": 24005.0,
+  "fuelStart": 45260.0,
+  "fuelEnd": 24800.0,
+  "fuelBurn": 20460.0,
+  "gwStart": 248240.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-03-20 13:28:00",
+  "end": "2022-03-20 16:38:00",
+  "durMin": 190,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.9
+  ],
+  "maxAlt": 36015.0,
+  "fuelStart": 55480.0,
+  "fuelEnd": 28020.0,
+  "fuelBurn": 27460.0,
+  "gwStart": 257720.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-03-21 08:27:00",
+  "end": "2022-03-21 10:00:00",
+  "durMin": 93,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "???",
+   "26.19,36.59",
+   125.5
+  ],
+  "maxAlt": 34012.0,
+  "fuelStart": 98680.0,
+  "fuelEnd": 76640.0,
+  "fuelBurn": 22040.0,
+  "gwStart": 298920.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-03-21 14:25:00",
+  "end": "2022-03-21 14:35:00",
+  "durMin": 10,
+  "points": 4,
+  "origin": [
+   "???",
+   "45.70,5.33",
+   260.9
+  ],
+  "dest": [
+   "???",
+   "45.72,5.09",
+   251.1
+  ],
+  "maxAlt": 5283.0,
+  "fuelStart": 33460.0,
+  "fuelEnd": 32240.0,
+  "fuelBurn": 1220.0,
+  "gwStart": 233760.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-03-22 11:14:00",
+  "end": "2022-03-22 11:49:00",
+  "durMin": 35,
+  "points": 6,
+  "origin": [
+   "???",
+   "45.73,5.09",
+   251.2
+  ],
+  "dest": [
+   "???",
+   "44.12,9.94",
+   294.8
+  ],
+  "maxAlt": 34995.0,
+  "fuelStart": 82520.0,
+  "fuelEnd": 72340.0,
+  "fuelBurn": 10180.0,
+  "gwStart": 288560.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-03-22 16:26:00",
+  "end": "2022-03-22 16:36:00",
+  "durMin": 10,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   4.0
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.2
+  ],
+  "maxAlt": 6744.0,
+  "fuelStart": 28620.0,
+  "fuelEnd": 28500.0,
+  "fuelBurn": 120.0,
+  "gwStart": 236240.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-03-23 10:32:00",
+  "end": "2022-03-23 11:45:00",
+  "durMin": 73,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "???",
+   "21.48,40.54",
+   41.4
+  ],
+  "maxAlt": 34013.0,
+  "fuelStart": 48920.0,
+  "fuelEnd": 34220.0,
+  "fuelBurn": 14700.0,
+  "gwStart": 256160.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-03-23 18:30:00",
+  "end": "2022-03-23 19:36:00",
+  "durMin": 66,
+  "points": 10,
+  "origin": [
+   "???",
+   "21.49,40.55",
+   42.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 35010.0,
+  "fuelStart": 34020.0,
+  "fuelEnd": 22860.0,
+  "fuelBurn": 11160.0,
+  "gwStart": 238280.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-03-24 16:35:00",
+  "end": "2022-03-24 19:20:00",
+  "durMin": 165,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.5
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 22990.0,
+  "fuelStart": 50020.0,
+  "fuelEnd": 30260.0,
+  "fuelBurn": 19760.0,
+  "gwStart": 249760.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-03-25 10:04:00",
+  "end": "2022-03-25 10:40:00",
+  "durMin": 36,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.5
+  ],
+  "dest": [
+   "???",
+   "25.56,42.86",
+   66.7
+  ],
+  "maxAlt": 36043.0,
+  "fuelStart": 70560.0,
+  "fuelEnd": 61820.0,
+  "fuelBurn": 8740.0,
+  "gwStart": 270280.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-03-25 12:34:00",
+  "end": "2022-03-25 12:48:00",
+  "durMin": 14,
+  "points": 4,
+  "origin": [
+   "HECA",
+   "Cairo",
+   15.6
+  ],
+  "dest": [
+   "HECA",
+   "Cairo",
+   0.8
+  ],
+  "maxAlt": 5497.0,
+  "fuelStart": 44580.0,
+  "fuelEnd": 42800.0,
+  "fuelBurn": 1780.0,
+  "gwStart": 244040.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-03-25 16:15:00",
+  "end": "2022-03-25 18:15:00",
+  "durMin": 120,
+  "points": 10,
+  "origin": [
+   "HECA",
+   "Cairo",
+   1.2
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 35009.0,
+  "fuelStart": 41200.0,
+  "fuelEnd": 21200.0,
+  "fuelBurn": 20000.0,
+  "gwStart": 251320.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-03-27 06:17:00",
+  "end": "2022-03-27 06:54:00",
+  "durMin": 37,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "???",
+   "25.63,42.44",
+   82.6
+  ],
+  "maxAlt": 34008.0,
+  "fuelStart": 106220.0,
+  "fuelEnd": 94480.0,
+  "fuelBurn": 11740.0,
+  "gwStart": 305560.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-03-27 12:23:00",
+  "end": "2022-03-27 12:32:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "???",
+   "45.96,5.91",
+   287.3
+  ],
+  "dest": [
+   "???",
+   "46.24,6.12",
+   299.6
+  ],
+  "maxAlt": 6650.0,
+  "fuelStart": 41400.0,
+  "fuelEnd": 41800.0,
+  "fuelBurn": -400.0,
+  "gwStart": 241360.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-04-01 07:33:00",
+  "end": "2022-04-01 08:23:00",
+  "durMin": 50,
+  "points": 6,
+  "origin": [
+   "???",
+   "26.13,50.97",
+   44.8
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 28002.0,
+  "fuelStart": 29980.0,
+  "fuelEnd": 23520.0,
+  "fuelBurn": 6460.0,
+  "gwStart": 235840.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-04-17 19:11:00",
+  "end": "2022-04-17 22:46:00",
+  "durMin": 215,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 35020.0,
+  "fuelStart": 55320.0,
+  "fuelEnd": 29060.0,
+  "fuelBurn": 26260.0,
+  "gwStart": 270040.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-04-19 10:44:00",
+  "end": "2022-04-19 12:26:00",
+  "durMin": 102,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "???",
+   "23.61,58.29",
+   470.6
+  ],
+  "maxAlt": 35007.0,
+  "fuelStart": 65740.0,
+  "fuelEnd": 48240.0,
+  "fuelBurn": 17500.0,
+  "gwStart": 267400.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-04-19 18:37:00",
+  "end": "2022-04-19 19:31:00",
+  "durMin": 54,
+  "points": 6,
+  "origin": [
+   "???",
+   "23.61,58.29",
+   471.0
+  ],
+  "dest": [
+   "???",
+   "25.96,52.45",
+   125.4
+  ],
+  "maxAlt": 36014.0,
+  "fuelStart": 71100.0,
+  "fuelEnd": 58140.0,
+  "fuelBurn": 12960.0,
+  "gwStart": 272040.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-04-19 21:24:00",
+  "end": "2022-04-19 23:49:00",
+  "durMin": 145,
+  "points": 14,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   18.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 35013.0,
+  "fuelStart": 39940.0,
+  "fuelEnd": 26380.0,
+  "fuelBurn": 13560.0,
+  "gwStart": 241760.0,
+  "apuOnPct": 42.9
+ },
+ {
+  "start": "2022-04-20 11:30:00",
+  "end": "2022-04-20 11:47:00",
+  "durMin": 17,
+  "points": 5,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "???",
+   "25.08,45.53",
+   64.0
+  ],
+  "maxAlt": 34003.0,
+  "fuelStart": 93140.0,
+  "fuelEnd": 85160.0,
+  "fuelBurn": 7980.0,
+  "gwStart": 294720.0,
+  "apuOnPct": 60.0
+ },
+ {
+  "start": "2022-04-20 13:40:00",
+  "end": "2022-04-20 14:51:00",
+  "durMin": 71,
+  "points": 5,
+  "origin": [
+   "???",
+   "29.21,32.66",
+   85.3
+  ],
+  "dest": [
+   "???",
+   "34.87,33.62",
+   210.7
+  ],
+  "maxAlt": 34019.0,
+  "fuelStart": 65440.0,
+  "fuelEnd": 57320.0,
+  "fuelBurn": 8120.0,
+  "gwStart": 268080.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-04-20 17:33:00",
+  "end": "2022-04-20 17:49:00",
+  "durMin": 16,
+  "points": 5,
+  "origin": [
+   "???",
+   "34.88,33.63",
+   210.9
+  ],
+  "dest": [
+   "???",
+   "33.59,32.95",
+   181.6
+  ],
+  "maxAlt": 35007.0,
+  "fuelStart": 66820.0,
+  "fuelEnd": 60100.0,
+  "fuelBurn": 6720.0,
+  "gwStart": 267640.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-04-20 19:51:00",
+  "end": "2022-04-20 20:36:00",
+  "durMin": 45,
+  "points": 5,
+  "origin": [
+   "OEGS",
+   "Gassim",
+   34.6
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 34905.0,
+  "fuelStart": 42180.0,
+  "fuelEnd": 35760.0,
+  "fuelBurn": 6420.0,
+  "gwStart": 243560.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-04-23 04:58:00",
+  "end": "2022-04-23 05:18:00",
+  "durMin": 20,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "???",
+   "25.24,44.57",
+   77.1
+  ],
+  "maxAlt": 34014.0,
+  "fuelStart": 101520.0,
+  "fuelEnd": 93180.0,
+  "fuelBurn": 8340.0,
+  "gwStart": 300920.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-04-23 11:37:00",
+  "end": "2022-04-23 11:46:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "???",
+   "51.93,0.13",
+   427.8
+  ],
+  "dest": [
+   "???",
+   "51.89,0.24",
+   425.6
+  ],
+  "maxAlt": 5520.0,
+  "fuelStart": 30720.0,
+  "fuelEnd": 29960.0,
+  "fuelBurn": 760.0,
+  "gwStart": 230640.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-04-23 13:48:00",
+  "end": "2022-04-23 14:43:00",
+  "durMin": 55,
+  "points": 6,
+  "origin": [
+   "???",
+   "51.88,0.22",
+   424.8
+  ],
+  "dest": [
+   "???",
+   "48.63,8.70",
+   449.0
+  ],
+  "maxAlt": 35023.0,
+  "fuelStart": 93420.0,
+  "fuelEnd": 78200.0,
+  "fuelBurn": 15220.0,
+  "gwStart": 304000.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-04-23 19:52:00",
+  "end": "2022-04-23 20:12:00",
+  "durMin": 20,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   12.8
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.2
+  ],
+  "maxAlt": 7114.0,
+  "fuelStart": 28620.0,
+  "fuelEnd": 26640.0,
+  "fuelBurn": 1980.0,
+  "gwStart": 240520.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-04-25 18:48:00",
+  "end": "2022-04-25 22:19:00",
+  "durMin": 211,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 36942.0,
+  "fuelStart": 58660.0,
+  "fuelEnd": 29140.0,
+  "fuelBurn": 29520.0,
+  "gwStart": 275560.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-05-02 21:09:00",
+  "end": "2022-05-02 22:31:00",
+  "durMin": 82,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.6
+  ],
+  "maxAlt": 34004.0,
+  "fuelStart": 55660.0,
+  "fuelEnd": 40740.0,
+  "fuelBurn": 14920.0,
+  "gwStart": 257240.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-05-03 00:22:00",
+  "end": "2022-05-03 00:57:00",
+  "durMin": 35,
+  "points": 6,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "24.64,36.50",
+   174.9
+  ],
+  "maxAlt": 34020.0,
+  "fuelStart": 101120.0,
+  "fuelEnd": 90140.0,
+  "fuelBurn": 10980.0,
+  "gwStart": 305320.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-05-03 06:37:00",
+  "end": "2022-05-03 06:46:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "???",
+   "51.92,0.12",
+   427.2
+  ],
+  "dest": [
+   "???",
+   "51.89,0.24",
+   425.5
+  ],
+  "maxAlt": 5171.0,
+  "fuelStart": 33240.0,
+  "fuelEnd": 33540.0,
+  "fuelBurn": -300.0,
+  "gwStart": 237400.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-05-04 10:24:00",
+  "end": "2022-05-04 11:25:00",
+  "durMin": 61,
+  "points": 6,
+  "origin": [
+   "???",
+   "51.89,0.25",
+   425.9
+  ],
+  "dest": [
+   "???",
+   "48.97,10.23",
+   512.7
+  ],
+  "maxAlt": 35031.0,
+  "fuelStart": 93640.0,
+  "fuelEnd": 78720.0,
+  "fuelBurn": 14920.0,
+  "gwStart": 291440.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-05-04 16:24:00",
+  "end": "2022-05-04 16:32:00",
+  "durMin": 8,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   1.0
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.9
+  ],
+  "maxAlt": 6755.0,
+  "fuelStart": 29800.0,
+  "fuelEnd": 29600.0,
+  "fuelBurn": 200.0,
+  "gwStart": 229360.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-05-12 06:02:00",
+  "end": "2022-05-12 06:25:00",
+  "durMin": 23,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "???",
+   "25.30,44.27",
+   66.1
+  ],
+  "maxAlt": 34006.0,
+  "fuelStart": 104780.0,
+  "fuelEnd": 95740.0,
+  "fuelBurn": 9040.0,
+  "gwStart": 304440.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-05-12 12:44:00",
+  "end": "2022-05-12 12:53:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "???",
+   "52.01,0.67",
+   434.7
+  ],
+  "dest": [
+   "???",
+   "51.88,0.23",
+   425.3
+  ],
+  "maxAlt": 5247.0,
+  "fuelStart": 35200.0,
+  "fuelEnd": 33900.0,
+  "fuelBurn": 1300.0,
+  "gwStart": 235080.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-05-13 17:01:00",
+  "end": "2022-05-13 17:43:00",
+  "durMin": 42,
+  "points": 6,
+  "origin": [
+   "???",
+   "51.89,0.25",
+   425.9
+  ],
+  "dest": [
+   "???",
+   "49.93,6.93",
+   435.9
+  ],
+  "maxAlt": 35011.0,
+  "fuelStart": 94640.0,
+  "fuelEnd": 83040.0,
+  "fuelBurn": 11600.0,
+  "gwStart": 299160.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-05-13 23:13:00",
+  "end": "2022-05-13 23:26:00",
+  "durMin": 13,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   15.9
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 7301.0,
+  "fuelStart": 29840.0,
+  "fuelEnd": 30220.0,
+  "fuelBurn": -380.0,
+  "gwStart": 234400.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-05-15 08:28:00",
+  "end": "2022-05-15 09:26:00",
+  "durMin": 58,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "???",
+   "26.25,39.15",
+   106.2
+  ],
+  "maxAlt": 32012.0,
+  "fuelStart": 93520.0,
+  "fuelEnd": 78360.0,
+  "fuelBurn": 15160.0,
+  "gwStart": 292520.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-05-15 11:16:00",
+  "end": "2022-05-15 11:26:00",
+  "durMin": 10,
+  "points": 4,
+  "origin": [
+   "???",
+   "34.85,33.59",
+   210.5
+  ],
+  "dest": [
+   "???",
+   "34.87,33.62",
+   210.7
+  ],
+  "maxAlt": 4817.0,
+  "fuelStart": 60540.0,
+  "fuelEnd": 59980.0,
+  "fuelBurn": 560.0,
+  "gwStart": 260960.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-05-15 14:03:00",
+  "end": "2022-05-15 14:52:00",
+  "durMin": 49,
+  "points": 6,
+  "origin": [
+   "???",
+   "34.87,33.61",
+   210.6
+  ],
+  "dest": [
+   "HECA",
+   "Cairo",
+   30.3
+  ],
+  "maxAlt": 35020.0,
+  "fuelStart": 58340.0,
+  "fuelEnd": 46180.0,
+  "fuelBurn": 12160.0,
+  "gwStart": 259680.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-05-15 17:02:00",
+  "end": "2022-05-15 17:12:00",
+  "durMin": 10,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   7.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 6612.0,
+  "fuelStart": 26700.0,
+  "fuelEnd": 25920.0,
+  "fuelBurn": 780.0,
+  "gwStart": 229800.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-05-20 04:57:00",
+  "end": "2022-05-20 06:14:00",
+  "durMin": 77,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.6
+  ],
+  "maxAlt": 36002.0,
+  "fuelStart": 44620.0,
+  "fuelEnd": 32800.0,
+  "fuelBurn": 11820.0,
+  "gwStart": 243600.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-05-20 09:52:00",
+  "end": "2022-05-20 14:06:00",
+  "durMin": 254,
+  "points": 16,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "15.02,38.90",
+   386.2
+  ],
+  "maxAlt": 35008.0,
+  "fuelStart": 91380.0,
+  "fuelEnd": 50320.0,
+  "fuelBurn": 41060.0,
+  "gwStart": 295400.0,
+  "apuOnPct": 37.5
+ },
+ {
+  "start": "2022-05-20 15:54:00",
+  "end": "2022-05-20 16:03:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   18.0
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 6956.0,
+  "fuelStart": 32560.0,
+  "fuelEnd": 31360.0,
+  "fuelBurn": 1200.0,
+  "gwStart": 232880.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-05-24 07:12:00",
+  "end": "2022-05-24 08:30:00",
+  "durMin": 78,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "???",
+   "21.69,55.98",
+   417.4
+  ],
+  "maxAlt": 33033.0,
+  "fuelStart": 102840.0,
+  "fuelEnd": 85160.0,
+  "fuelBurn": 17680.0,
+  "gwStart": 308200.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-05-24 11:44:00",
+  "end": "2022-05-24 11:52:00",
+  "durMin": 8,
+  "points": 4,
+  "origin": [
+   "???",
+   "3.94,73.43",
+   1883.9
+  ],
+  "dest": [
+   "???",
+   "4.20,73.53",
+   1876.9
+  ],
+  "maxAlt": 4808.0,
+  "fuelStart": 51920.0,
+  "fuelEnd": 51000.0,
+  "fuelBurn": 920.0,
+  "gwStart": 257120.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-05-24 13:25:00",
+  "end": "2022-05-24 14:07:00",
+  "durMin": 42,
+  "points": 6,
+  "origin": [
+   "???",
+   "4.18,73.53",
+   1877.8
+  ],
+  "dest": [
+   "???",
+   "8.16,70.42",
+   1578.4
+  ],
+  "maxAlt": 34018.0,
+  "fuelStart": 74200.0,
+  "fuelEnd": 62900.0,
+  "fuelBurn": 11300.0,
+  "gwStart": 272480.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-05-24 17:55:00",
+  "end": "2022-05-24 18:02:00",
+  "durMin": 7,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   7.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "maxAlt": 6636.0,
+  "fuelStart": 25600.0,
+  "fuelEnd": 25220.0,
+  "fuelBurn": 380.0,
+  "gwStart": 225960.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-05-29 03:12:00",
+  "end": "2022-05-29 04:37:00",
+  "durMin": 85,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.9
+  ],
+  "dest": [
+   "???",
+   "21.62,57.20",
+   477.0
+  ],
+  "maxAlt": 33017.0,
+  "fuelStart": 89420.0,
+  "fuelEnd": 71600.0,
+  "fuelBurn": 17820.0,
+  "gwStart": 287680.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-05-29 07:38:00",
+  "end": "2022-05-29 07:47:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "???",
+   "4.53,73.42",
+   1858.6
+  ],
+  "dest": [
+   "???",
+   "4.18,73.53",
+   1877.6
+  ],
+  "maxAlt": 4825.0,
+  "fuelStart": 40740.0,
+  "fuelEnd": 40020.0,
+  "fuelBurn": 720.0,
+  "gwStart": 241080.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-05-29 10:19:00",
+  "end": "2022-05-29 10:39:00",
+  "durMin": 20,
+  "points": 6,
+  "origin": [
+   "???",
+   "4.20,73.53",
+   1876.9
+  ],
+  "dest": [
+   "???",
+   "5.52,72.25",
+   1766.8
+  ],
+  "maxAlt": 30003.0,
+  "fuelStart": 77440.0,
+  "fuelEnd": 70000.0,
+  "fuelBurn": 7440.0,
+  "gwStart": 281720.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-05-29 14:49:00",
+  "end": "2022-05-29 14:58:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   11.9
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 7010.0,
+  "fuelStart": 25340.0,
+  "fuelEnd": 24920.0,
+  "fuelBurn": 420.0,
+  "gwStart": 230440.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-05-31 04:16:00",
+  "end": "2022-05-31 05:36:00",
+  "durMin": 80,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "26.73,36.13",
+   84.8
+  ],
+  "maxAlt": 30001.0,
+  "fuelStart": 88220.0,
+  "fuelEnd": 71300.0,
+  "fuelBurn": 16920.0,
+  "gwStart": 288360.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-05-31 08:02:00",
+  "end": "2022-05-31 08:12:00",
+  "durMin": 10,
+  "points": 4,
+  "origin": [
+   "???",
+   "40.62,25.78",
+   687.6
+  ],
+  "dest": [
+   "???",
+   "40.86,25.97",
+   696.9
+  ],
+  "maxAlt": 4407.0,
+  "fuelStart": 46000.0,
+  "fuelEnd": 44560.0,
+  "fuelBurn": 1440.0,
+  "gwStart": 247080.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-05-31 09:56:00",
+  "end": "2022-05-31 10:41:00",
+  "durMin": 45,
+  "points": 10,
+  "origin": [
+   "???",
+   "40.86,25.97",
+   696.9
+  ],
+  "dest": [
+   "???",
+   "37.94,23.93",
+   598.1
+  ],
+  "maxAlt": 23809.0,
+  "fuelStart": 45140.0,
+  "fuelEnd": 36360.0,
+  "fuelBurn": 8780.0,
+  "gwStart": 248000.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-05-31 12:12:00",
+  "end": "2022-05-31 13:25:00",
+  "durMin": 73,
+  "points": 6,
+  "origin": [
+   "???",
+   "37.92,23.92",
+   598.0
+  ],
+  "dest": [
+   "???",
+   "30.40,29.33",
+   109.1
+  ],
+  "maxAlt": 35011.0,
+  "fuelStart": 72740.0,
+  "fuelEnd": 55900.0,
+  "fuelBurn": 16840.0,
+  "gwStart": 289440.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-05-31 15:38:00",
+  "end": "2022-05-31 15:51:00",
+  "durMin": 13,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   3.5
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 6701.0,
+  "fuelStart": 34860.0,
+  "fuelEnd": 33940.0,
+  "fuelBurn": 920.0,
+  "gwStart": 252240.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-06-06 14:38:00",
+  "end": "2022-06-06 17:09:00",
+  "durMin": 151,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 29002.0,
+  "fuelStart": 39800.0,
+  "fuelEnd": 22200.0,
+  "fuelBurn": 17600.0,
+  "gwStart": 238760.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-06-08 10:35:00",
+  "end": "2022-06-08 11:25:00",
+  "durMin": 50,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "???",
+   "29.24,47.98",
+   192.2
+  ],
+  "maxAlt": 25009.0,
+  "fuelStart": 51460.0,
+  "fuelEnd": 41500.0,
+  "fuelBurn": 9960.0,
+  "gwStart": 250200.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-06-08 13:15:00",
+  "end": "2022-06-08 14:04:00",
+  "durMin": 49,
+  "points": 10,
+  "origin": [
+   "???",
+   "29.24,47.98",
+   192.0
+  ],
+  "dest": [
+   "OEDR",
+   "Dhahran",
+   25.3
+  ],
+  "maxAlt": 23013.0,
+  "fuelStart": 42060.0,
+  "fuelEnd": 33640.0,
+  "fuelBurn": 8420.0,
+  "gwStart": 247760.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-06-10 14:25:00",
+  "end": "2022-06-10 14:47:00",
+  "durMin": 22,
+  "points": 5,
+  "origin": [
+   "OEDR",
+   "Dhahran",
+   26.7
+  ],
+  "dest": [
+   "???",
+   "26.75,48.32",
+   81.2
+  ],
+  "maxAlt": 34003.0,
+  "fuelStart": 73480.0,
+  "fuelEnd": 65960.0,
+  "fuelBurn": 7520.0,
+  "gwStart": 278880.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-06-10 16:39:00",
+  "end": "2022-06-10 20:28:00",
+  "durMin": 229,
+  "points": 15,
+  "origin": [
+   "???",
+   "28.91,33.13",
+   87.3
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.6
+  ],
+  "maxAlt": 35009.0,
+  "fuelStart": 48140.0,
+  "fuelEnd": 23920.0,
+  "fuelBurn": 24220.0,
+  "gwStart": 253760.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-06-11 12:20:00",
+  "end": "2022-06-11 13:43:00",
+  "durMin": 83,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "15.58,32.55",
+   524.5
+  ],
+  "maxAlt": 32004.0,
+  "fuelStart": 70900.0,
+  "fuelEnd": 55300.0,
+  "fuelBurn": 15600.0,
+  "gwStart": 271360.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-06-11 17:01:00",
+  "end": "2022-06-11 18:23:00",
+  "durMin": 82,
+  "points": 10,
+  "origin": [
+   "???",
+   "15.60,32.55",
+   523.6
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.6
+  ],
+  "maxAlt": 35012.0,
+  "fuelStart": 53440.0,
+  "fuelEnd": 38980.0,
+  "fuelBurn": 14460.0,
+  "gwStart": 257720.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-06-11 19:59:00",
+  "end": "2022-06-11 21:19:00",
+  "durMin": 80,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.2
+  ],
+  "maxAlt": 35021.0,
+  "fuelStart": 37800.0,
+  "fuelEnd": 24540.0,
+  "fuelBurn": 13260.0,
+  "gwStart": 237400.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-06-15 07:40:00",
+  "end": "2022-06-15 09:54:00",
+  "durMin": 134,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "HECA",
+   "Cairo",
+   0.7
+  ],
+  "maxAlt": 34023.0,
+  "fuelStart": 77320.0,
+  "fuelEnd": 54740.0,
+  "fuelBurn": 22580.0,
+  "gwStart": 277120.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-06-15 12:29:00",
+  "end": "2022-06-15 17:05:00",
+  "durMin": 276,
+  "points": 20,
+  "origin": [
+   "HECA",
+   "Cairo",
+   1.3
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 35018.0,
+  "fuelStart": 53340.0,
+  "fuelEnd": 17960.0,
+  "fuelBurn": 35380.0,
+  "gwStart": 259680.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-06-18 11:42:00",
+  "end": "2022-06-18 12:52:00",
+  "durMin": 70,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "???",
+   "25.27,51.56",
+   96.7
+  ],
+  "maxAlt": 29006.0,
+  "fuelStart": 45120.0,
+  "fuelEnd": 34520.0,
+  "fuelBurn": 10600.0,
+  "gwStart": 244040.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-06-18 14:27:00",
+  "end": "2022-06-18 15:26:00",
+  "durMin": 59,
+  "points": 10,
+  "origin": [
+   "???",
+   "25.27,51.56",
+   96.7
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.7
+  ],
+  "maxAlt": 27999.0,
+  "fuelStart": 34200.0,
+  "fuelEnd": 23000.0,
+  "fuelBurn": 11200.0,
+  "gwStart": 240520.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-06-19 15:45:00",
+  "end": "2022-06-19 19:20:00",
+  "durMin": 215,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 35980.0,
+  "fuelStart": 48140.0,
+  "fuelEnd": 20240.0,
+  "fuelBurn": 27900.0,
+  "gwStart": 270480.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-06-20 06:55:00",
+  "end": "2022-06-20 08:11:00",
+  "durMin": 76,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.6
+  ],
+  "maxAlt": 34001.0,
+  "fuelStart": 66280.0,
+  "fuelEnd": 51920.0,
+  "fuelBurn": 14360.0,
+  "gwStart": 266080.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-06-20 10:19:00",
+  "end": "2022-06-20 10:42:00",
+  "durMin": 23,
+  "points": 5,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "23.60,37.49",
+   134.3
+  ],
+  "maxAlt": 34010.0,
+  "fuelStart": 99240.0,
+  "fuelEnd": 90480.0,
+  "fuelBurn": 8760.0,
+  "gwStart": 309720.0,
+  "apuOnPct": 60.0
+ },
+ {
+  "start": "2022-06-20 12:13:00",
+  "end": "2022-06-20 12:13:00",
+  "durMin": 0,
+  "points": 1,
+  "origin": [
+   "???",
+   "31.29,27.27",
+   224.8
+  ],
+  "dest": [
+   "???",
+   "31.29,27.27",
+   224.8
+  ],
+  "maxAlt": 34005.0,
+  "fuelStart": 73280.0,
+  "fuelEnd": 73280.0,
+  "fuelBurn": null,
+  "gwStart": 284000.0,
+  "apuOnPct": 0.0
+ },
+ {
+  "start": "2022-06-20 16:16:00",
+  "end": "2022-06-20 16:23:00",
+  "durMin": 7,
+  "points": 4,
+  "origin": [
+   "???",
+   "51.91,0.14",
+   426.7
+  ],
+  "dest": [
+   "???",
+   "51.89,0.24",
+   425.6
+  ],
+  "maxAlt": 5083.0,
+  "fuelStart": 35120.0,
+  "fuelEnd": 35180.0,
+  "fuelBurn": -60.0,
+  "gwStart": 245480.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-06-21 12:32:00",
+  "end": "2022-06-21 13:13:00",
+  "durMin": 41,
+  "points": 6,
+  "origin": [
+   "???",
+   "51.88,0.22",
+   424.8
+  ],
+  "dest": [
+   "???",
+   "50.10,7.07",
+   446.8
+  ],
+  "maxAlt": 34995.0,
+  "fuelStart": 89120.0,
+  "fuelEnd": 77300.0,
+  "fuelBurn": 11820.0,
+  "gwStart": 287240.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-06-21 18:34:00",
+  "end": "2022-06-21 18:43:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   7.9
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 7117.0,
+  "fuelStart": 25920.0,
+  "fuelEnd": 26660.0,
+  "fuelBurn": -740.0,
+  "gwStart": 226080.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-06-28 16:54:00",
+  "end": "2022-06-28 20:42:00",
+  "durMin": 228,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 35016.0,
+  "fuelStart": 49520.0,
+  "fuelEnd": 19640.0,
+  "fuelBurn": 29880.0,
+  "gwStart": 256800.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-07-01 13:42:00",
+  "end": "2022-07-01 15:20:00",
+  "durMin": 98,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "HESH",
+   "Sharm El-Sheikh",
+   34.2
+  ],
+  "maxAlt": 33993.0,
+  "fuelStart": 97660.0,
+  "fuelEnd": 76020.0,
+  "fuelBurn": 21640.0,
+  "gwStart": 308400.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-07-01 20:06:00",
+  "end": "2022-07-01 20:13:00",
+  "durMin": 7,
+  "points": 4,
+  "origin": [
+   "???",
+   "52.00,0.51",
+   433.6
+  ],
+  "dest": [
+   "???",
+   "51.88,0.23",
+   425.3
+  ],
+  "maxAlt": 5145.0,
+  "fuelStart": 30940.0,
+  "fuelEnd": 31600.0,
+  "fuelBurn": -660.0,
+  "gwStart": 241520.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-07-02 12:18:00",
+  "end": "2022-07-02 12:37:00",
+  "durMin": 19,
+  "points": 5,
+  "origin": [
+   "???",
+   "51.89,0.25",
+   426.0
+  ],
+  "dest": [
+   "???",
+   "51.23,2.67",
+   407.3
+  ],
+  "maxAlt": 34992.0,
+  "fuelStart": 82900.0,
+  "fuelEnd": 75580.0,
+  "fuelBurn": 7320.0,
+  "gwStart": 282840.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-07-02 14:12:00",
+  "end": "2022-07-02 14:12:00",
+  "durMin": 0,
+  "points": 1,
+  "origin": [
+   "???",
+   "43.34,17.97",
+   470.8
+  ],
+  "dest": [
+   "???",
+   "43.34,17.97",
+   470.8
+  ],
+  "maxAlt": 37001.0,
+  "fuelStart": 59800.0,
+  "fuelEnd": 59800.0,
+  "fuelBurn": null,
+  "gwStart": 259640.0,
+  "apuOnPct": 0.0
+ },
+ {
+  "start": "2022-07-02 18:29:00",
+  "end": "2022-07-02 18:41:00",
+  "durMin": 12,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   12.5
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.2
+  ],
+  "maxAlt": 7234.0,
+  "fuelStart": 21000.0,
+  "fuelEnd": 20060.0,
+  "fuelBurn": 940.0,
+  "gwStart": 220640.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-07-05 17:08:00",
+  "end": "2022-07-05 20:54:00",
+  "durMin": 226,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.9
+  ],
+  "maxAlt": 34998.0,
+  "fuelStart": 54900.0,
+  "fuelEnd": 23860.0,
+  "fuelBurn": 31040.0,
+  "gwStart": 270480.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-07-06 10:15:00",
+  "end": "2022-07-06 13:45:00",
+  "durMin": 210,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 34996.0,
+  "fuelStart": 48660.0,
+  "fuelEnd": 19940.0,
+  "fuelBurn": 28720.0,
+  "gwStart": 253280.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-07-06 17:24:00",
+  "end": "2022-07-06 18:42:00",
+  "durMin": 78,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.5
+  ],
+  "maxAlt": 36011.0,
+  "fuelStart": 51580.0,
+  "fuelEnd": 37820.0,
+  "fuelBurn": 13760.0,
+  "gwStart": 251520.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-07-07 13:42:00",
+  "end": "2022-07-07 15:11:00",
+  "durMin": 89,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 35009.0,
+  "fuelStart": 36340.0,
+  "fuelEnd": 22360.0,
+  "fuelBurn": 13980.0,
+  "gwStart": 240720.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-07-08 12:13:00",
+  "end": "2022-07-08 13:43:00",
+  "durMin": 90,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "HESH",
+   "Sharm El-Sheikh",
+   8.0
+  ],
+  "maxAlt": 34011.0,
+  "fuelStart": 72600.0,
+  "fuelEnd": 53180.0,
+  "fuelBurn": 19420.0,
+  "gwStart": 287480.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-07-08 15:30:00",
+  "end": "2022-07-08 17:58:00",
+  "durMin": 148,
+  "points": 10,
+  "origin": [
+   "???",
+   "37.74,23.74",
+   595.1
+  ],
+  "dest": [
+   "???",
+   "31.24,29.08",
+   137.6
+  ],
+  "maxAlt": 36993.0,
+  "fuelStart": 35980.0,
+  "fuelEnd": 44840.0,
+  "fuelBurn": -8860.0,
+  "gwStart": 250960.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-07-08 20:28:00",
+  "end": "2022-07-08 20:41:00",
+  "durMin": 13,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   10.0
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 6736.0,
+  "fuelStart": 24280.0,
+  "fuelEnd": 22920.0,
+  "fuelBurn": 1360.0,
+  "gwStart": 224640.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-07-11 10:17:00",
+  "end": "2022-07-11 11:28:00",
+  "durMin": 71,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.6
+  ],
+  "maxAlt": 34002.0,
+  "fuelStart": 55740.0,
+  "fuelEnd": 42620.0,
+  "fuelBurn": 13120.0,
+  "gwStart": 254400.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-07-11 13:33:00",
+  "end": "2022-07-11 14:50:00",
+  "durMin": 77,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.3
+  ],
+  "maxAlt": 35004.0,
+  "fuelStart": 40960.0,
+  "fuelEnd": 28720.0,
+  "fuelBurn": 12240.0,
+  "gwStart": 245360.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-07-14 07:52:00",
+  "end": "2022-07-14 09:05:00",
+  "durMin": 73,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.6
+  ],
+  "maxAlt": 34031.0,
+  "fuelStart": 40640.0,
+  "fuelEnd": 29280.0,
+  "fuelBurn": 11360.0,
+  "gwStart": 242040.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-07-14 10:59:00",
+  "end": "2022-07-14 12:21:00",
+  "durMin": 82,
+  "points": 6,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.0
+  ],
+  "dest": [
+   "???",
+   "28.01,30.24",
+   140.5
+  ],
+  "maxAlt": 33995.0,
+  "fuelStart": 97680.0,
+  "fuelEnd": 79240.0,
+  "fuelBurn": 18440.0,
+  "gwStart": 305320.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-07-14 15:56:00",
+  "end": "2022-07-14 18:20:00",
+  "durMin": 144,
+  "points": 14,
+  "origin": [
+   "???",
+   "46.41,6.37",
+   312.0
+  ],
+  "dest": [
+   "???",
+   "51.89,0.24",
+   425.5
+  ],
+  "maxAlt": 34003.0,
+  "fuelStart": 43720.0,
+  "fuelEnd": 27780.0,
+  "fuelBurn": 15940.0,
+  "gwStart": 250440.0,
+  "apuOnPct": 42.9
+ },
+ {
+  "start": "2022-07-16 17:19:00",
+  "end": "2022-07-16 18:48:00",
+  "durMin": 89,
+  "points": 6,
+  "origin": [
+   "???",
+   "51.89,0.25",
+   425.9
+  ],
+  "dest": [
+   "???",
+   "45.81,15.70",
+   491.2
+  ],
+  "maxAlt": 33007.0,
+  "fuelStart": 88220.0,
+  "fuelEnd": 67600.0,
+  "fuelBurn": 20620.0,
+  "gwStart": 302440.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-07-16 23:28:00",
+  "end": "2022-07-16 23:38:00",
+  "durMin": 10,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   4.8
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.3
+  ],
+  "maxAlt": 6907.0,
+  "fuelStart": 21740.0,
+  "fuelEnd": 20480.0,
+  "fuelBurn": 1260.0,
+  "gwStart": 236240.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-07-17 02:49:00",
+  "end": "2022-07-17 04:30:00",
+  "durMin": 101,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.5
+  ],
+  "dest": [
+   "OJAI",
+   "Amman",
+   0.6
+  ],
+  "maxAlt": 33999.0,
+  "fuelStart": 59920.0,
+  "fuelEnd": 40820.0,
+  "fuelBurn": 19100.0,
+  "gwStart": 258360.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-08-07 08:00:00",
+  "end": "2022-08-07 09:46:00",
+  "durMin": 106,
+  "points": 10,
+  "origin": [
+   "OJAI",
+   "Amman",
+   1.2
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 34907.0,
+  "fuelStart": 39100.0,
+  "fuelEnd": 22360.0,
+  "fuelBurn": 16740.0,
+  "gwStart": 237640.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-08-09 14:42:00",
+  "end": "2022-08-09 16:24:00",
+  "durMin": 102,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OETB",
+   "Tabuk",
+   0.7
+  ],
+  "maxAlt": 36006.0,
+  "fuelStart": 54960.0,
+  "fuelEnd": 39480.0,
+  "fuelBurn": 15480.0,
+  "gwStart": 255040.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-08-09 18:07:00",
+  "end": "2022-08-09 19:56:00",
+  "durMin": 109,
+  "points": 10,
+  "origin": [
+   "OETB",
+   "Tabuk",
+   0.2
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 35028.0,
+  "fuelStart": 38500.0,
+  "fuelEnd": 20920.0,
+  "fuelBurn": 17580.0,
+  "gwStart": 252640.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-08-15 12:52:00",
+  "end": "2022-08-15 14:10:00",
+  "durMin": 78,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.6
+  ],
+  "maxAlt": 33998.0,
+  "fuelStart": 55480.0,
+  "fuelEnd": 43040.0,
+  "fuelBurn": 12440.0,
+  "gwStart": 256160.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-08-15 17:13:00",
+  "end": "2022-08-15 18:30:00",
+  "durMin": 77,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 35017.0,
+  "fuelStart": 42380.0,
+  "fuelEnd": 28620.0,
+  "fuelBurn": 13760.0,
+  "gwStart": 242280.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-08-16 11:53:00",
+  "end": "2022-08-16 13:20:00",
+  "durMin": 87,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "OENN",
+   "NEOM Bay",
+   31.3
+  ],
+  "maxAlt": 34009.0,
+  "fuelStart": 88980.0,
+  "fuelEnd": 69300.0,
+  "fuelBurn": 19680.0,
+  "gwStart": 288360.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-08-16 17:28:00",
+  "end": "2022-08-16 17:37:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "???",
+   "39.68,3.16",
+   274.3
+  ],
+  "dest": [
+   "???",
+   "39.55,2.74",
+   293.5
+  ],
+  "maxAlt": 5104.0,
+  "fuelStart": 29200.0,
+  "fuelEnd": 30180.0,
+  "fuelBurn": -980.0,
+  "gwStart": 229240.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-08-17 13:33:00",
+  "end": "2022-08-17 14:02:00",
+  "durMin": 29,
+  "points": 6,
+  "origin": [
+   "???",
+   "39.56,2.74",
+   293.4
+  ],
+  "dest": [
+   "???",
+   "40.42,6.77",
+   126.6
+  ],
+  "maxAlt": 34016.0,
+  "fuelStart": 78260.0,
+  "fuelEnd": 68560.0,
+  "fuelBurn": 9700.0,
+  "gwStart": 296520.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-08-17 18:49:00",
+  "end": "2022-08-17 19:00:00",
+  "durMin": 11,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   10.3
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.6
+  ],
+  "maxAlt": 7197.0,
+  "fuelStart": 22940.0,
+  "fuelEnd": 22040.0,
+  "fuelBurn": 900.0,
+  "gwStart": 242120.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-08-20 13:35:00",
+  "end": "2022-08-20 15:56:00",
+  "durMin": 141,
+  "points": 11,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "15.59,32.55",
+   524.2
+  ],
+  "maxAlt": 36008.0,
+  "fuelStart": 77340.0,
+  "fuelEnd": 51760.0,
+  "fuelBurn": 25580.0,
+  "gwStart": 294280.0,
+  "apuOnPct": 54.5
+ },
+ {
+  "start": "2022-08-22 11:47:00",
+  "end": "2022-08-22 14:22:00",
+  "durMin": 155,
+  "points": 9,
+  "origin": [
+   "???",
+   "15.60,32.55",
+   523.6
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 35025.0,
+  "fuelStart": 50200.0,
+  "fuelEnd": 24300.0,
+  "fuelBurn": 25900.0,
+  "gwStart": 252200.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-08-24 06:58:00",
+  "end": "2022-08-24 08:32:00",
+  "durMin": 94,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.9
+  ],
+  "dest": [
+   "HESH",
+   "Sharm El-Sheikh",
+   4.5
+  ],
+  "maxAlt": 34029.0,
+  "fuelStart": 92620.0,
+  "fuelEnd": 72860.0,
+  "fuelBurn": 19760.0,
+  "gwStart": 292320.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-08-24 13:31:00",
+  "end": "2022-08-24 13:41:00",
+  "durMin": 10,
+  "points": 4,
+  "origin": [
+   "???",
+   "36.95,-4.76",
+   507.0
+  ],
+  "dest": [
+   "???",
+   "36.68,-4.49",
+   518.2
+  ],
+  "maxAlt": 6881.0,
+  "fuelStart": 26260.0,
+  "fuelEnd": 27640.0,
+  "fuelBurn": -1380.0,
+  "gwStart": 225680.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-08-25 11:35:00",
+  "end": "2022-08-25 12:33:00",
+  "durMin": 58,
+  "points": 6,
+  "origin": [
+   "???",
+   "36.68,-4.51",
+   518.4
+  ],
+  "dest": [
+   "???",
+   "39.66,3.74",
+   247.7
+  ],
+  "maxAlt": 34025.0,
+  "fuelStart": 84240.0,
+  "fuelEnd": 69800.0,
+  "fuelBurn": 14440.0,
+  "gwStart": 296720.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-08-25 17:55:00",
+  "end": "2022-08-25 18:06:00",
+  "durMin": 11,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   7.3
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.3
+  ],
+  "maxAlt": 6644.0,
+  "fuelStart": 19520.0,
+  "fuelEnd": 19380.0,
+  "fuelBurn": 140.0,
+  "gwStart": 232240.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-02 07:40:00",
+  "end": "2022-09-02 09:00:00",
+  "durMin": 80,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "dest": [
+   "OENN",
+   "NEOM Bay",
+   36.7
+  ],
+  "maxAlt": 32003.0,
+  "fuelStart": 102800.0,
+  "fuelEnd": 83880.0,
+  "fuelBurn": 18920.0,
+  "gwStart": 302880.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-02 10:59:00",
+  "end": "2022-09-02 11:08:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "???",
+   "40.65,28.71",
+   628.5
+  ],
+  "dest": [
+   "???",
+   "40.97,28.83",
+   641.1
+  ],
+  "maxAlt": 4932.0,
+  "fuelStart": 65840.0,
+  "fuelEnd": 64800.0,
+  "fuelBurn": 1040.0,
+  "gwStart": 265840.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-02 13:15:00",
+  "end": "2022-09-02 14:17:00",
+  "durMin": 62,
+  "points": 10,
+  "origin": [
+   "???",
+   "40.97,28.81",
+   641.1
+  ],
+  "dest": [
+   "???",
+   "37.94,23.96",
+   597.6
+  ],
+  "maxAlt": 31999.0,
+  "fuelStart": 64100.0,
+  "fuelEnd": 51880.0,
+  "fuelBurn": 12220.0,
+  "gwStart": 271600.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-09-02 16:05:00",
+  "end": "2022-09-02 17:11:00",
+  "durMin": 66,
+  "points": 6,
+  "origin": [
+   "???",
+   "37.95,23.97",
+   597.7
+  ],
+  "dest": [
+   "???",
+   "30.99,29.08",
+   130.9
+  ],
+  "maxAlt": 33012.0,
+  "fuelStart": 61580.0,
+  "fuelEnd": 45980.0,
+  "fuelBurn": 15600.0,
+  "gwStart": 280840.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-09-02 19:35:00",
+  "end": "2022-09-02 19:44:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   19.9
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 6736.0,
+  "fuelStart": 24220.0,
+  "fuelEnd": 23840.0,
+  "fuelBurn": 380.0,
+  "gwStart": 243960.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-12 10:15:00",
+  "end": "2022-09-12 10:35:00",
+  "durMin": 20,
+  "points": 5,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "25.26,44.45",
+   72.3
+  ],
+  "maxAlt": 34006.0,
+  "fuelStart": 87460.0,
+  "fuelEnd": 79500.0,
+  "fuelBurn": 7960.0,
+  "gwStart": 292320.0,
+  "apuOnPct": 60.0
+ },
+ {
+  "start": "2022-09-12 16:08:00",
+  "end": "2022-09-12 16:31:00",
+  "durMin": 23,
+  "points": 5,
+  "origin": [
+   "???",
+   "52.05,14.42",
+   740.2
+  ],
+  "dest": [
+   "???",
+   "52.37,13.49",
+   721.3
+  ],
+  "maxAlt": 11811.0,
+  "fuelStart": 28500.0,
+  "fuelEnd": 26120.0,
+  "fuelBurn": 2380.0,
+  "gwStart": 233160.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-09-18 12:33:00",
+  "end": "2022-09-18 13:37:00",
+  "durMin": 64,
+  "points": 6,
+  "origin": [
+   "???",
+   "52.38,13.53",
+   722.5
+  ],
+  "dest": [
+   "???",
+   "56.56,4.77",
+   734.1
+  ],
+  "maxAlt": 34018.0,
+  "fuelStart": 106920.0,
+  "fuelEnd": 90440.0,
+  "fuelBurn": 16480.0,
+  "gwStart": 310600.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-09-18 20:38:00",
+  "end": "2022-09-18 22:16:00",
+  "durMin": 98,
+  "points": 7,
+  "origin": [
+   "???",
+   "40.74,-73.38",
+   3102.2
+  ],
+  "dest": [
+   "???",
+   "40.59,-73.73",
+   3120.3
+  ],
+  "maxAlt": 5906.0,
+  "fuelStart": 22760.0,
+  "fuelEnd": 17460.0,
+  "fuelBurn": 5300.0,
+  "gwStart": 227920.0,
+  "apuOnPct": 57.1
+ },
+ {
+  "start": "2022-09-19 12:43:00",
+  "end": "2022-09-19 13:15:00",
+  "durMin": 32,
+  "points": 3,
+  "origin": [
+   "???",
+   "41.49,-74.22",
+   3112.2
+  ],
+  "dest": [
+   "???",
+   "42.37,-69.15",
+   2888.4
+  ],
+  "maxAlt": 35005.0,
+  "fuelStart": 88480.0,
+  "fuelEnd": 78800.0,
+  "fuelBurn": 9680.0,
+  "gwStart": 288680.0,
+  "apuOnPct": 0.0
+ },
+ {
+  "start": "2022-09-19 18:04:00",
+  "end": "2022-09-19 18:11:00",
+  "durMin": 7,
+  "points": 4,
+  "origin": [
+   "???",
+   "52.87,-8.60",
+   574.1
+  ],
+  "dest": [
+   "???",
+   "52.70,-8.92",
+   572.5
+  ],
+  "maxAlt": 4826.0,
+  "fuelStart": 33640.0,
+  "fuelEnd": 33340.0,
+  "fuelBurn": 300.0,
+  "gwStart": 233400.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-19 19:53:00",
+  "end": "2022-09-19 20:20:00",
+  "durMin": 27,
+  "points": 6,
+  "origin": [
+   "???",
+   "52.71,-8.91",
+   572.8
+  ],
+  "dest": [
+   "???",
+   "51.88,-4.26",
+   445.9
+  ],
+  "maxAlt": 35019.0,
+  "fuelStart": 88300.0,
+  "fuelEnd": 79760.0,
+  "fuelBurn": 8540.0,
+  "gwStart": 287240.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-09-20 01:55:00",
+  "end": "2022-09-20 02:07:00",
+  "durMin": 12,
+  "points": 4,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   19.1
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.5
+  ],
+  "maxAlt": 4980.0,
+  "fuelStart": 26380.0,
+  "fuelEnd": 26820.0,
+  "fuelBurn": -440.0,
+  "gwStart": 226720.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-20 23:14:00",
+  "end": "2022-09-21 00:47:00",
+  "durMin": 93,
+  "points": 6,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "HECA",
+   "Cairo",
+   4.4
+  ],
+  "maxAlt": 33982.0,
+  "fuelStart": 104340.0,
+  "fuelEnd": 82140.0,
+  "fuelBurn": 22200.0,
+  "gwStart": 311280.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-09-21 03:28:00",
+  "end": "2022-09-21 03:33:00",
+  "durMin": 5,
+  "points": 4,
+  "origin": [
+   "???",
+   "47.47,39.68",
+   945.9
+  ],
+  "dest": [
+   "???",
+   "47.49,39.92",
+   949.1
+  ],
+  "maxAlt": 5053.0,
+  "fuelStart": 55280.0,
+  "fuelEnd": 54700.0,
+  "fuelBurn": 580.0,
+  "gwStart": 261280.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-21 09:57:00",
+  "end": "2022-09-21 10:22:00",
+  "durMin": 25,
+  "points": 6,
+  "origin": [
+   "???",
+   "47.50,39.94",
+   949.7
+  ],
+  "dest": [
+   "???",
+   "45.32,39.12",
+   814.7
+  ],
+  "maxAlt": 35014.0,
+  "fuelStart": 80560.0,
+  "fuelEnd": 72080.0,
+  "fuelBurn": 8480.0,
+  "gwStart": 289000.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-09-21 14:39:00",
+  "end": "2022-09-21 14:46:00",
+  "durMin": 7,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   17.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 6849.0,
+  "fuelStart": 29960.0,
+  "fuelEnd": 29580.0,
+  "fuelBurn": 380.0,
+  "gwStart": 238920.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-22 07:00:00",
+  "end": "2022-09-22 08:07:00",
+  "durMin": 67,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "???",
+   "26.34,38.19",
+   135.2
+  ],
+  "maxAlt": 34002.0,
+  "fuelStart": 105840.0,
+  "fuelEnd": 87960.0,
+  "fuelBurn": 17880.0,
+  "gwStart": 304880.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-22 14:29:00",
+  "end": "2022-09-22 17:06:00",
+  "durMin": 157,
+  "points": 10,
+  "origin": [
+   "???",
+   "52.82,-8.34",
+   565.7
+  ],
+  "dest": [
+   "???",
+   "54.91,-19.40",
+   937.7
+  ],
+  "maxAlt": 34001.0,
+  "fuelStart": 25300.0,
+  "fuelEnd": 89980.0,
+  "fuelBurn": -64680.0,
+  "gwStart": 225520.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-09-22 22:49:00",
+  "end": "2022-09-22 23:00:00",
+  "durMin": 11,
+  "points": 4,
+  "origin": [
+   "???",
+   "41.86,-73.82",
+   3085.9
+  ],
+  "dest": [
+   "???",
+   "41.50,-74.12",
+   3108.1
+  ],
+  "maxAlt": 5649.0,
+  "fuelStart": 36200.0,
+  "fuelEnd": 35320.0,
+  "fuelBurn": 880.0,
+  "gwStart": 236440.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-24 16:08:00",
+  "end": "2022-09-24 18:33:00",
+  "durMin": 145,
+  "points": 6,
+  "origin": [
+   "???",
+   "41.51,-74.09",
+   3106.9
+  ],
+  "dest": [
+   "???",
+   "42.92,-71.57",
+   2967.7
+  ],
+  "maxAlt": 32999.0,
+  "fuelStart": 33840.0,
+  "fuelEnd": 84420.0,
+  "fuelBurn": -50580.0,
+  "gwStart": 234760.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-24 23:54:00",
+  "end": "2022-09-25 02:34:00",
+  "durMin": 160,
+  "points": 10,
+  "origin": [
+   "???",
+   "52.66,-9.35",
+   580.4
+  ],
+  "dest": [
+   "???",
+   "50.57,2.37",
+   366.5
+  ],
+  "maxAlt": 35023.0,
+  "fuelStart": 31740.0,
+  "fuelEnd": 83860.0,
+  "fuelBurn": -52120.0,
+  "gwStart": 238600.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-09-25 08:36:00",
+  "end": "2022-09-25 08:57:00",
+  "durMin": 21,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   17.3
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.3
+  ],
+  "maxAlt": 7013.0,
+  "fuelStart": 26420.0,
+  "fuelEnd": 24400.0,
+  "fuelBurn": 2020.0,
+  "gwStart": 233560.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-27 09:50:00",
+  "end": "2022-09-27 10:26:00",
+  "durMin": 36,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "25.57,42.29",
+   91.2
+  ],
+  "maxAlt": 32009.0,
+  "fuelStart": 106020.0,
+  "fuelEnd": 94300.0,
+  "fuelBurn": 11720.0,
+  "gwStart": 305560.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-27 17:28:00",
+  "end": "2022-09-27 17:40:00",
+  "durMin": 12,
+  "points": 4,
+  "origin": [
+   "???",
+   "55.22,37.23",
+   1396.6
+  ],
+  "dest": [
+   "???",
+   "55.59,37.27",
+   1419.3
+  ],
+  "maxAlt": 5878.0,
+  "fuelStart": 25400.0,
+  "fuelEnd": 24600.0,
+  "fuelBurn": 800.0,
+  "gwStart": 225600.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-27 20:17:00",
+  "end": "2022-09-27 20:50:00",
+  "durMin": 33,
+  "points": 6,
+  "origin": [
+   "???",
+   "55.59,37.25",
+   1418.9
+  ],
+  "dest": [
+   "???",
+   "53.98,43.23",
+   1357.4
+  ],
+  "maxAlt": 33009.0,
+  "fuelStart": 105040.0,
+  "fuelEnd": 93940.0,
+  "fuelBurn": 11100.0,
+  "gwStart": 314560.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-09-28 01:54:00",
+  "end": "2022-09-28 02:08:00",
+  "durMin": 14,
+  "points": 4,
+  "origin": [
+   "???",
+   "24.96,54.86",
+   266.5
+  ],
+  "dest": [
+   "???",
+   "24.90,55.16",
+   283.3
+  ],
+  "maxAlt": 4892.0,
+  "fuelStart": 40860.0,
+  "fuelEnd": 39940.0,
+  "fuelBurn": 920.0,
+  "gwStart": 250840.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-29 05:44:00",
+  "end": "2022-09-29 06:10:00",
+  "durMin": 26,
+  "points": 6,
+  "origin": [
+   "???",
+   "24.91,55.14",
+   282.4
+  ],
+  "dest": [
+   "???",
+   "25.88,52.65",
+   136.8
+  ],
+  "maxAlt": 34006.0,
+  "fuelStart": 104500.0,
+  "fuelEnd": 94280.0,
+  "fuelBurn": 10220.0,
+  "gwStart": 304200.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-09-29 11:53:00",
+  "end": "2022-09-29 12:02:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "???",
+   "43.49,7.60",
+   262.8
+  ],
+  "dest": [
+   "???",
+   "43.66,7.21",
+   277.2
+  ],
+  "maxAlt": 5367.0,
+  "fuelStart": 34920.0,
+  "fuelEnd": 35020.0,
+  "fuelBurn": -100.0,
+  "gwStart": 235280.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-30 08:43:00",
+  "end": "2022-09-30 09:24:00",
+  "durMin": 41,
+  "points": 6,
+  "origin": [
+   "???",
+   "43.65,7.20",
+   276.8
+  ],
+  "dest": [
+   "???",
+   "41.50,13.34",
+   237.9
+  ],
+  "maxAlt": 35004.0,
+  "fuelStart": 77500.0,
+  "fuelEnd": 66320.0,
+  "fuelBurn": 11180.0,
+  "gwStart": 284600.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-09-30 13:37:00",
+  "end": "2022-09-30 13:46:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   18.6
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.6
+  ],
+  "maxAlt": 6875.0,
+  "fuelStart": 26520.0,
+  "fuelEnd": 25900.0,
+  "fuelBurn": 620.0,
+  "gwStart": 233760.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-10-02 08:35:00",
+  "end": "2022-10-02 08:55:00",
+  "durMin": 20,
+  "points": 5,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "25.26,44.48",
+   73.6
+  ],
+  "maxAlt": 35999.0,
+  "fuelStart": 88020.0,
+  "fuelEnd": 79980.0,
+  "fuelBurn": 8040.0,
+  "gwStart": 287240.0,
+  "apuOnPct": 60.0
+ },
+ {
+  "start": "2022-10-02 10:39:00",
+  "end": "2022-10-02 10:39:00",
+  "durMin": 0,
+  "points": 1,
+  "origin": [
+   "HECA",
+   "Cairo",
+   4.9
+  ],
+  "dest": [
+   "HECA",
+   "Cairo",
+   4.9
+  ],
+  "maxAlt": 36002.0,
+  "fuelStart": 62940.0,
+  "fuelEnd": 62940.0,
+  "fuelBurn": null,
+  "gwStart": 262720.0,
+  "apuOnPct": 0.0
+ },
+ {
+  "start": "2022-10-02 14:18:00",
+  "end": "2022-10-02 14:29:00",
+  "durMin": 11,
+  "points": 4,
+  "origin": [
+   "???",
+   "39.13,2.03",
+   327.0
+  ],
+  "dest": [
+   "???",
+   "38.87,1.36",
+   359.2
+  ],
+  "maxAlt": 4535.0,
+  "fuelStart": 26920.0,
+  "fuelEnd": 27520.0,
+  "fuelBurn": -600.0,
+  "gwStart": 226360.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-10-03 21:21:00",
+  "end": "2022-10-03 21:45:00",
+  "durMin": 24,
+  "points": 6,
+  "origin": [
+   "???",
+   "38.88,1.38",
+   358.2
+  ],
+  "dest": [
+   "???",
+   "39.36,3.90",
+   239.6
+  ],
+  "maxAlt": 34024.0,
+  "fuelStart": 83860.0,
+  "fuelEnd": 74920.0,
+  "fuelBurn": 8940.0,
+  "gwStart": 306200.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-10-04 02:49:00",
+  "end": "2022-10-04 02:57:00",
+  "durMin": 8,
+  "points": 4,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   19.5
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.4
+  ],
+  "maxAlt": 6739.0,
+  "fuelStart": 25180.0,
+  "fuelEnd": 25240.0,
+  "fuelBurn": -60.0,
+  "gwStart": 247960.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-10-17 16:24:00",
+  "end": "2022-10-17 17:43:00",
+  "durMin": 79,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.9
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.6
+  ],
+  "maxAlt": 34001.0,
+  "fuelStart": 38360.0,
+  "fuelEnd": 25700.0,
+  "fuelBurn": 12660.0,
+  "gwStart": 239400.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-10-18 16:12:00",
+  "end": "2022-10-18 18:01:00",
+  "durMin": 109,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "HECA",
+   "Cairo",
+   0.9
+  ],
+  "maxAlt": 34002.0,
+  "fuelStart": 69800.0,
+  "fuelEnd": 48120.0,
+  "fuelBurn": 21680.0,
+  "gwStart": 273120.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-10-19 18:01:00",
+  "end": "2022-10-19 19:53:00",
+  "durMin": 112,
+  "points": 10,
+  "origin": [
+   "HECA",
+   "Cairo",
+   1.3
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   1.5
+  ],
+  "maxAlt": 35008.0,
+  "fuelStart": 46360.0,
+  "fuelEnd": 27320.0,
+  "fuelBurn": 19040.0,
+  "gwStart": 250120.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-10-19 22:01:00",
+  "end": "2022-10-19 23:20:00",
+  "durMin": 79,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.9
+  ],
+  "maxAlt": 35017.0,
+  "fuelStart": 38000.0,
+  "fuelEnd": 23980.0,
+  "fuelBurn": 14020.0,
+  "gwStart": 242480.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-10-25 14:55:00",
+  "end": "2022-10-25 16:16:00",
+  "durMin": 81,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.9
+  ],
+  "dest": [
+   "OEJN",
+   "Jeddah",
+   0.9
+  ],
+  "maxAlt": 33991.0,
+  "fuelStart": 56040.0,
+  "fuelEnd": 43880.0,
+  "fuelBurn": 12160.0,
+  "gwStart": 255040.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-10-25 18:40:00",
+  "end": "2022-10-25 20:13:00",
+  "durMin": 93,
+  "points": 10,
+  "origin": [
+   "OEJN",
+   "Jeddah",
+   1.1
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.7
+  ],
+  "maxAlt": 34840.0,
+  "fuelStart": 41580.0,
+  "fuelEnd": 25260.0,
+  "fuelBurn": 16320.0,
+  "gwStart": 250200.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-10-31 09:23:00",
+  "end": "2022-10-31 10:45:00",
+  "durMin": 82,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "dest": [
+   "???",
+   "26.59,37.09",
+   109.4
+  ],
+  "maxAlt": 34031.0,
+  "fuelStart": 102200.0,
+  "fuelEnd": 83180.0,
+  "fuelBurn": 19020.0,
+  "gwStart": 307760.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-10-31 15:39:00",
+  "end": "2022-10-31 15:53:00",
+  "durMin": 14,
+  "points": 4,
+  "origin": [
+   "???",
+   "37.27,3.85",
+   272.6
+  ],
+  "dest": [
+   "???",
+   "36.69,3.22",
+   315.9
+  ],
+  "maxAlt": 4681.0,
+  "fuelStart": 37140.0,
+  "fuelEnd": 35500.0,
+  "fuelBurn": 1640.0,
+  "gwStart": 242520.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-11-03 11:30:00",
+  "end": "2022-11-03 13:08:00",
+  "durMin": 98,
+  "points": 6,
+  "origin": [
+   "???",
+   "36.69,3.22",
+   315.8
+  ],
+  "dest": [
+   "???",
+   "35.51,18.73",
+   513.0
+  ],
+  "maxAlt": 35009.0,
+  "fuelStart": 66060.0,
+  "fuelEnd": 46360.0,
+  "fuelBurn": 19700.0,
+  "gwStart": 270720.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-11-03 14:43:00",
+  "end": "2022-11-03 14:52:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "HECA",
+   "Cairo",
+   12.1
+  ],
+  "dest": [
+   "HECA",
+   "Cairo",
+   0.7
+  ],
+  "maxAlt": 3953.0,
+  "fuelStart": 32480.0,
+  "fuelEnd": 31580.0,
+  "fuelBurn": 900.0,
+  "gwStart": 237720.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-11-06 14:53:00",
+  "end": "2022-11-06 16:15:00",
+  "durMin": 82,
+  "points": 10,
+  "origin": [
+   "HECA",
+   "Cairo",
+   1.2
+  ],
+  "dest": [
+   "HESH",
+   "Sharm El-Sheikh",
+   0.2
+  ],
+  "maxAlt": 23003.0,
+  "fuelStart": 54260.0,
+  "fuelEnd": 39800.0,
+  "fuelBurn": 14460.0,
+  "gwStart": 261000.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-11-06 18:04:00",
+  "end": "2022-11-06 19:47:00",
+  "durMin": 103,
+  "points": 10,
+  "origin": [
+   "HESH",
+   "Sharm El-Sheikh",
+   0.8
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "maxAlt": 33006.0,
+  "fuelStart": 38620.0,
+  "fuelEnd": 20440.0,
+  "fuelBurn": 18180.0,
+  "gwStart": 237840.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-11-07 05:04:00",
+  "end": "2022-11-07 05:23:00",
+  "durMin": 19,
+  "points": 5,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.1
+  ],
+  "dest": [
+   "???",
+   "24.13,45.04",
+   98.5
+  ],
+  "maxAlt": 32000.0,
+  "fuelStart": 104840.0,
+  "fuelEnd": 96740.0,
+  "fuelBurn": 8100.0,
+  "gwStart": 333320.0,
+  "apuOnPct": 60.0
+ },
+ {
+  "start": "2022-11-07 07:44:00",
+  "end": "2022-11-07 07:44:00",
+  "durMin": 0,
+  "points": 1,
+  "origin": [
+   "???",
+   "17.54,28.04",
+   675.9
+  ],
+  "dest": [
+   "???",
+   "17.54,28.04",
+   675.9
+  ],
+  "maxAlt": 34015.0,
+  "fuelStart": 69720.0,
+  "fuelEnd": 69720.0,
+  "fuelBurn": null,
+  "gwStart": 290240.0,
+  "apuOnPct": 0.0
+ },
+ {
+  "start": "2022-11-07 13:55:00",
+  "end": "2022-11-07 14:04:00",
+  "durMin": 9,
+  "points": 4,
+  "origin": [
+   "???",
+   "13.22,-16.31",
+   2058.3
+  ],
+  "dest": [
+   "???",
+   "13.34,-16.65",
+   2058.6
+  ],
+  "maxAlt": 4809.0,
+  "fuelStart": 9120.0,
+  "fuelEnd": 9120.0,
+  "fuelBurn": 0.0,
+  "gwStart": 236360.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-11-08 16:50:00",
+  "end": "2022-11-08 17:39:00",
+  "durMin": 49,
+  "points": 6,
+  "origin": [
+   "???",
+   "13.33,-16.64",
+   2059.1
+  ],
+  "dest": [
+   "???",
+   "13.35,-10.32",
+   1863.3
+  ],
+  "maxAlt": 34999.0,
+  "fuelStart": 105540.0,
+  "fuelEnd": 90960.0,
+  "fuelBurn": 14580.0,
+  "gwStart": 305320.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-11-09 00:31:00",
+  "end": "2022-11-09 00:38:00",
+  "durMin": 7,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   0.3
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.0
+  ],
+  "maxAlt": 6726.0,
+  "fuelStart": 23080.0,
+  "fuelEnd": 23020.0,
+  "fuelBurn": 60.0,
+  "gwStart": 224400.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-11-09 06:56:00",
+  "end": "2022-11-09 11:53:00",
+  "durMin": 297,
+  "points": 20,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.5
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.4
+  ],
+  "maxAlt": 35011.0,
+  "fuelStart": 61900.0,
+  "fuelEnd": 23300.0,
+  "fuelBurn": 38600.0,
+  "gwStart": 261000.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-11-10 03:04:00",
+  "end": "2022-11-10 05:41:00",
+  "durMin": 157,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   0.8
+  ],
+  "dest": [
+   "OJAI",
+   "Amman",
+   0.6
+  ],
+  "maxAlt": 34011.0,
+  "fuelStart": 66340.0,
+  "fuelEnd": 40560.0,
+  "fuelBurn": 25780.0,
+  "gwStart": 264960.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-11-18 09:30:00",
+  "end": "2022-11-18 11:13:00",
+  "durMin": 103,
+  "points": 10,
+  "origin": [
+   "OJAI",
+   "Amman",
+   0.7
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.2
+  ],
+  "maxAlt": 35018.0,
+  "fuelStart": 39420.0,
+  "fuelEnd": 22760.0,
+  "fuelBurn": 16660.0,
+  "gwStart": 240280.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-11-20 09:36:00",
+  "end": "2022-11-20 11:06:00",
+  "durMin": 90,
+  "points": 6,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.5
+  ],
+  "dest": [
+   "OENN",
+   "NEOM Bay",
+   30.2
+  ],
+  "maxAlt": 33984.0,
+  "fuelStart": 91980.0,
+  "fuelEnd": 71540.0,
+  "fuelBurn": 20440.0,
+  "gwStart": 291200.0,
+  "apuOnPct": 33.3
+ },
+ {
+  "start": "2022-11-20 16:12:00",
+  "end": "2022-11-20 16:19:00",
+  "durMin": 7,
+  "points": 4,
+  "origin": [
+   "???",
+   "52.01,0.63",
+   434.7
+  ],
+  "dest": [
+   "???",
+   "51.88,0.23",
+   425.3
+  ],
+  "maxAlt": 5503.0,
+  "fuelStart": 23920.0,
+  "fuelEnd": 23040.0,
+  "fuelBurn": 880.0,
+  "gwStart": 223800.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-11-21 18:23:00",
+  "end": "2022-11-21 18:53:00",
+  "durMin": 30,
+  "points": 6,
+  "origin": [
+   "???",
+   "51.89,0.25",
+   425.9
+  ],
+  "dest": [
+   "???",
+   "50.73,4.39",
+   409.6
+  ],
+  "maxAlt": 33001.0,
+  "fuelStart": 93060.0,
+  "fuelEnd": 83460.0,
+  "fuelBurn": 9600.0,
+  "gwStart": 314120.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-11-22 00:21:00",
+  "end": "2022-11-22 00:29:00",
+  "durMin": 8,
+  "points": 4,
+  "origin": [
+   "OERY",
+   "Riyadh Air Base",
+   3.6
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.6
+  ],
+  "maxAlt": 6582.0,
+  "fuelStart": 26500.0,
+  "fuelEnd": 26680.0,
+  "fuelBurn": -180.0,
+  "gwStart": 248600.0,
+  "apuOnPct": 50.0
+ },
+ {
+  "start": "2022-11-28 05:22:00",
+  "end": "2022-11-28 07:12:00",
+  "durMin": 110,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "OJAM",
+   "Amman-Marka",
+   0.8
+  ],
+  "maxAlt": 36009.0,
+  "fuelStart": 44460.0,
+  "fuelEnd": 24840.0,
+  "fuelBurn": 19620.0,
+  "gwStart": 251960.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-11-29 13:33:00",
+  "end": "2022-11-29 18:29:00",
+  "durMin": 296,
+  "points": 20,
+  "origin": [
+   "OJAM",
+   "Amman-Marka",
+   0.8
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   1.3
+  ],
+  "maxAlt": 37006.0,
+  "fuelStart": 65940.0,
+  "fuelEnd": 23540.0,
+  "fuelBurn": 42400.0,
+  "gwStart": 274240.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-11-30 15:54:00",
+  "end": "2022-11-30 16:54:00",
+  "durMin": 60,
+  "points": 10,
+  "origin": [
+   "OERK",
+   "Riyadh",
+   1.4
+  ],
+  "dest": [
+   "???",
+   "25.26,51.56",
+   97.3
+  ],
+  "maxAlt": 30998.0,
+  "fuelStart": 54580.0,
+  "fuelEnd": 42860.0,
+  "fuelBurn": 11720.0,
+  "gwStart": 256800.0,
+  "apuOnPct": 40.0
+ },
+ {
+  "start": "2022-11-30 22:09:00",
+  "end": "2022-11-30 23:17:00",
+  "durMin": 68,
+  "points": 10,
+  "origin": [
+   "???",
+   "25.27,51.56",
+   96.7
+  ],
+  "dest": [
+   "OERK",
+   "Riyadh",
+   0.3
+  ],
+  "maxAlt": 29816.0,
+  "fuelStart": 43100.0,
+  "fuelEnd": 30560.0,
+  "fuelBurn": 12540.0,
+  "gwStart": 244240.0,
+  "apuOnPct": 40.0
+ }
+]

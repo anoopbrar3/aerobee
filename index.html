@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AeroBee — Aviation Collective Intelligence</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50 3 93 26 93 74 50 97 7 74 7 26' fill='%23FFB300'/></svg>">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<aside id="sidebar">
+  <div class="brand">
+    <svg viewBox="0 0 100 100" class="brand-hex"><polygon points="50 3 93 26 93 74 50 97 7 74 7 26" fill="none" stroke="#FFB300" stroke-width="7"/><polygon points="50 22 74 36 74 64 50 78 26 64 26 36" fill="#FFB300"/></svg>
+    <div>
+      <div class="brand-name">Aero<span>Bee</span></div>
+      <div class="brand-sub">Collective Intelligence</div>
+    </div>
+  </div>
+
+  <nav>
+    <div class="nav-group">Dashboards</div>
+    <a class="nav-item active" data-view="overview"><span class="ni">⬡</span>Fleet Overview</a>
+    <a class="nav-item" data-view="replay"><span class="ni">✈</span>Live Flight / Replay</a>
+    <div class="nav-group">The Studio — AI Apps</div>
+    <a class="nav-item" data-view="health"><span class="ni">♥</span>Aircraft Health</a>
+    <a class="nav-item" data-view="engine"><span class="ni">⚙</span>Engine Condition</a>
+    <a class="nav-item" data-view="fuel"><span class="ni">⛽</span>Fuel Optimization</a>
+    <a class="nav-item" data-view="safety"><span class="ni">🛡</span>Proactive Safety <span class="badge" id="nav-event-count"></span></a>
+    <a class="nav-item" data-view="report"><span class="ni">📄</span>End of Flight Report</a>
+    <div class="nav-group">Conversational AI</div>
+    <a class="nav-item" data-view="ai"><span class="ni">🐝</span>Ask AeroBee</a>
+    <div class="nav-group nav-soon-label">Roadmap</div>
+    <a class="nav-item soon">3D Flight Replay <em>soon</em></a>
+    <a class="nav-item soon">Predictive Maintenance <em>soon</em></a>
+  </nav>
+
+  <div class="sidebar-foot">
+    <div class="ac-chip">
+      <div class="ac-reg" id="ac-reg">N310AB</div>
+      <div class="ac-type" id="ac-type">Airbus A310-300</div>
+      <div class="ac-src">Bee edge · satellite downlink</div>
+    </div>
+  </div>
+</aside>
+
+<main id="main">
+  <header id="topbar">
+    <div id="view-title">Fleet Overview</div>
+    <div class="topbar-right">
+      <input id="ask-input" placeholder="Ask AeroBee anything about this data…">
+      <div class="live-dot"><span></span>DEMO FLEET · N310AB</div>
+    </div>
+  </header>
+
+  <!-- ======================= FLEET OVERVIEW ======================= -->
+  <section class="view active" id="view-overview">
+    <div class="kpi-row" id="ov-kpis"></div>
+    <div class="grid-2-1">
+      <div class="panel">
+        <div class="panel-head"><h3>Fleet Map — logged city pairs</h3><span class="panel-note" id="ov-map-note"></span></div>
+        <div id="ov-map" class="map"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Top Routes</h3><span class="panel-note">by flights logged</span></div>
+        <table class="tbl" id="ov-routes"></table>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Monthly Utilization</h3><span class="panel-note">flights & block hours</span></div>
+        <div class="chart-wrap"><canvas id="ov-monthly"></canvas></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Monthly Fuel Burn</h3><span class="panel-note">from FQ deltas (lb)</span></div>
+        <div class="chart-wrap"><canvas id="ov-fuel"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= REPLAY ======================= -->
+  <section class="view" id="view-replay">
+    <div class="replay-top">
+      <div class="panel flight-picker">
+        <div class="panel-head"><h3>Flight</h3></div>
+        <div id="leg-buttons"></div>
+        <div class="leg-meta" id="leg-meta"></div>
+      </div>
+      <div class="kpi-row kpi-replay" id="rp-kpis"></div>
+    </div>
+    <div class="grid-2-1">
+      <div class="panel">
+        <div class="panel-head">
+          <h3 id="rp-map-title">Flight Track</h3>
+          <div class="replay-controls">
+            <button id="rp-play" class="btn-gold">▶ Play</button>
+            <div class="speed-group" id="rp-speeds"></div>
+          </div>
+        </div>
+        <div id="rp-map" class="map map-tall"></div>
+        <div class="strip-wrap">
+          <input type="range" id="rp-slider" min="0" max="1000" value="0">
+          <div class="chart-wrap strip"><canvas id="rp-strip"></canvas></div>
+        </div>
+      </div>
+      <div class="right-stack">
+        <div class="panel">
+          <div class="panel-head"><h3>Phase</h3><span class="phase-badge" id="rp-phase">—</span></div>
+          <div class="gauge-row">
+            <div class="gauge-cell"><canvas id="g-n1a" width="110" height="88"></canvas><div class="gauge-lbl">N1 · ENG 1</div></div>
+            <div class="gauge-cell"><canvas id="g-n1b" width="110" height="88"></canvas><div class="gauge-lbl">N1 · ENG 2</div></div>
+            <div class="gauge-cell"><canvas id="g-egta" width="110" height="88"></canvas><div class="gauge-lbl">EGT · ENG 1</div></div>
+            <div class="gauge-cell"><canvas id="g-egtb" width="110" height="88"></canvas><div class="gauge-lbl">EGT · ENG 2</div></div>
+          </div>
+          <div class="mini-kpis" id="rp-engine-kpis"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>Flight Controls</h3><span class="panel-note" id="rp-ctl-src">high-rate segments · simulated DFDR</span></div>
+          <div class="controls-panel" id="rp-controls"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>Weather Brief</h3><span class="panel-note">simulated METAR / winds</span></div>
+          <div id="rp-weather"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>Downlink Log</h3><span class="panel-note">Bee downlink</span></div>
+          <div class="log-scroll" id="rp-log"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= AIRCRAFT HEALTH ======================= -->
+  <section class="view" id="view-health">
+    <div class="health-hero panel">
+      <div class="hh-ring"><canvas id="hh-ring" width="170" height="170"></canvas>
+        <div class="hh-ring-val" id="hh-val">—</div></div>
+      <div class="hh-text">
+        <h2>Aircraft Health Index — <span id="hh-reg"></span></h2>
+        <p>Composite score across 8 ATA systems, computed from downlinked engine trends,
+        vibration, oil, APU duty cycle and utilization. <span class="sim-tag">health scores simulated for demo</span></p>
+        <div class="hh-chips" id="hh-chips"></div>
+      </div>
+    </div>
+    <div class="ahm-grid" id="ahm-grid"></div>
+  </section>
+
+  <!-- ======================= ENGINE ======================= -->
+  <section class="view" id="view-engine">
+    <div class="kpi-row" id="en-kpis"></div>
+    <div class="panel">
+      <div class="panel-head"><h3>Takeoff EGT Trend — 22 months, every departure</h3>
+        <span class="panel-note">divergence between engines is the earliest deterioration signal</span></div>
+      <div class="chart-wrap tall"><canvas id="en-trend"></canvas></div>
+    </div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Engine 1 − Engine 2 EGT Delta</h3><span class="panel-note">at takeoff power</span></div>
+        <div class="chart-wrap"><canvas id="en-delta"></canvas></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Oil & Vibration by Phase — 10 Aug flight</h3></div>
+        <table class="tbl" id="en-oil"></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= FUEL ======================= -->
+  <section class="view" id="view-fuel">
+    <div class="kpi-row" id="fu-kpis"></div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Fuel Burn by Phase</h3><span class="panel-note">OERK→OENN→OERK · 10 Aug 2021</span></div>
+        <div class="chart-wrap"><canvas id="fu-phase"></canvas></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Fuel Flow vs Altitude</h3><span class="panel-note">both engines, snapshot data</span></div>
+        <div class="chart-wrap"><canvas id="fu-ff"></canvas></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3>Savings Opportunities — computed from this aircraft's operation</h3>
+        <span class="panel-note" id="fu-savings-total"></span></div>
+      <div class="savings-grid" id="fu-savings"></div>
+    </div>
+  </section>
+
+  <!-- ======================= SAFETY ======================= -->
+  <section class="view" id="view-safety">
+    <div class="kpi-row" id="sa-kpis"></div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Event Pyramid</h3><span class="panel-note">by severity</span></div>
+        <div class="chart-wrap"><canvas id="sa-pyramid"></canvas></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Events by Category</h3></div>
+        <div class="chart-wrap"><canvas id="sa-cat"></canvas></div>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Stabilized Approach Analysis</h3>
+          <div class="seg-group" id="sa-leg-toggle"></div></div>
+        <div class="chart-wrap tall"><canvas id="sa-approach"></canvas></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Touchdown Scorecard</h3><span class="panel-note">simulated DFDR · 1 Hz</span></div>
+        <div id="sa-touchdown"></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3>Exceedance Report — FOQA / FDM</h3>
+        <span class="panel-note">click a row to replay that moment</span></div>
+      <table class="tbl" id="sa-events"></table>
+    </div>
+  </section>
+
+  <!-- ======================= REPORT ======================= -->
+  <section class="view" id="view-report">
+    <div class="report-toolbar panel">
+      <div id="report-leg-buttons"></div>
+      <div class="toolbar-actions">
+        <button class="btn" id="report-csv">⬇ CSV</button>
+        <button class="btn" id="report-json">⬇ JSON</button>
+        <button class="btn-gold" onclick="window.print()">🖨 Print</button>
+      </div>
+    </div>
+    <div class="panel report-sheet" id="report-sheet"></div>
+  </section>
+
+  <!-- ======================= AI ======================= -->
+  <section class="view" id="view-ai">
+    <div class="ai-layout">
+      <div class="panel ai-panel">
+        <div class="panel-head"><h3>🐝 Ask AeroBee</h3>
+          <span class="panel-note">answers computed live from N310AB's actual flight data</span></div>
+        <div class="chat-scroll" id="chat"></div>
+        <div class="chips" id="ai-chips"></div>
+        <div class="chat-input-row">
+          <input id="chat-input" placeholder="e.g. How much fuel did we burn to NEOM?">
+          <button class="btn-gold" id="chat-send">Send</button>
+        </div>
+      </div>
+      <div class="panel ai-side">
+        <div class="panel-head"><h3>How this works</h3></div>
+        <div class="ai-note">
+          <p><b>This demo</b> answers from a computed knowledge layer over the flight-data lakehouse — every number is derived from N310AB's downlinked flight data, not canned text.</p>
+          <p><b>In production</b>, the Beehive feeds an LLM through retrieval-augmented generation (RAG): live parameters, maintenance manuals, MELs, weather and historical fleet data — so pilots, engineers and executives can interrogate any flight in plain language.</p>
+          <p class="dim">Vision: The Beehive (platform) · The Bees (edge) · The Studio (AI apps)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
