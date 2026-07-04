@@ -2,11 +2,11 @@
 
 **Interactive post-flight analytics dashboard for the AeroBee demo fleet.**
 
-The trajectory backbone is genuine A310-class satellite-downlinked flight telemetry
-(white-labeled as demo tail **N310AB**) — 325 flight segments including a fully
-reconstructed Riyadh ↔ NEOM Bay round trip at 2-minute track resolution. On top of
-that, high-rate DFDR, weather and aircraft-health datasets are **simulated** to
-demonstrate the full product surface: FOQA gates, touchdown analysis, AHM scoring.
+Five loadable flights on demo tail **N310AB** (A310-300): two genuine **8 Hz FDR
+decodes** (94,576 rows mined for FOQA events, real IRS winds, recorded attitude and
+flight controls) plus three satellite-downlink flights — with 325 logged segments
+of fleet history behind them. Weather METARs, maintenance records and health
+scores are **simulated** and tagged as such in the UI.
 
 ## Run it
 
@@ -21,9 +21,12 @@ python3 -m http.server 8317
 
 | View | What it shows |
 |---|---|
-| **Fleet Overview** | KPIs, route map, monthly utilization & fuel burn across 325 flights |
-| **Live Flight / Replay** | Animated replay: moving aircraft, cockpit gauges, control surfaces (flap/gear/spoiler/reverse), live instruments, altitude+speed strip, weather brief, downlink log |
+| **Fleet & Flights** | Fleet strip, 5-flight library with fidelity badges, KPIs, network map |
+| **Flight Replay 2D** | FDR-driven replay: cockpit gauges, flight-control LEDs, recorded attitude & wind, weather overlays (wind barbs + radar), altitude/CAS strip |
+| **Flight Replay 3D** | CesiumJS globe replay with chase camera, glowing track, aircraft model, live HUD |
 | **Aircraft Health (AHM)** | System-by-system health scoring with trends and next-action recommendations |
+| **Predictive Maintenance** | 12-month EGT-margin forecast on real trend data, component RUL (P50/P90), 180-day intervention timeline |
+| **The Beehive — Data Connectors** | Animated data-fabric: fragmented sources → lakehouse → RAG/LLM → Studio apps, plus AI technology roadmap |
 | **Engine Condition (MOQA)** | 22 months of takeoff EGT trending, Eng1−Eng2 divergence, oil & vibration by phase |
 | **Fuel Optimization** | Burn by phase, fuel flow vs altitude, computed savings opportunities |
 | **Proactive Safety (FOQA/FDM)** | Exceedance events, stabilized-approach gate analysis, touchdown scorecard — click a row to replay that exact moment |
@@ -34,7 +37,8 @@ python3 -m http.server 8317
 
 ```
 data/                      raw JSON telemetry extracts
-scripts/derive_data.py     computes all dashboard datasets (real + simulated layers) → assets/js/data.js
+scripts/derive_data.py     satellite-telemetry datasets (real + simulated layers) → assets/js/data.js
+scripts/parse_fdr.py       8 Hz FDR decode parser + FOQA event mining → assets/js/fdr_data.js
 assets/js/app.js           the dashboard (vanilla JS + Leaflet + Chart.js, zero build)
 index.html                 single-page app
 docs/GAP_ANALYSIS.md       demo vs. production platform roadmap

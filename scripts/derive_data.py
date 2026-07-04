@@ -400,6 +400,35 @@ ahm = {
     ],
 }
 
+# Third satellite flight (AB103, OEJN→OERK 2021-08-12) for the flight selector
+sat3 = None
+ab103_path = os.path.join(DATA, "flight_ab103.json")
+if os.path.exists(ab103_path):
+    raw3 = json.load(open(ab103_path))
+    tr3 = [p for p in raw3["track"] if p.get("lat")]
+    for i, p in enumerate(tr3):
+        if i == 0: p["vs"] = 0; p["dist"] = 0.0
+        else:
+            q = tr3[i - 1]
+            dm = max((ts(p["t"]) - ts(q["t"])).total_seconds() / 60, .001)
+            p["vs"] = round(((p["alt"] or 0) - (q["alt"] or 0)) / dm)
+            p["dist"] = round(q["dist"] + hav_nm(q["lat"], q["lon"], p["lat"], p["lon"]), 2)
+    sn3 = raw3["snaps"]
+    fuels3 = [s.get("Fuel Quantity-Fuel on Board (Totalizer)") or s.get("Fuel Quantity-Fuel o") or
+              s.get("Fuel Quantity On Board") for s in sn3]
+    fuels3 = [f for f in fuels3 if f]
+    air3 = [p for p in tr3 if (p["gs"] or 0) > 80]
+    sat3 = {
+        "id": "AB103", "date": "2021-08-12", "from": "OEJN", "to": "OERK",
+        "fromName": "Jeddah King Abdulaziz Intl", "toName": "Riyadh King Khalid Intl",
+        "fidelity": "SAT",
+        "start": air3[0]["t"] if air3 else tr3[0]["t"], "end": air3[-1]["t"] if air3 else tr3[-1]["t"],
+        "durMin": int((ts(air3[-1]["t"]) - ts(air3[0]["t"])).total_seconds() / 60) if air3 else 0,
+        "maxAlt": max((p["alt"] or 0) for p in tr3),
+        "fuelBurn": (fuels3[0] - fuels3[-1]) if len(fuels3) > 1 else None,
+        "track": tr3, "snapshots": sn3,
+    }
+
 payload = {
     "aircraft": {"type": "Airbus A310-300", "reg": "N310AB", "engines": "2 × GE CF6-80C2",
                  "fleet": "AeroBee demo fleet",
@@ -410,7 +439,7 @@ payload = {
     "events": events, "fleetKpis": fleet_kpis, "monthly": monthly,
     "routes": route_stats, "fleet": fleet, "savings": savings, "eof": eof,
     "fuelUsdPerLb": FUEL_USD_PER_LB,
-    "dfdr": dfdr, "weather": weather, "ahm": ahm,
+    "dfdr": dfdr, "weather": weather, "ahm": ahm, "sat3": sat3,
 }
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 with open(OUT, "w") as f:
