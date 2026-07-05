@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=9">
+<link rel="stylesheet" href="assets/css/style.css?v=10">
 </head>
 <body>
 
@@ -257,7 +257,13 @@
 
   <!-- ======================= FUEL ======================= -->
   <section class="view" id="view-fuel">
-    <div class="kpi-row" id="fu-kpis"></div>
+    <div class="flightbar" id="fu-flightbar"></div>
+    <div class="kpi-row" id="fu-kpis" style="margin-top:12px"></div>
+    <div class="panel" style="margin-top:16px">
+      <div class="panel-head"><h3 id="fu-profile-title">Fuel Profile — selected flight</h3>
+        <span class="panel-note" id="fu-profile-note"></span></div>
+      <div class="chart-wrap"><canvas id="fu-profile"></canvas></div>
+    </div>
     <div class="grid-2">
       <div class="panel">
         <div class="panel-head"><h3>Fuel Burn by Phase</h3><span class="panel-note">OERK→OENN→OERK · 10 Aug 2021</span></div>
@@ -408,10 +414,10 @@
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-<script src="assets/js/data.js?v=9"></script>
-<script src="assets/js/fdr_data.js?v=9"></script>
-<script src="assets/js/ops_data.js?v=9"></script>
-<script src="assets/js/app.js?v=9"></script>
+<script src="assets/js/data.js?v=10"></script>
+<script src="assets/js/fdr_data.js?v=10"></script>
+<script src="assets/js/ops_data.js?v=10"></script>
+<script src="assets/js/app.js?v=10"></script>
 
 </body>
 </html>

@@ -153,6 +153,36 @@ function mkFdrFlight(f) {
   };
 }
 
+function mkDemoFlight(meta, track) {
+  /* demo CSV carries engine/fuel data on every track point — interpolate directly */
+  const trk = track.map(p => ({ ...p, tms: P(p.t), alt: p.alt || 0, gs: p.gs || 0, hdg: p.hdg || 0 }));
+  const t0 = trk[0].tms, t1 = trk[trk.length - 1].tms;
+  function at(tms) {
+    let i = trk.findIndex(p => p.tms > tms);
+    if (i <= 0) i = tms <= t0 ? 1 : trk.length - 1;
+    const a = trk[i - 1], b = trk[i];
+    const fr = Math.min(Math.max((tms - a.tms) / Math.max(b.tms - a.tms, 1), 0), 1);
+    const L = (k) => (a[k] == null || b[k] == null) ? a[k] : a[k] + (b[k] - a[k]) * fr;
+    let dh = (b.hdg - a.hdg); if (dh > 180) dh -= 360; if (dh < -180) dh += 360;
+    return { a, L, hdg: a.hdg + dh * fr };
+  }
+  return {
+    ...meta, fidelity: "SIM", t0, t1, track: trk,
+    stateAt(tms) {
+      const { a, L, hdg } = at(tms);
+      return {
+        fidelity: "SIM", lat: L("lat"), lon: L("lon"), alt: L("alt"), gs: L("gs"), hdg,
+        vs: L("vs"), cas: L("gs"), nz: null, pitch: null, roll: null,
+        n1a: L("n1a"), n1b: L("n1b"), egta: L("egta"), egtb: L("egtb"),
+        ff: L("ff"), fuel: L("fuel"),
+        flap: L("flap"), gear: null, spoiler: null, rev: null, ap: null, ra: null, aoa: null,
+        wspd: L("wspd"), wdir: L("wdir"),
+        phase: (a.phase || "—").toUpperCase(), real: false,
+      };
+    },
+  };
+}
+
 function mkSatFlight(meta, track, snaps, extra = {}) {
   const t0 = P(track[0].t), t1 = P(track[track.length - 1].t);
   const fuelKey = Object.keys(snaps[0] || {}).find(k => /fuel quantity/i.test(k));
@@ -247,15 +277,11 @@ const FLIGHTS = [];
   }
   if (typeof OPS !== "undefined" && OPS.demoFlight) {
     const d = OPS.demoFlight;
-    const trk = d.track.map(p => ({ ...p, dist: 0 }));
-    const fl = mkSatFlight({
+    FLIGHTS.push(mkDemoFlight({
       id: d.id, date: d.date, from: d.from, to: d.to, fromName: d.fromName, toName: d.toName,
       durMin: d.durMin, maxAlt: d.maxAlt, fuelLb: d.fuelBurn,
       events: d.events.map(e => ({ ...e, tms: P(e.t) })), gates: null,
-    }, trk, []);
-    fl.fidelity = "SIM";
-    fl.stateAtDemo = true;
-    FLIGHTS.push(fl);
+    }, d.track));
   }
   FLIGHTS.sort((a, b) => a.id.localeCompare(b.id));
 })();
@@ -288,6 +314,7 @@ function selectFlight(i) {
   if (inited.safety) bindSafetyFlight();
   if (inited.report) renderReport();
   if (inited.perf) bindPerfFlight();
+  if (inited.fuel) bindFuelFlight();
 }
 
 /* ---------------- navigation ---------------- */
@@ -1127,7 +1154,40 @@ function initEngine() {
       <td>${fmt(s["Engine 1 Vibration N1"], 2)} / ${fmt(s["Engine 2 Vibration N1"], 2)}</td></tr>`).join("");
 }
 
+function bindFuelFlight() {
+  const f = selFlight();
+  $("#fu-profile-title").textContent = `Fuel Profile — ${f.id} ${f.from} → ${f.to}`;
+  let pts = [];
+  if (f.fidelity === "FDR" && f.rows) {
+    const idx = Object.fromEntries(f.fields.map((k, i) => [k, i]));
+    pts = f.rows.filter((r, i) => i % 4 === 0).map(r => ({
+      x: ((r[idx.t] - f.rows[0][idx.t]) / 60).toFixed(0),
+      ff: (r[idx.ffa] || 0) + (r[idx.ffb] || 0), alt: r[idx.alt] || 0 }));
+    $("#fu-profile-note").textContent = "recorded 8 Hz fuel flow · FF-integrated burn " + fmt(f.fuelLb) + " lb";
+  } else if (f.track && f.track[0] && f.track[0].ff != null) {
+    pts = f.track.map(p => ({ x: ((p.tms - f.t0) / 60000).toFixed(0), ff: p.ff, alt: p.alt }));
+    $("#fu-profile-note").textContent = "simulated demo data · burn " + fmt(f.fuelLb) + " lb";
+  } else {
+    const sn = AB.snapshots.filter(x => f.id === "AB101" ? x.Date < "2021-08-10 13:00" : x.Date >= "2021-08-10 13:00");
+    pts = sn.map(x => ({ x: x.Date.slice(11, 16),
+      ff: (x["Engine 1 Fuel Flow"] || 0) + (x["Engine 2 Fuel Flow"] || 0), alt: x.Altitude || 0 }));
+    $("#fu-profile-note").textContent = "satellite downlink snapshots · burn " + fmt(f.fuelLb) + " lb";
+  }
+  chartOn($("#fu-profile"), {
+    type: "line",
+    data: { labels: pts.map(p => p.x), datasets: [
+      { label: "fuel flow (lb/hr, both engines)", data: pts.map(p => p.ff), borderColor: "rgba(242,242,244,.85)", borderWidth: 1.5, pointRadius: 0, tension: .3, yAxisID: "y" },
+      { label: "altitude (ft)", data: pts.map(p => p.alt), borderColor: C.blue, borderWidth: 1.1, pointRadius: 0, tension: .3, yAxisID: "y2", fill: "origin", backgroundColor: "rgba(139,167,199,.06)" },
+    ]},
+    options: { maintainAspectRatio: false, interaction: { intersect: false, mode: "index" },
+      scales: { x: { title: { display: true, text: "elapsed min" }, ticks: { maxTicksLimit: 12 } },
+                y: { title: { display: true, text: "lb/hr" } },
+                y2: { position: "right", grid: { display: false } } } },
+  });
+}
+
 function initFuel() {
+  bindFuelFlight();
   const l1 = AB.legs[0], l2 = AB.legs[1];
   const totalBurn = l1.fuelBurn + l2.fuelBurn;
   const totSave = AB.savings.reduce((a, s) => a + s.annualUsd, 0);
