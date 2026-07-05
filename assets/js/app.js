@@ -493,7 +493,7 @@ function bindReplayFlight() {
 function renderWeatherBrief(f) {
   const wxFor = (icao) => AB.weather.metars.find(w => w.icao === icao) ||
     { icao, wind: "320°/10 kt", vis: "CAVOK", temp: 40, qnh: 1004, raw: `${icao} — simulated METAR` };
-  const dep = wxFor(f.from === "OEJD" ? "OERK" : f.from), arr = wxFor(f.to === "OEJD" ? "OERK" : f.to);
+  const dep = wxFor(f.from), arr = wxFor(f.to);
   const windNote = f.fidelity === "FDR" && f.maxWind && f.maxWind.kt
     ? `<div class="wx-row"><span class="wx-tag">REAL FDR WIND</span>
         <span class="wx-main">max ${fmt(f.maxWind.kt)} kt from ${fmt(f.maxWind.dir)}° recorded at cruise</span></div>` : "";

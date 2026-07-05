@@ -351,6 +351,12 @@ weather = {
         {"icao": "OERK", "time": "2021-08-10 16:00Z",
          "raw": "OERK 101600Z 31010KT CAVOK 41/03 Q1001 NOSIG",
          "wind": "310° / 10 kt", "vis": "CAVOK", "temp": 41, "dew": 3, "qnh": 1001},
+        {"icao": "OEJD", "time": "2023-04-29 12:00Z",
+         "raw": "OEJD 291200Z 30014KT 8000 FEW035 36/22 Q1008 NOSIG",
+         "wind": "300° / 14 kt", "vis": "8 km", "temp": 36, "dew": 22, "qnh": 1008},
+        {"icao": "OEJN", "time": "2021-08-12 15:00Z",
+         "raw": "OEJN 121500Z 31016KT 9999 FEW040 37/24 Q1006 NOSIG",
+         "wind": "310° / 16 kt", "vis": "10 km+", "temp": 37, "dew": 24, "qnh": 1006},
     ],
     "windsAloft": [
         {"fl": "FL100", "dir": 300, "kt": 18, "tempC": 18},
