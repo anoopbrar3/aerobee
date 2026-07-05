@@ -15,11 +15,11 @@ const P = (t) => new Date(t.replace(" ", "T") + "Z").getTime();
 const hhmmss = (ms) => new Date(ms).toISOString().slice(11, 19);
 
 const C = {
-  gold: "#ffb300", teal: "#2dd4bf", blue: "#60a5fa", red: "#f87171",
-  amber: "#fbbf24", green: "#4ade80", dim: "#8b96ab", grid: "rgba(139,150,171,.12)",
-  purple: "#c084fc",
+  gold: "#d9a441", teal: "#8fb8ab", blue: "#8ba7c7", red: "#c97b6d",
+  amber: "#d0a866", green: "#7fb693", dim: "#6b6b74", grid: "rgba(255,255,255,.05)",
+  purple: "#a89bc9",
 };
-Chart.defaults.color = C.dim;
+Chart.defaults.color = "#6b6b74";
 Chart.defaults.font.family = "Inter, sans-serif";
 Chart.defaults.font.size = 11;
 Chart.defaults.borderColor = C.grid;
@@ -70,10 +70,10 @@ function sparkSvg(data, color, w = 90, h = 26) {
   return `<svg width="${w}" height="${h}" class="spark"><polyline points="${ptsv}" fill="none" stroke="${color}" stroke-width="1.6" stroke-linejoin="round"/></svg>`;
 }
 function ringGauge(canvas, value, color) {
-  const g = canvas.getContext("2d"), W = canvas.width, cx = W / 2, r = W / 2 - 12;
+  const g = canvas.getContext("2d"), W = canvas.width, cx = W / 2, r = W / 2 - 10;
   g.clearRect(0, 0, W, W);
-  g.lineWidth = 11; g.lineCap = "round";
-  g.strokeStyle = "rgba(139,150,171,.14)";
+  g.lineWidth = 6; g.lineCap = "round";
+  g.strokeStyle = "rgba(255,255,255,.08)";
   g.beginPath(); g.arc(cx, cx, r, -Math.PI / 2, Math.PI * 1.5); g.stroke();
   g.strokeStyle = color;
   g.beginPath(); g.arc(cx, cx, r, -Math.PI / 2, -Math.PI / 2 + 2 * Math.PI * value / 100); g.stroke();
@@ -259,7 +259,7 @@ function renderFlightBars() {
     bar.innerHTML = FLIGHTS.map((f, i) => `
       <button class="fl-chip ${i === state.fi ? "active" : ""}" data-i="${i}">
         <span class="fl-id">${f.id}</span> ${f.from}→${f.to}
-        <small>${f.date} · ${mins(f.durMin)} ${f.fidelity === "FDR" ? "· ⚡8Hz" : "· 📡"}</small>
+        <small>${f.date} · ${mins(f.durMin)} · ${f.fidelity === "FDR" ? "8 Hz" : "SAT"}</small>
       </button>`).join("");
     bar.querySelectorAll(".fl-chip").forEach(b => b.onclick = () => selectFlight(+b.dataset.i));
   });
@@ -333,8 +333,8 @@ function initOverview() {
       <div class="fc-route">${f.from} <span>→</span> ${f.to}</div>
       <div class="fc-meta">${f.date} · ${mins(f.durMin)} · FL${Math.round((f.maxAlt || 0) / 100)}</div>
       <div class="fc-stats">
-        <span>⛽ ${f.fuelLb ? fmt(f.fuelLb) + " lb" : "—"}</span>
-        <span>🛡 ${(f.events || []).length} events</span>
+        <span>${f.fuelLb ? fmt(f.fuelLb) + " lb" : "—"}</span>
+        <span>${(f.events || []).length} events</span>
       </div>
     </div>`).join("");
   $$(".flight-card").forEach(c => c.onclick = () => {
@@ -407,7 +407,7 @@ function initReplay() {
   rp.plane = L.marker([0, 0], {
     icon: L.divIcon({ className: "", iconSize: [34, 34], iconAnchor: [17, 17],
       html: `<svg class="plane-icon" id="plane-svg" viewBox="0 0 24 24" width="34" height="34">
-        <path fill="#ffb300" d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>` }),
+        <path fill="#d9a441" d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>` }),
   }).addTo(rp.map);
 
   $("#rp-kpis").innerHTML = [
@@ -603,7 +603,7 @@ function seek(fr) {
   rp.strip.update("none");
 }
 function rpPlay() {
-  rp.playing = true; $("#rp-play").textContent = "⏸ Pause";
+  rp.playing = true; $("#rp-play").textContent = "Pause";
   let last = performance.now();
   const step = (now) => {
     if (!rp.playing) return;
@@ -618,7 +618,7 @@ function rpPlay() {
 }
 function rpPause() {
   rp.playing = false;
-  const b = $("#rp-play"); if (b) b.textContent = "▶ Play";
+  const b = $("#rp-play"); if (b) b.textContent = "Play";
   if (rp.timer) cancelAnimationFrame(rp.timer);
 }
 
@@ -676,7 +676,7 @@ function setup3d() {
   $("#r3-play").onclick = () => {
     const ck = r3.viewer.clock;
     ck.shouldAnimate = !ck.shouldAnimate;
-    $("#r3-play").textContent = ck.shouldAnimate ? "⏸ Pause" : "▶ Play";
+    $("#r3-play").textContent = ck.shouldAnimate ? "Pause" : "Play";
   };
   $("#r3-follow").onclick = () => {
     r3.follow = !r3.follow;
@@ -734,9 +734,9 @@ function bind3dFlight() {
     orientation: new Cesium.VelocityOrientationProperty(pos),
     model: { uri: "https://raw.githubusercontent.com/CesiumGS/cesium/1.118/Apps/SampleData/models/CesiumAir/Cesium_Air.glb",
              minimumPixelSize: 56, maximumScale: 9000, color: Cesium.Color.fromCssColorString("#ffd257") },
-    point: { pixelSize: 8, color: Cesium.Color.fromCssColorString("#ffb300") },
+    point: { pixelSize: 8, color: Cesium.Color.fromCssColorString("#d9a441") },
     path: { resolution: 4, material: new Cesium.PolylineGlowMaterialProperty({
-      glowPower: .18, color: Cesium.Color.fromCssColorString("#ffb300") }), width: 9 },
+      glowPower: .18, color: Cesium.Color.fromCssColorString("#d9a441") }), width: 9 },
   });
   v.clock.startTime = start.clone(); v.clock.stopTime = stop.clone();
   v.clock.currentTime = start.clone();
@@ -771,7 +771,7 @@ function initHealth() {
   const watch = a.systems.filter(s => s.status !== "NORMAL");
   $("#hh-chips").innerHTML =
     `<span class="hh-chip ok">${a.systems.length - watch.length} systems normal</span>` +
-    watch.map(s => `<span class="hh-chip warn">⚠ ${s.name.split(" (")[0]} — ${s.status}</span>`).join("");
+    watch.map(s => `<span class="hh-chip warn">${s.name.split(" (")[0]} — ${s.status}</span>`).join("");
   $("#ahm-grid").innerHTML = a.systems.map(s => `
     <div class="ahm-card ${s.status !== "NORMAL" ? "watch" : ""}">
       <div class="ahm-top">
@@ -1001,8 +1001,8 @@ function bindSafetyFlight() {
       </div>
       <div class="td-verdict ${((gates["500"] || {}).cas || 0) <= f.vref + 15 && f.tdNz < 1.4 ? "ok" : "warn"}">
         ${f.id}: ${((gates["500"] || {}).cas || 0) <= f.vref + 15 && f.tdNz < 1.4
-          ? "✓ STABILIZED — on speed and configured at all gates, touchdown within limits."
-          : "⚠ REVIEW — gate tolerance exceeded, flagged for FOQA review."}</div>`;
+          ? "Stabilized — on speed and configured at all gates, touchdown within limits."
+          : "Review — gate tolerance exceeded, flagged for FOQA review."}</div>`;
   } else if (AB.dfdr && AB.dfdr[f.id]) {
     const d = AB.dfdr[f.id], rows = d.approach.filter(r => r[0] <= 10);
     $("#sa-app-note").textContent = "simulated 1 Hz DFDR layer";
@@ -1146,7 +1146,7 @@ function renderReport() {
   }
   $("#report-sheet").innerHTML = `
     <div class="rs-head">
-      <div class="rs-brand">Aero<span>Bee</span> ✈ END OF FLIGHT SUMMARY REPORT</div>
+      <div class="rs-brand">Aero<span>Bee</span> — End of Flight Summary Report</div>
       <div>Engineering & Maintenance</div>
     </div>
     <div class="rs-grid">
@@ -1181,21 +1181,21 @@ function downloadReport(kind) {
    THE BEEHIVE — DATA CONNECTORS
    ============================================================ */
 const CONNECTORS = [
-  { name: "FDR / QAR decodes", icon: "📦", status: "CONNECTED", meta: "2 flights · 94,576 rows · 68 wps", real: true },
-  { name: "Bee edge telemetry", icon: "🛰", status: "CONNECTED", meta: "325 flights · 68k downlink records", real: true },
-  { name: "Weather — METAR / GRIB", icon: "🌦", status: "SIMULATED", meta: "4 stations + winds aloft" },
-  { name: "Maintenance — AMOS / TRAX", icon: "🔧", status: "SIMULATED", meta: "work orders · component times" },
-  { name: "ACARS / datalink", icon: "📡", status: "ROADMAP", meta: "OOOI · position · free text" },
-  { name: "Flight plans — dispatch", icon: "🗺", status: "ROADMAP", meta: "planned vs actual deviation" },
-  { name: "Fuel invoices & uplift", icon: "🧾", status: "ROADMAP", meta: "cost reconciliation" },
-  { name: "Tech manuals · MEL · SB (PDF)", icon: "📚", status: "SIMULATED", meta: "RAG-indexed documents" },
-  { name: "Crew rosters", icon: "👥", status: "ROADMAP", meta: "fatigue & pairing context" },
-  { name: "NOTAMs & airport data", icon: "🛫", status: "ROADMAP", meta: "operational constraints" },
+  { name: "FDR / QAR decodes", icon: "", status: "CONNECTED", meta: "2 flights · 94,576 rows · 68 wps", real: true },
+  { name: "Bee edge telemetry", icon: "", status: "CONNECTED", meta: "325 flights · 68k downlink records", real: true },
+  { name: "Weather — METAR / GRIB", icon: "", status: "SIMULATED", meta: "4 stations + winds aloft" },
+  { name: "Maintenance — AMOS / TRAX", icon: "", status: "SIMULATED", meta: "work orders · component times" },
+  { name: "ACARS / datalink", icon: "", status: "ROADMAP", meta: "OOOI · position · free text" },
+  { name: "Flight plans — dispatch", icon: "", status: "ROADMAP", meta: "planned vs actual deviation" },
+  { name: "Fuel invoices & uplift", icon: "", status: "ROADMAP", meta: "cost reconciliation" },
+  { name: "Tech manuals · MEL · SB (PDF)", icon: "", status: "SIMULATED", meta: "RAG-indexed documents" },
+  { name: "Crew rosters", icon: "", status: "ROADMAP", meta: "fatigue & pairing context" },
+  { name: "NOTAMs & airport data", icon: "", status: "ROADMAP", meta: "operational constraints" },
 ];
 const STUDIO_APPS = [
-  { name: "Proactive Safety (FOQA)", icon: "🛡" }, { name: "Fuel Optimization", icon: "⛽" },
-  { name: "Aircraft Health & PdM", icon: "♥" }, { name: "Flight Replay 2D/3D", icon: "✈" },
-  { name: "EOF Reports", icon: "📄" }, { name: "Ask AeroBee (LLM+RAG)", icon: "🐝" },
+  { name: "Proactive Safety (FOQA)", icon: "" }, { name: "Fuel Optimization", icon: "" },
+  { name: "Aircraft Health & PdM", icon: "" }, { name: "Flight Replay 2D/3D", icon: "" },
+  { name: "EOF Reports", icon: "" }, { name: "Ask AeroBee (LLM+RAG)", icon: "" },
 ];
 function initConnectors() {
   $("#bh-sources").innerHTML = CONNECTORS.map((c, i) => `
@@ -1229,7 +1229,7 @@ function initConnectors() {
       4. <b>Engine trend</b>: Engine 2 ΔEGT is drifting (+6 °C/90 days) → ~0.4% SFC penalty, ~70 lb on this sector.<br>
       5. <b>Maintenance (AMOS)</b>: Engine 2 water-wash is overdue 240 FH — projected to recover most of that SFC.<br><br>
       <b>Recommendation:</b> schedule the wash at the D+150 window (see Predictive Maintenance) and re-file seasonal winds.
-      <span class="src">⬡ sources: FDR 8 Hz · GRIB winds · dispatch FPL · MOQA trend · AMOS — demo composition</span>
+      <span class="src">Sources: FDR 8 Hz · GRIB winds · dispatch FPL · MOQA trend · AMOS — demo composition</span>
     </div>`;
 
   const ROADMAP = [
@@ -1272,7 +1272,7 @@ function aiAnswer(q) {
     return `The April FDR flights recorded the IRS wind vector at 8 Hz — real data, not forecast:\n\n` +
       `• <b>AB201</b>: max ${fmt(f201.maxWind.kt)} kt from ${fmt(f201.maxWind.dir)}° at cruise\n` +
       `• <b>AB202</b>: max ${fmt(f202.maxWind.kt)} kt from ${fmt(f202.maxWind.dir)}° — nearly a direct tailwind into Riyadh, ground speed peaked near 580 kt\n\n` +
-      `Toggle 🌬 Winds on the 2D replay map to see the recorded vectors along the route. Ground METARs in the brief are simulated for the demo.`;
+      `Toggle Winds on the 2D replay map to see the recorded vectors along the route. Ground METARs in the brief are simulated for the demo.`;
 
   if (/safety|event|exceed|foqa|incident/.test(s)) {
     const fdrEv = [...f201.events, ...f202.events];
@@ -1317,7 +1317,7 @@ function aiAnswer(q) {
       `. Riyadh is home base; Jeddah is the dominant pair.`;
 
   if (/hello|hi |hey|who are you|what can/.test(s))
-    return `I'm <b>AeroBee</b> 🐝 — the conversational layer of the Beehive. I answer from the demo fleet's actual data: two 8 Hz FDR decodes, three satellite flights, engine trends, weather and maintenance context. Try a suggestion below.`;
+    return `I'm <b>AeroBee</b> — the conversational layer of the Beehive. I answer from the demo fleet's actual data: two 8 Hz FDR decodes, three satellite flights, engine trends, weather and maintenance context. Try a suggestion below.`;
 
   return `I can answer about <b>the 5 loaded flights, fuel, engines, winds, safety events, predictive maintenance and savings</b>. In production this router is an LLM with RAG over every connector in the Beehive — any question, any phrasing, grounded and cited. Try: "${AI_SUGGESTIONS[Math.floor(Math.random() * AI_SUGGESTIONS.length)]}"`;
 }
@@ -1329,7 +1329,7 @@ function addMsg(text, who) {
     $("#chat").appendChild(d);
     $("#chat").scrollTop = 1e9;
     setTimeout(() => {
-      d.innerHTML = text + `<span class="src">⬡ computed from flight telemetry · demo fleet · ${FLIGHTS.length} flights loaded</span>`;
+      d.innerHTML = text + `<span class="src">Computed from flight telemetry · demo fleet · ${FLIGHTS.length} flights loaded</span>`;
       $("#chat").scrollTop = 1e9;
     }, 550 + Math.random() * 400);
   } else { d.textContent = text; $("#chat").appendChild(d); $("#chat").scrollTop = 1e9; }
@@ -1344,7 +1344,7 @@ function initAI() {
   $$("#ai-chips .chip").forEach(c => c.onclick = () => sendChat(c.textContent));
   $("#chat-send").onclick = () => { sendChat($("#chat-input").value); $("#chat-input").value = ""; };
   $("#chat-input").onkeydown = (e) => { if (e.key === "Enter") { sendChat(e.target.value); e.target.value = ""; } };
-  addMsg(`Welcome to <b>AeroBee</b> 🐝 I'm connected to the demo fleet — 5 flights loaded including two full 8 Hz FDR decodes (94,576 rows mined), plus 22 months of engine trends. Ask me anything.`, "bot");
+  addMsg(`Welcome to <b>AeroBee</b> — I'm connected to the demo fleet — 5 flights loaded including two full 8 Hz FDR decodes (94,576 rows mined), plus 22 months of engine trends. Ask me anything.`, "bot");
 }
 $("#ask-input").onkeydown = (e) => {
   if (e.key === "Enter" && e.target.value.trim()) {
