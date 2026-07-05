@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=10">
+<link rel="stylesheet" href="assets/css/style.css?v=11">
 </head>
 <body>
 
@@ -181,22 +181,34 @@
   <section class="view" id="view-pdm">
     <div class="seg-group" id="pdm-seg" style="margin:0 0 14px;display:inline-flex"></div>
     <div class="kpi-row" id="pdm-kpis"></div>
+    <div class="panel" style="margin-top:16px">
+      <div class="panel-head"><h3 id="pdm-main-title">Forecast</h3>
+        <span class="panel-note" id="pdm-main-note"></span></div>
+      <div class="chart-wrap tall"><canvas id="pdm-forecast"></canvas></div>
+    </div>
     <div class="grid-2">
       <div class="panel">
-        <div class="panel-head"><h3>Engine 2 EGT Margin — 12-month AI forecast</h3>
-          <span class="panel-note">trend model on 22 months of real takeoff EGT · forecast simulated</span></div>
-        <div class="chart-wrap tall"><canvas id="pdm-forecast"></canvas></div>
+        <div class="panel-head"><h3 id="pdm-ctl-title">Control Chart</h3>
+          <span class="panel-note">EWMA · ±2.66σ control limits (SPC)</span></div>
+        <div class="chart-wrap"><canvas id="pdm-control"></canvas></div>
       </div>
+      <div class="panel">
+        <div class="panel-head"><h3>AeroBee Insight</h3>
+          <span class="panel-note">generated from the statistics · production: LLM narrative</span></div>
+        <div class="pdm-insight" id="pdm-insight"></div>
+      </div>
+    </div>
+    <div class="grid-2" id="pdm-engine-extras">
       <div class="panel">
         <div class="panel-head"><h3>Component Remaining Useful Life</h3>
           <span class="panel-note">P50 / P90 estimates · simulated model output</span></div>
         <div id="pdm-rul"></div>
       </div>
-    </div>
-    <div class="panel">
-      <div class="panel-head"><h3>Maintenance Forecast — next 180 days</h3>
-        <span class="panel-note">AI-planned interventions, ranked by risk-cost</span></div>
-      <div class="pdm-timeline" id="pdm-timeline"></div>
+      <div class="panel">
+        <div class="panel-head"><h3>Maintenance Forecast — next 180 days</h3>
+          <span class="panel-note">AI-planned interventions, ranked by risk-cost</span></div>
+        <div class="pdm-timeline" id="pdm-timeline"></div>
+      </div>
     </div>
   </section>
 
@@ -414,10 +426,11 @@
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-<script src="assets/js/data.js?v=10"></script>
-<script src="assets/js/fdr_data.js?v=10"></script>
-<script src="assets/js/ops_data.js?v=10"></script>
-<script src="assets/js/app.js?v=10"></script>
+<script src="assets/js/data.js?v=11"></script>
+<script src="assets/js/fdr_data.js?v=11"></script>
+<script src="assets/js/ops_data.js?v=11"></script>
+<script src="assets/js/pdm_data.js?v=11"></script>
+<script src="assets/js/app.js?v=11"></script>
 
 </body>
 </html>

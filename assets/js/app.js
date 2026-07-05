@@ -854,57 +854,146 @@ function initHealth() {
    on top of the real 22-month EGT trend)
    ============================================================ */
 let pdmDomain = "engine";
-function pdmForecastFuel() {
-  /* fuel-burn forecast: linear trend on monthly burn + seasonal band */
-  const mm = AB.monthly.filter(m => m.fuelLb > 0);
-  const y = mm.map(m => m.fuelLb / Math.max(m.flights, 1) / 1000); /* klb per flight */
-  const n = y.length, xs = [...Array(n).keys()];
-  const xb = xs.reduce((a, b) => a + b, 0) / n, yb = y.reduce((a, b) => a + b, 0) / n;
-  const slope = xs.reduce((a, x, i) => a + (x - xb) * (y[i] - yb), 0) / xs.reduce((a, x) => a + (x - xb) ** 2, 0);
-  const fc = [...Array(6).keys()].map(k => yb + slope * (n + k - xb));
-  const labels = mm.map(m => m.month).concat(["+1 mo", "+2", "+3", "+4", "+5", "+6"]);
-  chartOn($("#pdm-forecast"), {
+const PDM_META = {
+  engine: { main: "Takeoff EGT Margin (N1-normalized) — history + 12-month projection",
+            note: () => `${PDM.engine.takeoffs} real departures · Theil–Sen robust trend · 95% CI fan`,
+            ctl: "ΔEGT Eng1−Eng2 — EWMA control chart" },
+  fuel:   { main: "Fuel Burn per Flight — history + Holt forecast",
+            note: () => `${PDM.fuel.flights} measured flights · route-normalized anomaly detection`,
+            ctl: "Burn / flight — EWMA control chart" },
+  safety: { main: "FDM Event Rate per Flight — Poisson model",
+            note: () => `${PDM.safety.totalEvents} classified events / ${PDM.safety.totalFlights} flights · 95% CI`,
+            ctl: "Event rate — EWMA control chart" },
+};
+function pdmVerdict(slope, ci, unit, goodWhenNegative = false) {
+  const sig = Math.abs(slope) > ci;
+  const dir = slope > 0 ? "rising" : "falling";
+  if (!sig) return `<b class="ok">No statistically significant trend</b> — slope ${slope > 0 ? "+" : ""}${slope} ± ${ci} ${unit} (95% CI includes zero).`;
+  const good = (slope < 0) === goodWhenNegative;
+  return `<b class="${good ? "ok" : "warn"}">${dir[0].toUpperCase() + dir.slice(1)} trend confirmed</b> — ${slope > 0 ? "+" : ""}${slope} ± ${ci} ${unit} at 95% confidence.`;
+}
+function ctlChart(canvas, labels, raw, ew, limits, violations, unit) {
+  chartOn($(canvas), {
     type: "line",
     data: { labels, datasets: [
-      { label: "burn per flight (klb, actual)", data: y.concat(Array(6).fill(null)), borderColor: "rgba(242,242,244,.85)", borderWidth: 1.6, pointRadius: 2.5, tension: .3 },
-      { label: "AI forecast (simulated)", data: Array(n - 1).fill(null).concat([y[n - 1]], fc), borderColor: "#d9a441", borderDash: [5, 5], borderWidth: 1.6, pointRadius: 0 },
-      { label: "P90 band", data: Array(n - 1).fill(null).concat([y[n - 1]], fc.map((v, i) => v + 0.5 + i * 0.28)), borderColor: "transparent", pointRadius: 0, fill: "+1", backgroundColor: "rgba(217,164,65,.09)" },
-      { label: "", data: Array(n - 1).fill(null).concat([y[n - 1]], fc.map((v, i) => v - 0.5 - i * 0.28)), borderColor: "transparent", pointRadius: 0 },
+      { label: `monthly value (${unit})`, data: raw, borderColor: "rgba(255,255,255,.25)", borderWidth: 1, pointRadius: 2.5,
+        pointBackgroundColor: raw.map((_, i) => violations.includes(i) ? "#c97b6d" : "rgba(255,255,255,.4)") },
+      { label: "EWMA (λ=0.3)", data: ew, borderColor: "rgba(242,242,244,.9)", borderWidth: 1.8, pointRadius: 0, tension: .25 },
+      { label: "UCL", data: labels.map(() => limits.ucl), borderColor: "rgba(201,123,109,.55)", borderDash: [4, 5], borderWidth: 1.1, pointRadius: 0 },
+      { label: "LCL", data: labels.map(() => limits.lcl), borderColor: "rgba(201,123,109,.55)", borderDash: [4, 5], borderWidth: 1.1, pointRadius: 0 },
+      { label: "center", data: labels.map(() => limits.center), borderColor: "rgba(255,255,255,.18)", borderWidth: 1, pointRadius: 0 },
     ]},
-    options: { maintainAspectRatio: false, plugins: { legend: { labels: { filter: i => i.text } } },
-      scales: { y: { title: { display: true, text: "klb / flight" } }, x: { ticks: { maxTicksLimit: 14 } } } },
+    options: { maintainAspectRatio: false, plugins: { legend: { labels: { filter: i => !["UCL", "LCL", "center"].includes(i.text) } } },
+      scales: { x: { ticks: { maxTicksLimit: 12 } } } },
   });
-  $("#pdm-kpis").innerHTML =
-    kpiBox("Burn Trend", (slope >= 0 ? "+" : "") + fmt(slope * 1000) + "<small> lb/flt/mo</small>", "fit on measured monthly burn", C.teal) +
-    kpiBox("6-mo Forecast", fmt(fc[5], 1) + "<small> klb/flt</small>", "P50 · simulated model", C.gold) +
-    kpiBox("Anomaly Watch", "2<small> routes</small>", "sectors burning above fleet norm", C.amber) +
-    kpiBox("Savings at Stake", "$" + fmt(AB.savings.reduce((a, x) => a + x.annualUsd, 0)), "identified initiatives (Fuel view)", C.green);
 }
-function pdmForecastSafety() {
-  /* safety risk index forecast from real classified FDM history */
-  const rm = OPS.foqa.riskMonthly;
-  const y = rm.map(m => m.avgRisk), n = y.length;
-  const xs = [...Array(n).keys()];
-  const xb = xs.reduce((a, b) => a + b, 0) / n, yb = y.reduce((a, b) => a + b, 0) / n;
-  const slope = xs.reduce((a, x, i) => a + (x - xb) * (y[i] - yb), 0) / Math.max(xs.reduce((a, x) => a + (x - xb) ** 2, 0), 1e-9);
-  const fc = [...Array(4).keys()].map(k => yb + slope * (n + k - xb));
+function renderPdmEngine() {
+  const E = PDM.engine, s1 = E.stats.eng1, s2 = E.stats.eng2;
+  $("#pdm-kpis").innerHTML =
+    kpiBox("Eng 1 Margin", `${fmt(s1.marginNow)}<small> °C</small>`, `trend ${s1.theilSen > 0 ? "+" : ""}${s1.theilSen} °C/mo (Theil–Sen)`, C.teal) +
+    kpiBox("Eng 2 Margin", `${fmt(s2.marginNow)}<small> °C</small>`, `trend ${s2.theilSen > 0 ? "+" : ""}${s2.theilSen} °C/mo`, C.teal) +
+    kpiBox("Wear Signal", s1.significant || s2.significant ? "CONFIRMED" : "NOT SIG.", "slope vs 95% CI on 22 months", s1.significant ? C.amber : C.green) +
+    kpiBox("RUL to Alert — P90", s1.rulP90 ? `${fmt(Math.min(s1.rulP90, s2.rulP90 || 999))}<small> mo</small>` : "—", `to ${E.alertMargin}°C margin · worst-case slope`, C.gold) +
+    kpiBox("ΔEGT Alerts", E.deltaViolations.length, "EWMA control-limit violations", E.deltaViolations.length ? C.red : C.green);
+  const lab = E.months.concat([...Array(12).keys()].map(k => `+${k + 1}mo`));
+  const pad = Array(E.months.length - 1).fill(null);
   chartOn($("#pdm-forecast"), {
     type: "line",
-    data: { labels: rm.map(m => m.month).concat(["+1 mo", "+2", "+3", "+4"]), datasets: [
-      { label: "avg risk index (real FDM events)", data: y.concat(Array(4).fill(null)), borderColor: "rgba(242,242,244,.85)", borderWidth: 1.6, pointRadius: 3, tension: .3 },
-      { label: "events / month", data: rm.map(m => m.n).concat(Array(4).fill(null)), borderColor: C.blue, borderWidth: 1.2, pointRadius: 2, yAxisID: "y2", tension: .3 },
-      { label: "AI projection (simulated)", data: Array(n - 1).fill(null).concat([y[n - 1]], fc), borderColor: "#d9a441", borderDash: [5, 5], borderWidth: 1.6, pointRadius: 0 },
+    data: { labels: lab, datasets: [
+      { label: "Eng 1 margin (real, N1-normalized)", data: E.margin1, borderColor: "rgba(242,242,244,.9)", borderWidth: 1.7, pointRadius: 2.5, tension: .3 },
+      { label: "Eng 2 margin (real, N1-normalized)", data: E.margin2, borderColor: C.blue, borderWidth: 1.7, pointRadius: 2.5, tension: .3 },
+      { label: "Eng 1 projection", data: pad.concat([E.margin1[E.margin1.length - 1]], s1.forecast), borderColor: "rgba(242,242,244,.6)", borderDash: [5, 5], borderWidth: 1.3, pointRadius: 0 },
+      { label: "95% CI", data: pad.concat([E.margin1[E.margin1.length - 1]], s1.fcHi), borderColor: "transparent", pointRadius: 0, fill: "+1", backgroundColor: "rgba(217,164,65,.08)" },
+      { label: "", data: pad.concat([E.margin1[E.margin1.length - 1]], s1.fcLo), borderColor: "transparent", pointRadius: 0 },
+      { label: `ECM alert (${E.alertMargin}°C)`, data: lab.map(() => E.alertMargin), borderColor: "rgba(201,123,109,.6)", borderDash: [3, 5], borderWidth: 1.1, pointRadius: 0 },
+    ]},
+    options: { maintainAspectRatio: false, plugins: { legend: { labels: { filter: i => i.text } } },
+      scales: { y: { title: { display: true, text: "°C margin to redline (at reference N1)" } }, x: { ticks: { maxTicksLimit: 14 } } } },
+  });
+  ctlChart("#pdm-control", E.months, E.delta, E.deltaEwma, E.deltaLimits, E.deltaViolations, "°C ΔEGT");
+  $("#pdm-insight").innerHTML = `
+    <p>${pdmVerdict(s1.theilSen, s1.slopeCi95, "°C/mo", true)} Engine 1 margin sits at <b>${s1.marginNow}°C</b>
+    after N1-normalization of ${E.takeoffs} real departures — EGT corrected to reference thrust so hot-day and
+    derate variation don't masquerade as wear.</p>
+    <p>ΔEGT divergence between engines shows <b>${E.deltaViolations.length} EWMA control-limit violation(s)</b>
+    (±2.66σ). ${E.deltaViolations.length ? "Investigate bleed configuration or probe drift at the flagged months." :
+    "Both engines are tracking together — no split deterioration."}</p>
+    <p class="dim">Worst-case (P90) time to the ${E.alertMargin}°C ECM alert: <b>${fmt(Math.min(s1.rulP90 || 999, s2.rulP90 || 999))} months</b> —
+    driven by CI width, not by a confirmed trend. More departures tighten this bound automatically.</p>`;
+  $("#pdm-engine-extras").style.display = "";
+}
+function renderPdmFuel() {
+  const F = PDM.fuel;
+  $("#pdm-kpis").innerHTML =
+    kpiBox("Burn / Flight", `${F.burnPerFlight[F.burnPerFlight.length - 1]}<small> klb</small>`, "latest month mean", C.teal) +
+    kpiBox("Trend", `${F.theilSen > 0 ? "+" : ""}${fmt(F.theilSen * 1000)}<small> lb/mo</small>`, F.significant ? "statistically significant" : "not significant (95% CI)", F.significant ? C.amber : C.green) +
+    kpiBox("Route Anomalies", F.anomalies.length, "flights > 2σ off route norm", F.anomalies.length ? C.amber : C.green) +
+    kpiBox("Drift Cost", `$${fmt(Math.abs(F.driftUsdYr))}<small>/yr</small>`, F.significant ? "if trend persists" : "potential — trend unconfirmed", C.gold) +
+    kpiBox("Fleet Sample", fmt(F.flights), "measured flights in model", C.blue);
+  const lab = F.months.concat([...Array(6).keys()].map(k => `+${k + 1}mo`));
+  const pad = Array(F.months.length - 1).fill(null);
+  chartOn($("#pdm-forecast"), {
+    type: "line",
+    data: { labels: lab, datasets: [
+      { label: "burn / flight (measured, klb)", data: F.burnPerFlight, borderColor: "rgba(242,242,244,.9)", borderWidth: 1.7, pointRadius: 2.5, tension: .3 },
+      { label: "Holt forecast", data: pad.concat([F.burnPerFlight[F.burnPerFlight.length - 1]], F.holtFc), borderColor: "#d9a441", borderDash: [5, 5], borderWidth: 1.5, pointRadius: 0 },
     ]},
     options: { maintainAspectRatio: false,
-      scales: { y: { title: { display: true, text: "probability × severity" } },
-                y2: { position: "right", grid: { display: false }, title: { display: true, text: "events" } } } },
+      scales: { y: { title: { display: true, text: "klb per flight" } }, x: { ticks: { maxTicksLimit: 14 } } } },
   });
-  const top = OPS.foqa.pareto[0];
+  ctlChart("#pdm-control", F.months, F.burnPerFlight, F.ewma, F.limits, [], "klb/flt");
+  const an = F.anomalies.slice(0, 4).map(a =>
+    `<li><b>${a.date}</b> ${a.route}: ${fmt(a.burn)} lb vs ${fmt(a.expected)} lb expected (z=${a.z})</li>`).join("");
+  const rs = F.routeStats[0];
+  $("#pdm-insight").innerHTML = `
+    <p>${pdmVerdict(F.theilSen, F.slopeCi95, "klb/flt/mo", true)} Holt double-exponential smoothing projects
+    <b>${F.holtFc[5]} klb/flight</b> in six months.</p>
+    <p><b>${F.anomalies.length} route-normalized anomalies</b> (>2σ against same-city-pair distribution):</p>
+    <ul class="pdm-list">${an}</ul>
+    <p class="dim">Tightest benchmark: ${rs.route} — ${rs.n} flights, σ/μ = ${rs.cv}%. Anomaly review recovers fuel
+    before it becomes a trend; SFC creep of 1% ≈ $${fmt(Math.abs(F.driftUsdYr))}/yr at this utilization.</p>`;
+  $("#pdm-engine-extras").style.display = "none";
+}
+function renderPdmSafety() {
+  const S = PDM.safety, last = S.rate.length - 1;
   $("#pdm-kpis").innerHTML =
-    kpiBox("Risk Trend", (slope >= 0 ? "+" : "") + slope.toFixed(2) + "<small> /mo</small>", "avg probability × severity", slope > 0 ? C.amber : C.green) +
-    kpiBox("Leading Indicator", top[1] + "<small> ×</small>", top[0], C.gold) +
-    kpiBox("Event Rate", fmt(OPS.foqa.events.length / OPS.foqa.flights, 1) + "<small> /flight</small>", OPS.foqa.flights + " flights analyzed", C.blue) +
-    kpiBox("High-Risk Cells", Object.entries(OPS.foqa.matrix).filter(([k]) => k.split(",").reduce((a, b) => a * b, 1) >= 15).length, "matrix cells P×S ≥ 15", C.red);
+    kpiBox("Event Rate", `${S.rate[last]}<small> /flt</small>`, `95% CI ${S.rateLo[last]}–${S.rateHi[last]} (Poisson)`, C.teal) +
+    kpiBox("Rate Trend", `${S.theilSen > 0 ? "+" : ""}${S.theilSen}<small> /mo</small>`, S.significant ? "statistically significant" : "not significant (95% CI)", S.significant ? C.red : C.green) +
+    kpiBox("Risk Index", S.riskIndex[last], "mean probability × severity", C.gold) +
+    kpiBox("Rising Event", `+${S.risers[0].delta}`, S.risers[0].event, C.amber) +
+    kpiBox("Sample", `${S.totalEvents}<small> ev</small>`, `${S.totalFlights} flights · real FDM`, C.blue);
+  chartOn($("#pdm-forecast"), {
+    type: "line",
+    data: { labels: S.months, datasets: [
+      { label: "events / flight (measured)", data: S.rate, borderColor: "rgba(242,242,244,.9)", borderWidth: 1.7, pointRadius: 3, tension: .3 },
+      { label: "Poisson 95% upper", data: S.rateHi, borderColor: "transparent", pointRadius: 0, fill: "+1", backgroundColor: "rgba(139,167,199,.09)" },
+      { label: "Poisson 95% lower", data: S.rateLo, borderColor: "transparent", pointRadius: 0 },
+      { label: "risk index (P×S)", data: S.riskIndex, borderColor: "#d9a441", borderWidth: 1.4, pointRadius: 2, tension: .3, yAxisID: "y2" },
+    ]},
+    options: { maintainAspectRatio: false, plugins: { legend: { labels: { filter: i => !/95%/.test(i.text) || i.text.includes("upper") } } },
+      scales: { y: { title: { display: true, text: "events / flight" } },
+                y2: { position: "right", grid: { display: false }, title: { display: true, text: "P×S" } } } },
+  });
+  ctlChart("#pdm-control", S.months, S.rate, S.ewma, S.limits, [], "ev/flt");
+  const rl = S.risers.slice(0, 3).map(r =>
+    `<li><b>${r.event}</b>: ${r.firstHalf} → ${r.secondHalf} (${r.delta > 0 ? "+" : ""}${r.delta})</li>`).join("");
+  $("#pdm-insight").innerHTML = `
+    <p>${pdmVerdict(S.theilSen, S.slopeCi95, "events/flt/mo", true)} Current rate
+    <b>${S.rate[last]} events/flight</b> (Poisson 95% CI ${S.rateLo[last]}–${S.rateHi[last]}).</p>
+    <p><b>Leading indicators — first vs second half of the period:</b></p>
+    <ul class="pdm-list">${rl}</ul>
+    <p class="dim">The riser pattern (${S.risers[0].event}) is the SMS conversation to have with the fleet before
+    it graduates from Low to Medium severity. Risk-weighting uses the operator's own SMS classification table.</p>`;
+  $("#pdm-engine-extras").style.display = "none";
+}
+function renderPdm() {
+  const meta = PDM_META[pdmDomain];
+  $("#pdm-main-title").textContent = meta.main;
+  $("#pdm-main-note").textContent = meta.note();
+  $("#pdm-ctl-title").textContent = meta.ctl;
+  if (pdmDomain === "fuel") renderPdmFuel();
+  else if (pdmDomain === "safety") renderPdmSafety();
+  else renderPdmEngine();
 }
 function initPdm() {
   $("#pdm-seg").innerHTML = ["engine", "fuel", "safety"].map(d =>
@@ -912,57 +1001,9 @@ function initPdm() {
   $$("#pdm-seg .speed-btn").forEach(b => b.onclick = () => {
     pdmDomain = b.dataset.d;
     $$("#pdm-seg .speed-btn").forEach(x => x.classList.toggle("active", x === b));
-    if (pdmDomain === "fuel") pdmForecastFuel();
-    else if (pdmDomain === "safety") pdmForecastSafety();
-    else { inited.pdm = false; try { INIT.pdm(); inited.pdm = true; } catch (e) { console.error(e); } }
+    renderPdm();
   });
-
-  const t = AB.egtTrend, LIMIT = 960;
-  /* monthly mean margin for engine 2 (the drifting one) */
-  const byMonth = {};
-  t.forEach(x => {
-    if (!x.e2egt) return;
-    const m = x.date.slice(0, 7);
-    (byMonth[m] = byMonth[m] || []).push(LIMIT - x.e2egt);
-  });
-  const months = Object.keys(byMonth).sort();
-  const margins = months.map(m => byMonth[m].reduce((a, b) => a + b, 0) / byMonth[m].length);
-  /* linear fit */
-  const nM = margins.length, xs = margins.map((_, i) => i);
-  const sx = xs.reduce((a, b) => a + b, 0), sy = margins.reduce((a, b) => a + b, 0);
-  const sxy = xs.reduce((a, x, i) => a + x * margins[i], 0), sxx = xs.reduce((a, x) => a + x * x, 0);
-  const slope = (nM * sxy - sx * sy) / (nM * sxx - sx * sx), icpt = (sy - slope * sx) / nM;
-  const H = 12;
-  const futMonths = [];
-  let [yy, mm] = months[months.length - 1].split("-").map(Number);
-  for (let i = 0; i < H; i++) { mm++; if (mm > 12) { mm = 1; yy++; } futMonths.push(`${yy}-${String(mm).padStart(2, "0")}`); }
-  const fc = futMonths.map((_, i) => icpt + slope * (nM + i));
-  const bandU = fc.map((v, i) => v + 6 + i * 1.6), bandL = fc.map((v, i) => v - 6 - i * 1.6);
-  const monthsToLimit = slope < 0 ? Math.round((0 - icpt) / slope) - nM : null;
-
-  $("#pdm-kpis").innerHTML =
-    kpiBox("Fleet Availability Risk", "LOW", "next 90 days · simulated model", C.green) +
-    kpiBox("Eng 2 Margin Trend", `${slope > 0 ? "+" : ""}${slope.toFixed(1)}<small> °C/mo</small>`, "fit on 22 months of real EGT", slope < -1 ? C.amber : C.teal) +
-    kpiBox("Predicted Actions", "4", "next 180 days", C.gold) +
-    kpiBox("Unscheduled-Event Reduction", "32<small>%</small>", "industry benchmark for PdM adoption", C.purple) +
-    kpiBox("Model", "TS-FM", "time-series foundation model · prototype", C.blue);
-
-  chartOn($("#pdm-forecast"), {
-    type: "line",
-    data: { labels: [...months, ...futMonths], datasets: [
-      { label: "EGT margin (real, monthly mean)", data: [...margins, ...Array(H).fill(null)],
-        borderColor: C.teal, borderWidth: 2, pointRadius: 2.5, tension: .3 },
-      { label: "AI forecast (simulated)", data: [...Array(nM).fill(null), ...fc],
-        borderColor: C.gold, borderDash: [6, 5], borderWidth: 2, pointRadius: 0, tension: .3 },
-      { label: "P90 band", data: [...Array(nM).fill(null), ...bandU], borderColor: "transparent",
-        pointRadius: 0, fill: "+1", backgroundColor: "rgba(255,179,0,.10)" },
-      { label: "", data: [...Array(nM).fill(null), ...bandL], borderColor: "transparent", pointRadius: 0 },
-    ]},
-    options: { maintainAspectRatio: false,
-      plugins: { legend: { labels: { filter: i => i.text } } },
-      scales: { x: { ticks: { maxTicksLimit: 14 } }, y: { title: { display: true, text: "°C margin to redline" } } } },
-  });
-
+  renderPdm();
   const rul = [
     { comp: "Engine 2 — HPT blades", ata: "72", p50: 2900, p90: 1850, unit: "FH", driver: "EGT margin erosion + ΔEGT divergence" },
     { comp: "APU — hot section", ata: "49", p50: 1400, p90: 900, unit: "APU hrs", driver: "42.6% ground duty cycle observed" },
