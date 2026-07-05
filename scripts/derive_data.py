@@ -435,6 +435,15 @@ if os.path.exists(ab103_path):
         "track": tr3, "snapshots": sn3,
     }
 
+# Simulated fleet touchdown dispersion (for the Performance view scatter)
+random.seed(49)
+td_disp = []
+for _ in range(28):
+    g = max(min(random.gauss(1.24, .11), 1.55), 1.04)
+    dist = max(min(random.gauss(1900, 430), 3300), 950)
+    td_disp.append({"g": round(g, 2), "distFt": round(dist)})
+td_disp.append({"g": 1.58, "distFt": 3150})   # one interesting outlier
+
 payload = {
     "aircraft": {"type": "Airbus A310-300", "reg": "N310AB", "engines": "2 × GE CF6-80C2",
                  "fleet": "AeroBee demo fleet",
@@ -445,7 +454,7 @@ payload = {
     "events": events, "fleetKpis": fleet_kpis, "monthly": monthly,
     "routes": route_stats, "fleet": fleet, "savings": savings, "eof": eof,
     "fuelUsdPerLb": FUEL_USD_PER_LB,
-    "dfdr": dfdr, "weather": weather, "ahm": ahm, "sat3": sat3,
+    "dfdr": dfdr, "weather": weather, "ahm": ahm, "sat3": sat3, "tdDispersion": td_disp,
 }
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 with open(OUT, "w") as f:

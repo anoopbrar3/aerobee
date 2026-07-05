@@ -126,6 +126,7 @@ function mkFdrFlight(f) {
     fidelity: "FDR", t0, t1, durMin: f.durMin, airMin: f.airMin, maxAlt: maxAltVal,
     fuelLb: f.fuelUsedLb, gwStart: f.gwStart, tdNz: f.tdNz, maxWind: f.maxWind,
     vref: f.vref, gates: f.gates, track,
+    perf: f.perf, fields: f.fields, rows: f.rows, onSec: f.onSec,
     events: f.events.map(e => ({ ...e, tms: FDR_EPOCH + e.tSec * 1000, src: "FDR 8 Hz · recorded" })),
     stateAt(tms) {
       const { L, a } = rowAt(tms);
@@ -274,13 +275,14 @@ function selectFlight(i) {
   if (inited.replay3d) bind3dFlight();
   if (inited.safety) bindSafetyFlight();
   if (inited.report) renderReport();
+  if (inited.perf) bindPerfFlight();
 }
 
 /* ---------------- navigation ---------------- */
 const TITLES = {
   overview: "Fleet & Flights", replay: "Flight Replay — 2D Live Analysis",
   replay3d: "Flight Replay — 3D", health: "Aircraft Health Monitoring",
-  pdm: "Predictive Maintenance (AI Prototype)", engine: "Engine Condition Monitoring (MOQA)",
+  pdm: "Predictive Maintenance (AI Prototype)", perf: "Takeoff & Landing Performance", engine: "Engine Condition Monitoring (MOQA)",
   fuel: "Fuel Optimization", safety: "Proactive Safety — FOQA / FDM",
   report: "End of Flight Report", connectors: "The Beehive — Data Connectors",
   ai: "Ask AeroBee — Conversational Intelligence",
@@ -864,6 +866,127 @@ function initPdm() {
 }
 
 /* ============================================================
+   TAKEOFF & LANDING PERFORMANCE — real 8 Hz FDR analytics
+   ============================================================ */
+function initPerf() {
+  $("#pf-value").innerHTML = [
+    ["Derate protects engine life",
+     "Every 1% of takeoff thrust reduction extends engine life \u224810% \u2014 the last degrees of EGT are the most damaging. AeroBee grades every departure automatically.",
+     "1% derate \u2248 10% life", "Flight Safety Foundation benchmark"],
+    ["EGT margin is money",
+     "EGT margin decides when an engine comes off wing. Trending real takeoff margin per departure converts temperature into overhaul dollars and removal planning.",
+     "margin \u2192 on-wing time", "MOQA trend on recorded data"],
+    ["Touchdown dispersion is risk",
+     "Long or hard landings drive runway-excursion risk, brake and tire cost. Fleet dispersion analytics find the outliers before the incident report does.",
+     "excursions: top insurance claim", "FDM industry practice"],
+    ["Predictive beats unscheduled",
+     "Platforms in this class report up to 30% fewer unscheduled removals and 25\u201330% maintenance cost reduction. The wedge: measurable outcomes, per tail, from its own data.",
+     "\u221230% unscheduled removals", "MRO market research 2025\u201326"],
+  ].map(([h, p, sv, sc]) => `<div class="saving-card"><h4>${h}</h4><p>${p}</p>
+      <div class="sv" style="font-size:15px">${sv}</div><div class="sc">${sc}</div></div>`).join("");
+  bindPerfFlight();
+}
+
+function bindPerfFlight() {
+  const f = selFlight();
+  const kp = $("#pf-to-kpis");
+  ["pf-sig", "pf-energy", "pf-td"].forEach(id => { const c = Chart.getChart($("#" + id)); if (c) c.destroy(); });
+
+  if (f.fidelity !== "FDR" || !f.perf) {
+    kp.innerHTML = `<div class="panel" style="grid-column:1/-1;text-align:center;padding:34px">
+      <div style="font-size:14px;font-weight:600">Full-rate data required</div>
+      <div style="font-size:12px;color:var(--text-3);margin-top:6px">
+        ${f.id} was captured over satellite downlink (1\u20132 min). Takeoff and landing performance
+        analytics need 8 Hz FDR/QAR data \u2014 captured automatically by the Bee edge device.</div></div>`;
+    $("#pf-ldg").innerHTML = ""; $("#pf-verdict").textContent = ""; $("#pf-ldg-note").textContent = "";
+    return;
+  }
+  const T = f.perf.takeoff, L = f.perf.landing;
+  kp.innerHTML =
+    kpiBox("Peak N1", `${fmt(T.n1Peak, 1)}<small> %</small>`, `${fmt(T.deratePct, 1)}% below rated \u2014 reduced thrust`, C.green) +
+    kpiBox("Peak EGT", `${fmt(T.egtPeak)}<small> \u00b0C</small>`, `${fmt(T.egtMargin)}\u00b0C margin to redline`, C.teal) +
+    kpiBox("Ground Roll", `${fmt(T.groundRollFt)}<small> ft</small>`, `rotation at ${fmt(T.vrCas)} kt CAS`, C.blue) +
+    kpiBox("Rotation", `${T.rotRateDegS.toFixed(1)}<small> \u00b0/s</small>`, "target 2.5\u20133.5 \u00b0/s", C.gold) +
+    kpiBox("To 1,500 ft", `${fmt(T.secTo1500)}<small> s</small>`, "initial climb performance", C.purple);
+
+  const sig = f.perf.egtN1Sig.filter(r => r[0] > 20);
+  chartOn($("#pf-sig"), {
+    type: "scatter",
+    data: { datasets: [
+      { label: "Engine 1", data: sig.map(r => ({ x: r[0], y: r[1] })), pointRadius: 3, backgroundColor: "rgba(242,242,244,.8)" },
+      { label: "Engine 2", data: sig.map(r => ({ x: r[2], y: r[3] })), pointRadius: 3, backgroundColor: C.blue },
+    ]},
+    options: { maintainAspectRatio: false,
+      scales: { x: { title: { display: true, text: "N1 %" } }, y: { title: { display: true, text: "EGT \u00b0C" } } } },
+  });
+
+  const idx = Object.fromEntries(f.fields.map((k, i) => [k, i]));
+  /* final approach only: slice from the last time RA came down through 2,400 ft,
+     so out-of-range RA flicker during descent stays out of the plot */
+  const pre = f.rows.filter(r => r[idx.t] <= f.onSec && r[idx.ra] != null && r[idx.cas] != null);
+  let cut = 0;
+  for (let i = pre.length - 1; i >= 0; i--) if (pre[i][idx.ra] >= 2400) { cut = i; break; }
+  let app = pre.slice(cut).filter(r => r[idx.ra] > 0 && r[idx.ra] < 2600);
+  /* enforce monotonic descent to kill residual sensor flicker */
+  let lastRa = Infinity;
+  app = app.filter(r => { if (r[idx.ra] <= lastRa + 40) { lastRa = r[idx.ra]; return true; } return false; });
+  const vref = f.vref || 137;
+  chartOn($("#pf-energy"), {
+    type: "line",
+    data: { datasets: [
+      { label: "CAS (recorded)", data: app.map(r => ({ x: r[idx.ra], y: r[idx.cas] })), borderColor: "rgba(242,242,244,.85)", borderWidth: 1.6, pointRadius: 0 },
+      { label: `Vref+5 target (${vref + 5} kt)`, data: [{ x: 2600, y: vref + 5 }, { x: 0, y: vref + 5 }], borderColor: C.gold, borderDash: [5, 5], borderWidth: 1.2, pointRadius: 0 },
+      { label: "Gate tolerance (+10 kt)", data: [{ x: 2600, y: vref + 15 }, { x: 0, y: vref + 15 }], borderColor: "rgba(201,123,109,.5)", borderDash: [3, 5], borderWidth: 1, pointRadius: 0 },
+    ]},
+    options: { maintainAspectRatio: false,
+      scales: { x: { type: "linear", reverse: true, title: { display: true, text: "radio altitude ft (\u2192 touchdown)" } },
+                y: { title: { display: true, text: "kt CAS" }, suggestedMin: vref - 10 } } },
+  });
+
+  const real = FLIGHTS.filter(x => x.fidelity === "FDR" && x.perf)
+    .map(x => ({ x: x.perf.landing.tdDistEstFt, y: x.perf.landing.tdG, id: x.id }));
+  chartOn($("#pf-td"), {
+    type: "scatter",
+    data: { datasets: [
+      { label: "Fleet history (simulated)", data: AB.tdDispersion.map(d => ({ x: d.distFt, y: d.g })), pointRadius: 4, backgroundColor: "rgba(255,255,255,.16)" },
+      { label: "This aircraft (recorded, dist est.)", data: real, pointRadius: 7, pointStyle: "rectRot",
+        backgroundColor: real.map(r => r.id === f.id ? "#d9a441" : "rgba(217,164,65,.45)") },
+    ]},
+    options: { maintainAspectRatio: false,
+      plugins: { tooltip: { callbacks: { label: (c) => (c.raw.id ? c.raw.id + ": " : "") + fmt(c.raw.y, 2) + " g @ " + fmt(c.raw.x) + " ft" } } },
+      scales: { x: { title: { display: true, text: "touchdown point past threshold (ft)" }, suggestedMax: 3500 },
+                y: { title: { display: true, text: "touchdown g" }, suggestedMin: 1.0, suggestedMax: 1.7 } } },
+    plugins: [{ id: "tdZones", afterDraw(c) {
+      const g = c.ctx, a = c.chartArea, x = c.scales.x, y = c.scales.y;
+      g.save(); g.strokeStyle = "rgba(201,123,109,.4)"; g.setLineDash([4, 5]); g.lineWidth = 1;
+      const yh = y.getPixelForValue(1.4), xv = x.getPixelForValue(2000);
+      g.beginPath(); g.moveTo(a.left, yh); g.lineTo(a.right, yh); g.stroke();
+      g.beginPath(); g.moveTo(xv, a.top); g.lineTo(xv, a.bottom); g.stroke();
+      g.fillStyle = "rgba(201,123,109,.7)"; g.font = "500 10px Inter";
+      g.fillText("firm 1.40 g", a.left + 6, yh - 5); g.fillText("long 2,000 ft", xv + 5, a.top + 12);
+      g.restore();
+    } }],
+  });
+
+  $("#pf-ldg-note").textContent = `${f.id} \u00b7 recorded 8 Hz`;
+  $("#pf-ldg").innerHTML = [
+    ["Flare", L.flareSec.toFixed(1) + " s", "50 ft \u2192 touchdown"],
+    ["Touchdown", L.tdG.toFixed(2) + " g", "pitch " + L.tdPitch.toFixed(1) + "\u00b0"],
+    ["TD point", fmt(L.tdDistEstFt) + " ft", "estimated past threshold"],
+    ["Reverse", L.revSec.toFixed(0) + " s", "max " + L.revMaxN1.toFixed(0) + "% N1"],
+    ["Deceleration", L.decelKtS.toFixed(1) + " kt/s", "first 15 s"],
+    ["Taxi-in", L.taxiInMin.toFixed(0) + " min", fmt(L.taxiInFuelLb) + " lb burned"],
+  ].map(([l, v, sub]) => `<div class="mk"><div class="kl">${l}</div><div class="kv">${v}</div>
+    <div class="kl" style="text-transform:none;letter-spacing:0;margin-top:2px">${sub}</div></div>`).join("");
+  const clean = L.tdG < 1.4 && L.tdDistEstFt < 2000;
+  $("#pf-verdict").className = "td-verdict " + (clean ? "ok" : "warn");
+  $("#pf-verdict").textContent = clean
+    ? `Stabilized and efficient: on-speed approach, ${L.tdG.toFixed(2)} g touchdown inside the target zone. ` +
+      (L.revMaxN1 > 60 ? "Full reverse was used \u2014 idle reverse would have saved \u224866 lb on this runway." : "Idle reverse used \u2014 efficient.")
+    : `Flagged for review \u2014 auto-routed to the FOQA queue.`;
+}
+
+/* ============================================================
    ENGINE (unchanged core) / FUEL
    ============================================================ */
 function initEngine() {
@@ -1355,7 +1478,7 @@ $("#ask-input").onkeydown = (e) => {
 };
 
 /* ---------------- boot ---------------- */
-const INIT = { overview: initOverview, replay: initReplay, replay3d: initReplay3d,
+const INIT = { perf: initPerf, overview: initOverview, replay: initReplay, replay3d: initReplay3d,
   health: initHealth, pdm: initPdm, engine: initEngine, fuel: initFuel,
   safety: initSafety, report: initReport, connectors: initConnectors, ai: initAI };
 $("#nav-event-count").textContent = FLIGHTS.flatMap(f => f.events || []).length;

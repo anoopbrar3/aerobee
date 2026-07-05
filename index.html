@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=4">
+<link rel="stylesheet" href="assets/css/style.css?v=6">
 </head>
 <body>
 
@@ -29,6 +29,7 @@
     <div class="nav-group">The Studio — AI Apps</div>
     <a class="nav-item" data-view="health"><svg class="ni" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 8.5h3L6.4 4l2.6 8 1.7-3.5h3.8"/></svg>Aircraft Health</a>
     <a class="nav-item" data-view="pdm"><svg class="ni" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13 6 8.6l3 2.2L14 4"/><path d="M10.6 4H14v3.4"/></svg>Predictive Maintenance</a>
+    <a class="nav-item" data-view="perf"><svg class="ni" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13.5h12M4.5 13.5 7 3.5M11.5 13.5 9 3.5"/><path d="M5.6 9h4.8"/></svg>T/O &amp; Landing</a>
     <a class="nav-item" data-view="engine"><svg class="ni" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4"/></svg>Engine Condition</a>
     <a class="nav-item" data-view="fuel"><svg class="ni" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.8C5.5 5.3 3.7 7.7 3.7 10a4.3 4.3 0 0 0 8.6 0C12.3 7.7 10.5 5.3 8 1.8Z"/></svg>Fuel Optimization</a>
     <a class="nav-item" data-view="safety"><svg class="ni" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.8 13 3.6V8c0 3.2-2.2 5.2-5 6.4C5.2 13.2 3 11.2 3 8V3.6Z"/></svg>Proactive Safety <span class="badge" id="nav-event-count"></span></a>
@@ -189,6 +190,41 @@
     </div>
   </section>
 
+  <!-- ======================= T/O & LANDING PERFORMANCE ======================= -->
+  <section class="view" id="view-perf">
+    <div class="flightbar" id="pf-flightbar"></div>
+    <div class="kpi-row" id="pf-to-kpis" style="margin-top:12px"></div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Engine Signature — EGT vs N1 at takeoff</h3>
+          <span class="panel-note">recorded 8 Hz · both engines through the takeoff roll</span></div>
+        <div class="chart-wrap tall"><canvas id="pf-sig"></canvas></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Approach Energy — CAS vs radio altitude</h3>
+          <span class="panel-note">final approach · target Vref+5</span></div>
+        <div class="chart-wrap tall"><canvas id="pf-energy"></canvas></div>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Touchdown Dispersion — fleet context</h3>
+          <span class="panel-note">grey = simulated fleet history · marked = this aircraft, recorded</span></div>
+        <div class="chart-wrap tall"><canvas id="pf-td"></canvas></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Landing & Rollout Scorecard</h3><span class="panel-note" id="pf-ldg-note"></span></div>
+        <div class="mini-kpis" id="pf-ldg" style="grid-template-columns:repeat(2,1fr)"></div>
+        <div class="td-verdict" id="pf-verdict" style="margin-top:12px"></div>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:16px">
+      <div class="panel-head"><h3>Why this matters — the economics</h3>
+        <span class="panel-note">industry benchmarks · Flight Safety Foundation, MRO market research</span></div>
+      <div class="savings-grid" id="pf-value"></div>
+    </div>
+  </section>
+
   <!-- ======================= ENGINE ======================= -->
   <section class="view" id="view-engine">
     <div class="kpi-row" id="en-kpis"></div>
@@ -335,8 +371,8 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-<script src="assets/js/data.js?v=4"></script>
-<script src="assets/js/fdr_data.js?v=4"></script>
-<script src="assets/js/app.js?v=4"></script>
+<script src="assets/js/data.js?v=6"></script>
+<script src="assets/js/fdr_data.js?v=6"></script>
+<script src="assets/js/app.js?v=6"></script>
 </body>
 </html>

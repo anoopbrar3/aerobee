@@ -255,6 +255,66 @@ for F in FLIGHTS:
         ])
     print(f"  web rows: {len(rows_out)}")
 
+
+    # ---------------- takeoff & landing performance analytics ----------------
+    # Takeoff: brake release = first sustained gspd>3 before liftoff
+    br = None
+    for i in range(i0, max(i0 - 8 * 420, 0), -1):
+        if (gspd[i] or 0) < 3: br = i; break
+    if br is None:
+        win = range(max(i0 - 8 * 420, 0), i0)
+        br = min(win, key=lambda i: gspd[i] or 0)
+    ground_roll_ft = 0.0
+    for i in range(br + 1, i0 + 1):
+        ground_roll_ft += ((gspd[i] or 0) * 1.68781) * (t[i] - t[i - 1])  # kt→ft/s
+    n1_peak = max((n1a[i] or 0, n1b[i] or 0) for i in range(br, i0 + 8 * 60))
+    egt_peak = max(max(egta[i] or 0, egtb[i] or 0) for i in range(br, i0 + 8 * 60))
+    vr_cas = cas[i0] or 0
+    # pitch rate at rotation (max over liftoff ±5 s, per second)
+    rot_rate = max(((pitch[i + 8] or 0) - (pitch[i] or 0)) for i in range(i0 - 40, i0 + 40))
+    alt_lo = alt[i0] or 0
+    sec_to_1500 = next((t[i] - t[i0] for i in range(i0, i1) if (alt[i] or 0) >= alt_lo + 1500), None)
+    # Landing: flare = RA 50 ft → touchdown
+    i50 = next((i for i in range(i1, i0, -1) if (ra[i] or 0) >= 50), i1)
+    flare_sec = round(t[i1] - t[i50], 1)
+    td_pitch = max((pitch[i] or 0) for i in range(i1 - 24, i1 + 8))
+    rev_idx = [i for i in range(i1, n) if (rev1[i] or 0) or (rev2[i] or 0)]
+    rev_sec = round((t[rev_idx[-1]] - t[rev_idx[0]]), 1) if rev_idx else 0
+    rev_max_n1 = round(max(((n1a[i] or 0) + (n1b[i] or 0)) / 2 for i in rev_idx), 1) if rev_idx else 0
+    # deceleration kt/s over first 15 s after touchdown
+    i15 = min(i1 + 8 * 15, n - 1)
+    decel = round(((gspd[i1] or 0) - (gspd[i15] or 0)) / max(t[i15] - t[i1], 1), 2)
+    # taxi-in time & fuel
+    ti_idx = [i for i in range(i1, n) if (gspd[i] or 0) > 2]
+    taxi_in_min = round((t[ti_idx[-1]] - t[i1]) / 60, 1) if ti_idx else 0
+    taxi_fuel = 0.0
+    for i in range(i1 + 1, n):
+        taxi_fuel += ((ffa[i] or 0) + (ffb[i] or 0)) * (t[i] - t[i - 1]) / 3600
+    # EGT-vs-N1 signature during takeoff acceleration (1 Hz for 100 s)
+    sig = []
+    for i in range(br, min(br + 8 * 100, n), 8):
+        sig.append([round(n1a[i] or 0, 1), round(egta[i] or 0), round(n1b[i] or 0, 1), round(egtb[i] or 0)])
+    EGT_REDLINE = 960
+    perf = {
+        "takeoff": {
+            "n1Peak": round(n1_peak[0] if isinstance(n1_peak, tuple) else n1_peak, 1),
+            "egtPeak": round(egt_peak), "egtMargin": round(EGT_REDLINE - egt_peak),
+            "deratePct": round(100 - (n1_peak[0] if isinstance(n1_peak, tuple) else n1_peak), 1),
+            "groundRollFt": round(ground_roll_ft), "vrCas": round(vr_cas),
+            "rotRateDegS": round(rot_rate, 1),
+            "secTo1500": round(sec_to_1500) if sec_to_1500 else None,
+        },
+        "landing": {
+            # est. touchdown point past threshold: ground covered during flare
+            # minus the ~950 ft from the 50 ft screen to the threshold (3 deg GS)
+            "tdDistEstFt": round(max((gspd[i50] or 135) * 1.68781 * flare_sec - 950, 400)),
+            "flareSec": flare_sec, "tdG": round(td_nz, 2), "tdPitch": round(td_pitch, 1),
+            "revSec": rev_sec, "revMaxN1": rev_max_n1, "decelKtS": decel,
+            "taxiInMin": taxi_in_min, "taxiInFuelLb": round(taxi_fuel),
+        },
+        "egtN1Sig": sig,
+    }
+
     # summary
     fuel_used = None
     ff_int = 0.0
@@ -276,7 +336,7 @@ for F in FLIGHTS:
         "fuelUsedLb": fuel_used, "gwStart": next((w for w in gw if w and w > 100000), None),
         "tdNz": round(td_nz, 2), "maxWind": {"kt": max_wind[0], "dir": max_wind[1]},
         "vref": vref, "gates": gates, "events": events,
-        "fields": fields, "rows": rows_out,
+        "fields": fields, "rows": rows_out, "perf": perf,
     })
 
 with open(OUT, "w") as f:
