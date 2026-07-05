@@ -8,13 +8,13 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=6">
+<link rel="stylesheet" href="assets/css/style.css?v=7">
 </head>
 <body>
 
 <aside id="sidebar">
   <div class="brand">
-    <svg viewBox="0 0 100 100" class="brand-hex"><polygon points="50 3 93 26 93 74 50 97 7 74 7 26" fill="none" stroke="#FFB300" stroke-width="7"/><polygon points="50 22 74 36 74 64 50 78 26 64 26 36" fill="#FFB300"/></svg>
+    <svg viewBox="0 0 78 82" class="brand-hex" style="color:#d9a441"><g fill="currentColor"><polygon points="39.5,22.7 34.5,31.3 24.5,31.3 19.5,22.7 24.5,14.0 34.5,14.0"/><polygon points="55.0,14.0 50.0,22.7 40.0,22.7 35.0,14.0 40.0,5.3 50.0,5.3"/><polygon points="24.0,31.3 19.0,40.0 9.0,40.0 4.0,31.3 9.0,22.7 19.0,22.7"/><polygon points="39.5,40.0 34.5,48.6 24.5,48.6 19.5,40.0 24.5,31.3 34.5,31.3"/><polygon points="55.0,31.3 50.0,40.0 40.0,40.0 35.0,31.3 40.0,22.7 50.0,22.7"/><polygon points="24.0,48.6 19.0,57.3 9.0,57.3 4.0,48.6 9.0,40.0 19.0,40.0"/><polygon points="39.5,57.3 34.5,66.0 24.5,66.0 19.5,57.3 24.5,48.6 34.5,48.6"/><polygon points="55.0,48.6 50.0,57.3 40.0,57.3 35.0,48.6 40.0,40.0 50.0,40.0"/><polygon points="39.5,74.6 34.5,83.3 24.5,83.3 19.5,74.6 24.5,66.0 34.5,66.0"/></g></svg>
     <div>
       <div class="brand-name">Aero<span>Bee</span></div>
       <div class="brand-sub">Collective Intelligence</div>
@@ -65,7 +65,11 @@
         <span class="panel-note">2 full-rate FDR decodes · 3 satellite downlink flights — click to load</span></div>
       <div class="flight-cards" id="flight-cards"></div>
     </div>
-    <div class="kpi-row" id="ov-kpis" style="margin-top:14px"></div>
+    <div class="grid-2" style="margin-top:16px;grid-template-columns:2.1fr 1fr">
+      <div class="kpi-row" id="ov-kpis" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr));align-content:start"></div>
+      <div class="panel"><div class="panel-head"><h3>Operations Feed</h3><span class="panel-note">latest events · all flights</span></div>
+        <div class="ops-feed" id="ops-feed"></div></div>
+    </div>
     <div class="grid-2-1">
       <div class="panel">
         <div class="panel-head"><h3>Network Map — logged city pairs</h3><span class="panel-note" id="ov-map-note"></span></div>
@@ -91,6 +95,11 @@
   <!-- ======================= REPLAY 2D ======================= -->
   <section class="view" id="view-replay">
     <div class="flightbar" id="rp-flightbar"></div>
+    <div class="panel" style="margin-top:12px;padding:12px 20px">
+      <div class="fp-bar"><div class="fp-ends" id="fp-dep"></div>
+        <div class="fp-track"><i id="fp-fill"></i><span class="fp-plane" id="fp-plane"></span></div>
+        <div class="fp-ends right" id="fp-arr"></div></div>
+    </div>
     <div class="kpi-row kpi-replay" id="rp-kpis" style="margin-top:12px"></div>
     <div class="grid-2-1">
       <div class="panel">
@@ -170,6 +179,7 @@
 
   <!-- ======================= PREDICTIVE MAINTENANCE ======================= -->
   <section class="view" id="view-pdm">
+    <div class="seg-group" id="pdm-seg" style="margin:0 0 14px;display:inline-flex"></div>
     <div class="kpi-row" id="pdm-kpis"></div>
     <div class="grid-2">
       <div class="panel">
@@ -258,7 +268,17 @@
         <div class="chart-wrap"><canvas id="fu-ff"></canvas></div>
       </div>
     </div>
-    <div class="panel">
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>CO₂ &amp; CORSIA Reporting</h3><span class="panel-note">from measured fuel burn · ICAO 3.16 kg CO₂/kg fuel</span></div>
+        <div class="chart-wrap"><canvas id="fu-co2"></canvas></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Emissions Summary</h3><span class="panel-note" id="fu-co2-note"></span></div>
+        <div class="mini-kpis" id="fu-co2-kpis" style="grid-template-columns:repeat(2,1fr)"></div>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:16px">
       <div class="panel-head"><h3>Savings Opportunities — computed from this aircraft's operation</h3>
         <span class="panel-note" id="fu-savings-total"></span></div>
       <div class="savings-grid" id="fu-savings"></div>
@@ -269,6 +289,17 @@
   <section class="view" id="view-safety">
     <div class="flightbar" id="sa-flightbar"></div>
     <div class="kpi-row" id="sa-kpis" style="margin-top:12px"></div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Event Pareto — fleet FDM history</h3><span class="panel-note" id="sa-pareto-note"></span></div>
+        <div class="chart-wrap tall"><canvas id="sa-pareto"></canvas></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>SMS Risk Matrix</h3><span class="panel-note">probability × severity · event count · classified via SMS table</span></div>
+        <div class="risk-matrix" id="sa-matrix"></div>
+        <div class="panel-note" style="margin-top:10px" id="sa-matrix-note"></div>
+      </div>
+    </div>
     <div class="grid-2">
       <div class="panel">
         <div class="panel-head"><h3>Stabilized Approach Analysis</h3><span class="panel-note" id="sa-app-note"></span></div>
@@ -369,10 +400,18 @@
   </section>
 </main>
 
+<div id="palette" class="palette-veil" hidden>
+  <div class="palette">
+    <input id="palette-input" placeholder="Jump to a view, load a flight, search events…">
+    <div class="palette-list" id="palette-list"></div>
+  </div>
+</div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
-<script src="assets/js/data.js?v=6"></script>
-<script src="assets/js/fdr_data.js?v=6"></script>
-<script src="assets/js/app.js?v=6"></script>
+<script src="assets/js/data.js?v=7"></script>
+<script src="assets/js/fdr_data.js?v=7"></script>
+<script src="assets/js/ops_data.js?v=7"></script>
+<script src="assets/js/app.js?v=7"></script>
+
 </body>
 </html>

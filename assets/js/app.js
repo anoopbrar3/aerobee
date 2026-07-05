@@ -245,28 +245,40 @@ const FLIGHTS = [];
       durMin: s3.durMin, maxAlt: s3.maxAlt, fuelLb: s3.fuelBurn, events: [], gates: null,
     }, s3.track, s3.snapshots));
   }
+  if (typeof OPS !== "undefined" && OPS.demoFlight) {
+    const d = OPS.demoFlight;
+    const trk = d.track.map(p => ({ ...p, dist: 0 }));
+    const fl = mkSatFlight({
+      id: d.id, date: d.date, from: d.from, to: d.to, fromName: d.fromName, toName: d.toName,
+      durMin: d.durMin, maxAlt: d.maxAlt, fuelLb: d.fuelBurn,
+      events: d.events.map(e => ({ ...e, tms: P(e.t) })), gates: null,
+    }, trk, []);
+    fl.fidelity = "SIM";
+    fl.stateAtDemo = true;
+    FLIGHTS.push(fl);
+  }
   FLIGHTS.sort((a, b) => a.id.localeCompare(b.id));
 })();
 const state = { fi: FLIGHTS.findIndex(f => f.id === "AB201") };
 function selFlight() { return FLIGHTS[state.fi]; }
 
 function fidelityBadge(f) {
-  return f.fidelity === "FDR"
-    ? `<span class="fid-badge fdr">FDR · 8 Hz</span>`
-    : `<span class="fid-badge sat">SAT · downlink</span>`;
+  if (f.fidelity === "FDR") return `<span class="fid-badge fdr">FDR · 8 Hz</span>`;
+  if (f.fidelity === "SIM") return `<span class="fid-badge sat">SIM · demo</span>`;
+  return `<span class="fid-badge sat">SAT · downlink</span>`;
 }
 function renderFlightBars() {
   $$(".flightbar").forEach(bar => {
     bar.innerHTML = FLIGHTS.map((f, i) => `
       <button class="fl-chip ${i === state.fi ? "active" : ""}" data-i="${i}">
         <span class="fl-id">${f.id}</span> ${f.from}→${f.to}
-        <small>${f.date} · ${mins(f.durMin)} · ${f.fidelity === "FDR" ? "8 Hz" : "SAT"}</small>
+        <small>${f.date} · ${mins(f.durMin)} · ${f.fidelity === "FDR" ? "8 Hz" : f.fidelity}</small>
       </button>`).join("");
     bar.querySelectorAll(".fl-chip").forEach(b => b.onclick = () => selectFlight(+b.dataset.i));
   });
   const f = selFlight();
   $("#side-flight").textContent = `${f.id} · ${f.from}→${f.to}`;
-  $("#side-fidelity").textContent = f.fidelity === "FDR" ? "8 Hz FDR decode · recorded" : "satellite downlink · 1–2 min";
+  $("#side-fidelity").textContent = f.fidelity === "FDR" ? "8 Hz FDR decode · recorded" : f.fidelity === "SIM" ? "simulated demo flight" : "satellite downlink · 1–2 min";
 }
 function selectFlight(i) {
   state.fi = i;
@@ -373,6 +385,19 @@ function initOverview() {
     L.polyline(f.track.filter((_, j) => j % 8 === 0).map(p => [p.lat, p.lon]),
       { color: C.teal, weight: 2, opacity: .8 }).addTo(ov.map).bindTooltip(`${f.id} — 8 Hz FDR track`);
   });
+    /* operations feed — latest events across all flights (Star-deck alerts idea) */
+  const feedEvents = FLIGHTS.flatMap(f => (f.events || []).map(e => ({ ...e, fid: f.id })))
+    .sort((a, b) => (b.tms || 0) - (a.tms || 0)).slice(0, 9);
+  $("#ops-feed").innerHTML = feedEvents.map(e => `
+    <button class="feed-item sev-b-${e.sev}" data-fid="${e.fid}">
+      <span class="feed-dot"></span>
+      <span class="feed-body"><b>${e.fid}</b> ${e.desc}<small>${e.cat} · ${e.sev}${e.t ? " · " + String(e.t).slice(0, 16) : ""}</small></span>
+    </button>`).join("");
+  $$("#ops-feed .feed-item").forEach(b => b.onclick = () => {
+    const i = FLIGHTS.findIndex(f => f.id === b.dataset.fid);
+    if (i >= 0) { selectFlight(i); show("safety"); }
+  });
+
   $("#ov-map-note").textContent = `gold dashed = downlink history · teal = FDR tracks`;
 
   $("#ov-routes").innerHTML =
@@ -399,6 +424,15 @@ function initOverview() {
    REPLAY 2D
    ============================================================ */
 const rp = { playing: false, speed: 8, cursor: 0, timer: null, wx: { winds: null, radar: null } };
+
+function renderProgress(frac) {
+  const f = selFlight();
+  $("#fp-dep").innerHTML = `<b>${f.from}</b><small>${f.fromName || ""}</small>`;
+  $("#fp-arr").innerHTML = `<b>${f.to}</b><small>${f.toName || ""}</small>`;
+  const pct = Math.min(Math.max(frac * 100, 0), 100);
+  $("#fp-fill").style.width = pct + "%";
+  $("#fp-plane").style.left = pct + "%";
+}
 
 function initReplay() {
   renderFlightBars();
@@ -600,6 +634,7 @@ function seek(fr) {
   $("#rp-att-src").textContent = f.fidelity === "FDR" ? "recorded FDR attitude & IRS wind" : "downlink derived";
 
   $("#rp-slider").value = Math.round(fr * 1000);
+  renderProgress(fr);
   let ci = rp.tr.findIndex(p => p.tms >= tms);
   rp.cursorX = ci < 0 ? rp.tr.length - 1 : ci;
   rp.strip.update("none");
@@ -791,7 +826,70 @@ function initHealth() {
    PREDICTIVE MAINTENANCE (AI prototype — simulated forecasts
    on top of the real 22-month EGT trend)
    ============================================================ */
+let pdmDomain = "engine";
+function pdmForecastFuel() {
+  /* fuel-burn forecast: linear trend on monthly burn + seasonal band */
+  const mm = AB.monthly.filter(m => m.fuelLb > 0);
+  const y = mm.map(m => m.fuelLb / Math.max(m.flights, 1) / 1000); /* klb per flight */
+  const n = y.length, xs = [...Array(n).keys()];
+  const xb = xs.reduce((a, b) => a + b, 0) / n, yb = y.reduce((a, b) => a + b, 0) / n;
+  const slope = xs.reduce((a, x, i) => a + (x - xb) * (y[i] - yb), 0) / xs.reduce((a, x) => a + (x - xb) ** 2, 0);
+  const fc = [...Array(6).keys()].map(k => yb + slope * (n + k - xb));
+  const labels = mm.map(m => m.month).concat(["+1 mo", "+2", "+3", "+4", "+5", "+6"]);
+  chartOn($("#pdm-forecast"), {
+    type: "line",
+    data: { labels, datasets: [
+      { label: "burn per flight (klb, actual)", data: y.concat(Array(6).fill(null)), borderColor: "rgba(242,242,244,.85)", borderWidth: 1.6, pointRadius: 2.5, tension: .3 },
+      { label: "AI forecast (simulated)", data: Array(n - 1).fill(null).concat([y[n - 1]], fc), borderColor: "#d9a441", borderDash: [5, 5], borderWidth: 1.6, pointRadius: 0 },
+      { label: "P90 band", data: Array(n - 1).fill(null).concat([y[n - 1]], fc.map((v, i) => v + 0.5 + i * 0.28)), borderColor: "transparent", pointRadius: 0, fill: "+1", backgroundColor: "rgba(217,164,65,.09)" },
+      { label: "", data: Array(n - 1).fill(null).concat([y[n - 1]], fc.map((v, i) => v - 0.5 - i * 0.28)), borderColor: "transparent", pointRadius: 0 },
+    ]},
+    options: { maintainAspectRatio: false, plugins: { legend: { labels: { filter: i => i.text } } },
+      scales: { y: { title: { display: true, text: "klb / flight" } }, x: { ticks: { maxTicksLimit: 14 } } } },
+  });
+  $("#pdm-kpis").innerHTML =
+    kpiBox("Burn Trend", (slope >= 0 ? "+" : "") + fmt(slope * 1000) + "<small> lb/flt/mo</small>", "fit on measured monthly burn", C.teal) +
+    kpiBox("6-mo Forecast", fmt(fc[5], 1) + "<small> klb/flt</small>", "P50 · simulated model", C.gold) +
+    kpiBox("Anomaly Watch", "2<small> routes</small>", "sectors burning above fleet norm", C.amber) +
+    kpiBox("Savings at Stake", "$" + fmt(AB.savings.reduce((a, x) => a + x.annualUsd, 0)), "identified initiatives (Fuel view)", C.green);
+}
+function pdmForecastSafety() {
+  /* safety risk index forecast from real classified FDM history */
+  const rm = OPS.foqa.riskMonthly;
+  const y = rm.map(m => m.avgRisk), n = y.length;
+  const xs = [...Array(n).keys()];
+  const xb = xs.reduce((a, b) => a + b, 0) / n, yb = y.reduce((a, b) => a + b, 0) / n;
+  const slope = xs.reduce((a, x, i) => a + (x - xb) * (y[i] - yb), 0) / Math.max(xs.reduce((a, x) => a + (x - xb) ** 2, 0), 1e-9);
+  const fc = [...Array(4).keys()].map(k => yb + slope * (n + k - xb));
+  chartOn($("#pdm-forecast"), {
+    type: "line",
+    data: { labels: rm.map(m => m.month).concat(["+1 mo", "+2", "+3", "+4"]), datasets: [
+      { label: "avg risk index (real FDM events)", data: y.concat(Array(4).fill(null)), borderColor: "rgba(242,242,244,.85)", borderWidth: 1.6, pointRadius: 3, tension: .3 },
+      { label: "events / month", data: rm.map(m => m.n).concat(Array(4).fill(null)), borderColor: C.blue, borderWidth: 1.2, pointRadius: 2, yAxisID: "y2", tension: .3 },
+      { label: "AI projection (simulated)", data: Array(n - 1).fill(null).concat([y[n - 1]], fc), borderColor: "#d9a441", borderDash: [5, 5], borderWidth: 1.6, pointRadius: 0 },
+    ]},
+    options: { maintainAspectRatio: false,
+      scales: { y: { title: { display: true, text: "probability × severity" } },
+                y2: { position: "right", grid: { display: false }, title: { display: true, text: "events" } } } },
+  });
+  const top = OPS.foqa.pareto[0];
+  $("#pdm-kpis").innerHTML =
+    kpiBox("Risk Trend", (slope >= 0 ? "+" : "") + slope.toFixed(2) + "<small> /mo</small>", "avg probability × severity", slope > 0 ? C.amber : C.green) +
+    kpiBox("Leading Indicator", top[1] + "<small> ×</small>", top[0], C.gold) +
+    kpiBox("Event Rate", fmt(OPS.foqa.events.length / OPS.foqa.flights, 1) + "<small> /flight</small>", OPS.foqa.flights + " flights analyzed", C.blue) +
+    kpiBox("High-Risk Cells", Object.entries(OPS.foqa.matrix).filter(([k]) => k.split(",").reduce((a, b) => a * b, 1) >= 15).length, "matrix cells P×S ≥ 15", C.red);
+}
 function initPdm() {
+  $("#pdm-seg").innerHTML = ["engine", "fuel", "safety"].map(d =>
+    `<button class="speed-btn ${d === pdmDomain ? "active" : ""}" data-d="${d}">${d[0].toUpperCase() + d.slice(1)}</button>`).join("");
+  $$("#pdm-seg .speed-btn").forEach(b => b.onclick = () => {
+    pdmDomain = b.dataset.d;
+    $$("#pdm-seg .speed-btn").forEach(x => x.classList.toggle("active", x === b));
+    if (pdmDomain === "fuel") pdmForecastFuel();
+    else if (pdmDomain === "safety") pdmForecastSafety();
+    else { inited.pdm = false; try { INIT.pdm(); inited.pdm = true; } catch (e) { console.error(e); } }
+  });
+
   const t = AB.egtTrend, LIMIT = 960;
   /* monthly mean margin for engine 2 (the drifting one) */
   const byMonth = {};
@@ -1064,6 +1162,27 @@ function initFuel() {
       x: { title: { display: true, text: "lb/hr (both engines)" } },
       y: { title: { display: true, text: "altitude ft" } } } },
   });
+  /* CO2 & CORSIA from measured monthly burn */
+  const mm = AB.monthly.filter(m => m.fuelLb > 0);
+  const co2t = (lb) => lb * 0.4536 * 3.16 / 1000;
+  chartOn($("#fu-co2"), {
+    type: "bar",
+    data: { labels: mm.map(m => m.month), datasets: [{ label: "t CO₂", data: mm.map(m => co2t(m.fuelLb)),
+      backgroundColor: "rgba(255,255,255,.22)", borderRadius: 4 }] },
+    options: { maintainAspectRatio: false, plugins: { legend: { display: false } },
+      scales: { y: { title: { display: true, text: "tonnes CO₂" } }, x: { ticks: { maxTicksLimit: 12 } } } },
+  });
+  const tot = mm.reduce((a, m) => a + co2t(m.fuelLb), 0);
+  const peak = mm.reduce((a, m) => co2t(m.fuelLb) > co2t(a.fuelLb) ? m : a, mm[0]);
+  $("#fu-co2-note").textContent = "CORSIA-style monitoring · simulated reporting demo";
+  $("#fu-co2-kpis").innerHTML = [
+    ["Total CO₂", fmt(tot) + " t", AB.fleetKpis.period],
+    ["Avg / flight", fmt(tot / AB.fleetKpis.flights, 1) + " t", "across logged segments"],
+    ["Peak month", fmt(co2t(peak.fuelLb)) + " t", peak.month],
+    ["Offset exposure", "$" + fmt(tot * 25), "@ $25/t CORSIA-eligible est."],
+  ].map(([l, v, sub]) => `<div class="mk"><div class="kl">${l}</div><div class="kv">${v}</div>
+    <div class="kl" style="text-transform:none;letter-spacing:0;margin-top:2px">${sub}</div></div>`).join("");
+
   $("#fu-savings-total").textContent = `total identified: $${fmt(totSave)}/yr for this single aircraft`;
   $("#fu-savings").innerHTML = AB.savings.map(s => `
     <div class="saving-card"><h4>${s.name}</h4><p>${s.detail}</p>
@@ -1076,6 +1195,36 @@ function initFuel() {
    SAFETY — flight-aware FOQA
    ============================================================ */
 function initSafety() {
+  /* fleet FDM intelligence — real classified event history */
+  if (typeof OPS !== "undefined" && OPS.foqa) {
+    const F = OPS.foqa;
+    $("#sa-pareto-note").textContent = `${F.events.length} classified events · ${F.flights} flights · ${F.period}`;
+    chartOn($("#sa-pareto"), {
+      type: "bar",
+      data: { labels: F.pareto.map(p => p[0]), datasets: [{ data: F.pareto.map(p => p[1]),
+        backgroundColor: F.pareto.map((_, i) => i < 3 ? "rgba(217,164,65,.75)" : "rgba(255,255,255,.18)"), borderRadius: 4 }] },
+      options: { indexAxis: "y", maintainAspectRatio: false, plugins: { legend: { display: false } },
+        scales: { x: { title: { display: true, text: "occurrences" } }, y: { ticks: { font: { size: 10 }, autoSkip: false } } } },
+    });
+    /* 5×5 risk matrix */
+    let cells = "";
+    for (let sev = 5; sev >= 1; sev--) {
+      for (let prob = 1; prob <= 5; prob++) {
+        const n = F.matrix[`${prob},${sev}`] || 0;
+        const risk = prob * sev;
+        const tone = risk >= 15 ? "high" : risk >= 8 ? "med" : "low";
+        cells += `<div class="rm-cell ${tone} ${n ? "has" : ""}" title="P${prob} × S${sev}${n ? " · " + n + " events" : ""}">${n || ""}</div>`;
+      }
+    }
+    $("#sa-matrix").innerHTML =
+      `<div class="rm-axis-y">severity →</div><div class="rm-grid">${cells}</div><div class="rm-axis-x">probability →</div>`;
+    const hot = Object.entries(F.matrix).map(([k, n]) => ({ k, n, r: k.split(",").reduce((a, b) => a * b, 1) }))
+      .sort((a, b) => b.r - a.r)[0];
+    $("#sa-matrix-note").textContent = hot
+      ? `Highest-risk cell P${hot.k.split(",")[0]}×S${hot.k.split(",")[1]} holds ${hot.n} event(s). Classification: SMS FOQA table (171 event types).`
+      : "";
+  }
+
   renderFlightBars();
   bindSafetyFlight();
 }
@@ -1476,6 +1625,48 @@ $("#ask-input").onkeydown = (e) => {
     setTimeout(() => sendChat(q), 200);
   }
 };
+
+/* ============================================================
+   COMMAND PALETTE — press ⌘K / Ctrl-K anywhere
+   ============================================================ */
+const paletteEl = $("#palette"), paletteInput = $("#palette-input"), paletteList = $("#palette-list");
+function paletteItems(q) {
+  q = q.toLowerCase().trim();
+  const items = [];
+  Object.entries(TITLES).forEach(([v, t]) =>
+    items.push({ label: t, kind: "View", run: () => show(v) }));
+  FLIGHTS.forEach((f, i) =>
+    items.push({ label: `${f.id} · ${f.from} → ${f.to} · ${f.date}`, kind: f.fidelity, run: () => { selectFlight(i); show("replay"); } }));
+  FLIGHTS.flatMap(f => (f.events || []).slice(0, 6).map(e => ({ e, f }))).forEach(({ e, f }) =>
+    items.push({ label: `${e.desc} — ${f.id}`, kind: e.sev, run: () => { selectFlight(FLIGHTS.findIndex(x => x.id === f.id)); show("safety"); } }));
+  if (typeof OPS !== "undefined")
+    OPS.foqa.pareto.slice(0, 8).forEach(([name, n]) =>
+      items.push({ label: `${name} (${n}× in fleet history)`, kind: "FDM", run: () => show("safety") }));
+  let out = q ? items.filter(i => i.label.toLowerCase().includes(q)) : items.slice(0, 12);
+  if (q.length > 2 && out.length < 3)
+    out.push({ label: `Ask AeroBee: “${q}”`, kind: "AI", run: () => { show("ai"); setTimeout(() => sendChat(q), 250); } });
+  return out.slice(0, 12);
+}
+function paletteRender() {
+  const items = paletteItems(paletteInput.value);
+  paletteList.innerHTML = items.map((it, i) => `
+    <button class="palette-item ${i === 0 ? "sel" : ""}" data-i="${i}">
+      <span>${it.label}</span><span class="palette-kind">${it.kind}</span></button>`).join("");
+  paletteList.querySelectorAll(".palette-item").forEach((b, i) =>
+    b.onclick = () => { paletteClose(); items[i].run(); });
+}
+function paletteOpen() { paletteEl.hidden = false; paletteInput.value = ""; paletteRender(); paletteInput.focus(); }
+function paletteClose() { paletteEl.hidden = true; }
+document.addEventListener("keydown", (e) => {
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); paletteEl.hidden ? paletteOpen() : paletteClose(); }
+  if (e.key === "Escape" && !paletteEl.hidden) paletteClose();
+  if (e.key === "Enter" && !paletteEl.hidden) {
+    const first = paletteList.querySelector(".palette-item.sel") || paletteList.querySelector(".palette-item");
+    if (first) first.click();
+  }
+});
+paletteInput && (paletteInput.oninput = paletteRender);
+paletteEl && (paletteEl.onclick = (e) => { if (e.target === paletteEl) paletteClose(); });
 
 /* ---------------- boot ---------------- */
 const INIT = { perf: initPerf, overview: initOverview, replay: initReplay, replay3d: initReplay3d,
