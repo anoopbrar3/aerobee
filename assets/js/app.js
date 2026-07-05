@@ -1655,11 +1655,16 @@ function paletteRender() {
   paletteList.querySelectorAll(".palette-item").forEach((b, i) =>
     b.onclick = () => { paletteClose(); items[i].run(); });
 }
-function paletteOpen() { paletteEl.hidden = false; paletteInput.value = ""; paletteRender(); paletteInput.focus(); }
-function paletteClose() { paletteEl.hidden = true; }
+function paletteOpen() {
+  paletteEl.hidden = false; paletteEl.style.display = "flex";
+  paletteInput.value = ""; paletteRender(); paletteInput.focus();
+}
+function paletteClose() { paletteEl.hidden = true; paletteEl.style.display = "none"; }
+/* force-closed at boot regardless of any cached stylesheet */
+if (paletteEl) paletteClose();
 document.addEventListener("keydown", (e) => {
   if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); paletteEl.hidden ? paletteOpen() : paletteClose(); }
-  if (e.key === "Escape" && !paletteEl.hidden) paletteClose();
+  if (e.key === "Escape") paletteClose();
   if (e.key === "Enter" && !paletteEl.hidden) {
     const first = paletteList.querySelector(".palette-item.sel") || paletteList.querySelector(".palette-item");
     if (first) first.click();
